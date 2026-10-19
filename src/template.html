@@ -225,23 +225,24 @@ let cy = null, hidden = new Set(['place','motif']);
 function zonePositions(){
   const pos = {}, hy = D.nodes.filter(n => n.type==='hyp');
   pos.Q = {x:0,y:0};
-  hy.forEach((h,i) => { const a = -Math.PI/2 + i*2*Math.PI/hy.length; pos[h.id] = {x:Math.cos(a)*360, y:Math.sin(a)*360, a}; });
+  const R = Math.max(360, hy.length*22), d = R - 360;
+  hy.forEach((h,i) => { const a = -Math.PI/2 + i*2*Math.PI/hy.length; pos[h.id] = {x:Math.cos(a)*R*1.45, y:Math.sin(a)*R, a}; });
   const clues = D.nodes.filter(n => n.type==='clue').map(c => {
     const hs = D.edges.filter(e => e.source===c.id && byId.get(e.target).type==='hyp').map(e => pos[e.target].a);
     const seed = [...c.id].reduce((s,ch) => (s*31 + ch.charCodeAt(0)) % 997, 7) / 997 * 6.283;
     let a = hs.length ? Math.atan2(hs.reduce((s,x)=>s+Math.sin(x),0), hs.reduce((s,x)=>s+Math.cos(x),0)) : seed;
     return {id:c.id, a};
   }).sort((p,q) => p.a-q.a);
-  clues.forEach((c,i) => { const a = c.a*0.35 + (-Math.PI + i*2*Math.PI/clues.length)*0.65; const r = 700 + (i%3)*80; pos[c.id] = {x:Math.cos(a)*r, y:Math.sin(a)*r}; });
+  clues.forEach((c,i) => { const a = c.a*0.35 + (-Math.PI + i*2*Math.PI/clues.length)*0.65; const r = 700 + d + (i%3)*80; pos[c.id] = {x:Math.cos(a)*r, y:Math.sin(a)*r}; });
   const ring = (type, r, from, to) => { const L = D.nodes.filter(n => n.type===type); L.forEach((n,i) => { const a = from + (L.length===1?0.5:i/(L.length-1))*(to-from); pos[n.id] = {x:Math.cos(a)*r, y:Math.sin(a)*r}; }); };
-  ring('char', 1080, -Math.PI*0.95, -Math.PI*0.05);
-  ring('place', 1320, -Math.PI*0.85, -Math.PI*0.15);
-  ring('ref', 1100, Math.PI*0.6, Math.PI*1.05);
-  ring('motif', 1100, Math.PI*0.05, Math.PI*0.3);
-  ring('open', 1330, -Math.PI*0.03, Math.PI*0.1);
+  ring('char', 1080 + d, -Math.PI*0.95, -Math.PI*0.05);
+  ring('place', 1320 + d, -Math.PI*0.85, -Math.PI*0.15);
+  ring('ref', 1100 + d, Math.PI*0.6, Math.PI*1.05);
+  ring('motif', 1100 + d, Math.PI*0.05, Math.PI*0.3);
+  ring('open', 1330 + d, -Math.PI*0.1, Math.PI*0.14);
   const evs = D.nodes.filter(n => n.type==='event').sort((a,b) => (a.era===b.era? a.order-b.order : (a.era==='before'?-1:1)));
-  evs.forEach((n,i) => { pos[n.id] = {x:-1180 + i*124, y:1240 + (i%2)*100}; });
-  D.nodes.filter(n => n.type==='ending').forEach((n,i) => { pos[n.id] = {x:1200 + i*200, y:960 + (i%2)*110}; });
+  evs.forEach((n,i) => { pos[n.id] = {x:-1180 - d + i*(124 + d/10), y:1240 + d + (i%2)*100}; });
+  D.nodes.filter(n => n.type==='ending').forEach((n,i) => { pos[n.id] = {x:1200 + d + i*200, y:960 + d + (i%2)*110}; });
   return pos;
 }
 function styles(){
