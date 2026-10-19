@@ -255,7 +255,7 @@
   },
   "c_burncar": {
    "label": "The burning car on the bridge",
-   "text": "Alex on stream: “we saw the crash, where that car is burning… on the bridge”, and he connected it to the drowned-man report right away. The checked frames of the map and the report show no burning car, and the report mentions no fire. Where it was is a question for Alex."
+   "text": "Alex: a burning car stood on the bridge at the crossing out of downtown and blocked the way. When one of the bells in town was taken, a storm with heavy rain began and the car “melted away”. Alex connected it to the drowned-man report right away, but the report has no fire: only “a single-vehicle accident”."
   },
   "c_sameasyou": {
    "label": "“Same as me. Same as you”",
@@ -427,7 +427,7 @@
   },
   "h_owner": {
    "label": "The little man is Alice's husband or another “owner”",
-   "text": "A living man who considered Alice his and wouldn't let her go: a husband, a father, an ex. She wears a wedding ring; her diary has “touching what belongs to someone else” and “far away from him”; in the car, “He will kill us both”; Eddie has “we would have run away together”."
+   "text": "A living man who considered Alice his and wouldn't let her go: a husband, a father, an ex. She wears a wedding ring; her diary has “touching what belongs to someone else” and “far away from him”; in the fight, “He will kill us both!”; Eddie has “we would have run away together”. Alex in the interview: “a crappy hypothesis” — no husband appears in any document."
   },
   "h_shadow": {
    "label": "The little man is Eddie's own shadow",
@@ -435,7 +435,7 @@
   },
   "h_child": {
    "label": "The little man is an unborn child",
-   "text": "Alice was pregnant. The final boss is a female “Flesh Tree” with a belly and a beating heart."
+   "text": "Alice was pregnant. The final boss is a woman in a “pregnant” Flesh Tree with a beating heart, which Alex confirms. For him the child is “definitely one of the threads”: the little man may be both the child and the dark side of drunk Eddie at once."
   },
   "h_endings": {
    "label": "The endings are three answers to guilt",
@@ -623,7 +623,7 @@
   },
   "q_canon": {
    "label": "Which ending should the video treat as canon?",
-   "text": "The community is split between Rest and Live. The developers aren't saying."
+   "text": "The community is split between Rest and Live. The developers aren't saying. Alex: for him Live is canon, but the video won't claim that on the game's behalf."
   },
   "wib": {
    "label": "The girl in black",
@@ -722,11 +722,11 @@
   },
   "q_melody": {
    "label": "What is the E G D C F A B melody?",
-   "text": "Each bell sounds exactly once, and the melody ends on B, the leading tone, which never resolves to C. The second half, F–A–B, rises by a tritone. No known song could be found in it. The bell-number reading, 352-1467, was dialed by Alex on 19.10: “number unavailable”. The magazine's letter number, 55-CONMAG, that is 55266624, did work: the magazine called back. The next candidate for the bells is the same letters E G D C F A B on the keypad, 343-2322. Nobody has dialed it yet."
+   "text": "Each bell sounds exactly once, and the melody ends on B, the leading tone, which never resolves to C. The second half, F–A–B, rises by a tritone. No known song could be found in it. The bell-number reading, 352-1467, was dialed by Alex on 19.10: “number unavailable”. The magazine's letter number, 55-CONMAG, that is 55266624, did work: the magazine called back. The next candidate for the bells is the same letters E G D C F A B on the keypad, 343-2322: Alex dialed it, it doesn't work. The billboard number 54-FAITH, 5432484, doesn't work either."
   },
   "q_wib": {
    "label": "Who is the girl in black?",
-   "text": "A cat, Alice's dark side, or one more of the town's fragments? About her “friend” she says: “A real oddball. Obsessive. But not as simple as he might seem.”"
+   "text": "A cat, Alice's dark side, or one more of the town's fragments? About her “friend” she says: “A real oddball. Obsessive. But not as simple as he might seem.” Alex: the “friend” with the cage is the man in the trench coat with the Magnum from the sewers."
   },
   "c_conmag": {
    "label": "“That's him... I mean, me”",
@@ -788,6 +788,14 @@
   "h_roberts": {
    "label": "Roberts had a hand in the drowned man's death",
    "text": "The drowned man in the morgue clenches a brass badge, 0013, in his teeth, and its number reversed frees Roberts from the interrogation room. Roberts himself asks Red: “Have you ever lost control, detective? Done something you regretted?”, he “smells of some kind of dampness”, and “around Roberts everything turns... cold”. Meanwhile things go missing from the evidence room that only three people can access. Whose badge it is, the game doesn't say."
+  },
+  "c_lovetape": {
+   "label": "The red “Love” tape",
+   "text": "Alex: in the final zone, before the fight with the woman from the tree, you find a red tape labeled “Love”. On it a woman who looks like Alice shoots herself with a pistol — the one Eddie gave her when she complained about the little man. Not yet frame-checked."
+  },
+  "c_silence": {
+   "label": "Jackman goes silent",
+   "text": "Alex: if you refuse to kill Eddie, Jackman never calls again, and there are no more conversations with him. The voice that demanded the killing simply disappears."
   }
  },
  "edges": {
@@ -862,7 +870,11 @@
   "c_badge|h_roberts|supports": "the badge in the drowned man's teeth opens Roberts's door",
   "c_damp|h_roberts|supports": "dampness and cold",
   "c_sameasyou|h_roberts|supports": "“lost control… done something you regretted?”",
-  "c_report|h_roberts|contradicts": "the report is by Deputy Lee, not Roberts: a single-vehicle accident"
+  "c_report|h_roberts|contradicts": "the report is by Deputy Lee, not Roberts: a single-vehicle accident",
+  "c_lovetape|h_jump|supports": "Alice shoots herself with Eddie's pistol",
+  "c_lovetape|h_crash|contradicts": "Alice's second death: a gunshot, not a crash",
+  "c_silence|h_jackman|supports": "the voice disappears once you stop obeying",
+  "c_silence|h_suicide|supports": "the voice of self-hatred goes quiet after the refusal"
  },
  "src": {
   "пересказ сцены у телецентра, NPC Tips": "retelling of the scene outside Thelend Broadcasting, NPC Tips",
@@ -927,7 +939,8 @@
   "запись «все записки» · 2:06": "“all notes” recording · 2:06",
   "запись звонка в CONMAG, 19.10 · 0:22–2:06": "CONMAG call recording, 19.10 · 0:22–2:06",
   "The Black Riders — Wikipedia": "The Black Riders — Wikipedia",
-  "запись «все записки» · 4:00": "“all notes” recording · 4:00"
+  "запись «все записки» · 4:00": "“all notes” recording · 4:00",
+  "интервью Alex, 19.10.2026": "Alex interview, 19.10.2026"
  },
  "holders": {
   "Alex": "Alex",
