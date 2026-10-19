@@ -43,7 +43,7 @@
   },
   "oldcop": {
    "label": "The old man in a trench coat with a Magnum",
-   "text": "A big, hostile man; guides call him the Sheriff or the “old cop”. He knocks Red to the ground, says “I'll be watching you” and tells him to leave. In the sewers he chokes Red, and Red shoots. “I'll see you in hell.” — “I'm already in hell.”"
+   "text": "A big, hostile man; guides call him the Sheriff or the “old cop”. He knocks Red to the ground, says “I'll be watching you” and tells him to leave. In the sewers he chokes Red, and Red shoots. “See you... in hell.” — “Though I'm already in hell.”"
   },
   "wulfe": {
    "label": "Sheriff Wulfe",
@@ -51,7 +51,7 @@
   },
   "oldman": {
    "label": "The kind old man with an umbrella",
-   "text": "Turns up on the bridge and on the bus. Lived with his wife in Union Apartments. Urges Red not to destroy himself: “No one owes anyone anything, except to die.” On parting: “You had a similar choice from the very beginning.”"
+   "text": "Turns up on the bridge and on the bus. Lived with his wife in Union Apartments. Urges Red not to destroy himself: “No one owes anyone anything, except to die.” On parting: “Looks like you had a choice from the very beginning.”"
   },
   "sadgirl": {
    "label": "The girl from the vet clinic",
@@ -119,7 +119,7 @@
   },
   "b_mount": {
    "label": "Something happened to Alice on the mountain",
-   "text": "According to Father Foster's journal, Alice's old trauma is tied to the mountain and happened before Eddie. She pretended that talking about it helped."
+   "text": "Alice's diary: with the deacon on Church Hill she talks “about what happened in the mountains” and pretends it helps. It happened before Eddie: according to Foster's journal, meeting the musician reopened her wounds."
   },
   "b_foster": {
    "label": "Father Foster takes Alice to the sea",
@@ -131,7 +131,7 @@
   },
   "b_gig": {
    "label": "The last gig, September 17",
-   "text": "A poster: Eddie Velvet, September 17, Rabbit Hole. In the vision the bartender calls it “his last gig”."
+   "text": "A poster: Eddie Velvet, September 17, Rabbit Hole. In the vision the Server in a bow tie says: “Eddie Velvet. His last gig.”"
   },
   "b_car": {
    "label": "The fight in the car",
@@ -155,7 +155,7 @@
   },
   "g_bar": {
    "label": "The vision at the Rabbit Hole",
-   "text": "The bartender: “What's to say you're not dreaming now?… I know him better than he knows himself.” Eddie sings on stage."
+   "text": "The bartender (the Cowboy): “What's to say you're not dreaming now?” The Server in a bow tie: “Eddie Velvet. His last gig”… “I know him better than he knows himself.” Eddie sings on stage."
   },
   "g_bells": {
    "label": "Seven bells for the cable car",
@@ -207,15 +207,15 @@
   },
   "c_haze": {
    "label": "Doesn't remember getting here",
-   "text": "Red wakes up outside the empty diner; at the bar he says he doesn't remember how he got there; he doesn't remember the beach he is being promised either: “Nah, I don't remember.”"
+   "text": "Red wakes up outside the empty diner. In the Rabbit Hole vision: “This is going to sound crazy, but... I don't remember how I got here. I thought I was somewhere else.” And when Jackman reminds him of his “paradise beach” (“Did you forget? Palm trees, an endless blue ocean, sipping a piña colada?”), Red answers: “No, I remember.”"
   },
   "c_begged": {
-   "label": "“You begged me for this assignment”",
-   "text": "Red threatens to drop everything and disappear; Jackman reminds him that he begged for this job himself."
+   "label": "“You're the one who begged me for this job”",
+   "text": "Red: “What if I just get the hell out of here and disappear?” — Jackman: “Actually, you're the one who begged me for this job. Remember?” And: “We have a deal, Walker. And you'll hold up your end.” — “Sorry. Sorry, Mr. Jackman.”"
   },
   "c_dream": {
    "label": "“What's to say you're not dreaming now?”",
-   "text": "The bartender in the Rabbit Hole vision: “What's to say you're not dreaming now?” and “I know him better than he knows himself.”"
+   "text": "The Rabbit Hole vision. The bartender (the Cowboy): “What's to say you're not dreaming now?” Next to him, the Server, pale, in a bow tie. Red: “I guess you're his biggest fan.” The Server: “Well, not quite. But I know him better than he knows himself. I wouldn't miss this for anything.”"
   },
   "c_nodrink": {
    "label": "“On the house.” — “I don't drink.”",
@@ -223,7 +223,7 @@
   },
   "c_notmyself": {
    "label": "“I don't feel like myself anymore”",
-   "text": "A note in Room 5 of the motel, and a page in the writer's typewriter at Union Apartments with the line repeated a hundred times."
+   "text": "A note in Room 5 of the motel: “Someone comes into my room. Things go missing from it, more every day”, and on the second page, “I don't feel like myself anymore.” The same line fourteen times in a row on a typewriter page from apartment 2A at Union Apartments: the writer who lived there poisoned himself with turpentine. A grey-haired old man later throws it at Red: “‘I don't feel like myself anymore’... What are you, some kind of psycho, kid?”, as if Red had written it."
   },
   "c_stairs": {
    "label": "The man on the stairs who wasn't there",
@@ -231,35 +231,35 @@
   },
   "c_jekyll": {
    "label": "Bookmark: “Henry Jekyll's Full Statement of the Case”",
-   "text": "At the station, a book with a bookmark: “I hesitated. Then, in a kind of desperate burst of courage, I drank…” This is the last chapter of Strange Case of Dr Jekyll and Mr Hyde."
+   "text": "At the station, a book with a bookmark: “I hesitated. Then, in a kind of desperate burst of courage, I drank…” This is the last chapter of Strange Case of Dr Jekyll and Mr Hyde. In the novella Hyde is first introduced as “a little man”: “pale and dwarfish”, smaller and younger than Jekyll."
   },
   "c_wake": {
    "label": "“Why can't I just wake up?”",
-   "text": "Bitten by the “bad little man” who “came for the girl in the water”, she says: “I wish I could just wake up.”"
+   "text": "The girl from the vet clinic, bitten by the “bad little man”: “He's coming for you. Like he came for the girl in the water… He won't let anyone go. Not me, not you... NO ONE.” And: “I wish I could just wake up.”"
   },
   "c_friend": {
    "label": "The 4B door intercom: “a friend”",
    "text": "“Alice Baker isn't in right now.” — “Who is this?” — “A friend, detective.”"
   },
   "c_redroom": {
-   "label": "The voice in the red room",
-   "text": "“You want us to leave? The little man won't let me leave.”"
+   "label": "A diary page in the red room",
+   "text": "A page of Alice's diary found in the red zone: “You want us to leave. The little man won't let me go… Tonight I'll take you to a special place… I can't stop it.”"
   },
   "c_tape": {
    "label": "The interrogation tape",
-   "text": "The sheriff: Alice was seen with you on the cable car, “did you kill her up there in the mountains?” Eddie: “I didn't kill her.” According to outside sources, Eddie spoke of a car ride “that never happened”."
+   "text": "The tape of Eddie's interrogation. The interrogator: “The last time Alice was seen alive was when you took her up to the Summit… You two were seen together on the cable car… You killed her up there in the mountains, didn't you? And then you made up some crap about a car ride that never even happened.” — Eddie: “I didn't... FUCKING kill her!”"
   },
   "c_report": {
    "label": "The drowned man under the bridge",
-   "text": "Incident Report: an unidentified man found drowned in the storm drain under Riverside Bridge, a single-vehicle accident, the body in the station morgue."
+   "text": "Incident report by Deputy A. Lee: at 3:00 a.m. the body of an unidentified man was found in the storm drain under Riverside Bridge. Signs of drowning, blunt-force trauma and many shallow cuts from glass, “indicating a single-vehicle accident”. No match among missing-person reports. The body stays in the station's cold storage until the storm passes, with a request for an autopsy and identification at St. Vincent's Hospital."
   },
   "c_burncar": {
    "label": "The burning car on the bridge",
-   "text": "A burning car on the map and on the bridge. Alex connected it to the report right away."
+   "text": "Alex on stream: “we saw the crash, where that car is burning… on the bridge”, and he connected it to the drowned-man report right away. The checked frames of the map and the report show no burning car, and the report mentions no fire. Where it was is a question for Alex."
   },
   "c_sameasyou": {
-   "label": "“Same as me, same as you”",
-   "text": "Roberts: “Did Eddie kill that girl? Maybe he did, maybe he didn't… You're just like me.” And earlier: “Have you ever lost control, detective?”"
+   "label": "“Same as me. Same as you”",
+   "text": "Red: “Did Eddie kill that girl?” — Roberts: “Maybe he did. Maybe he didn't. Who gives a damn. Any way you look at it, Eddie's a piece of scum. Same as me. Same as you… You're just like me, aren't you.” And earlier: “Have you ever lost control, detective? Done something you regretted?”"
   },
   "c_badge": {
    "label": "Badge 0013",
@@ -275,7 +275,7 @@
   },
   "c_otherside": {
    "label": "“She did have another side to her”",
-   "text": "The voice in the church: “A sweetheart. The toast of the town. An angel if you ask me… she did have another side to her, but it only made her more beautiful… Eddie killed her.”"
+   "text": "The voice behind the confessional grille: “A sweetheart. The toast of the town. An angel… Well, she did have another side to her. But it only made her more beautiful.” Red: “Sounds like you loved her. Did Eddie kill her?” — “When you find him, ask him yourself. Ask him who gave him the right to come here and take her away from us.”"
   },
   "c_palms": {
    "label": "Alice's diary: palm trees",
@@ -294,24 +294,24 @@
    "text": "Diary: “I hate how you reek of alcohol and cigarettes when you come to me after your shows. I hate the way you touch me. Touching what belongs to someone else. THE TOUCH OF A USELESS PILE OF SHIT!”"
   },
   "c_cararg": {
-   "label": "The fight in the car",
-   "text": "“He will kill us both… I should have just left… You stop the car.” Alex: “they had one hell of a fight in that car.”"
+   "label": "The fight: “He will kill us both!”",
+   "text": "A recording of a fight, heard at the payphone, no portraits. The man: “I can't believe you're doing this, Alice… It's all in your head.” The woman: “He will kill us both! I shouldn't have told you anything… I should have just left.” No car is shown. Alex: “they had one hell of a fight in that car.”"
   },
   "c_driver": {
    "label": "“The driver knows what you did”",
-   "text": "A note: “The driver knows what you did. The driver never rests. The driver is coming for you… I see you.”"
+   "text": "On the TV: “The driver knows what you did. The driver never rests. The driver is coming for you.” And in italics, twice: “I see you.”"
   },
   "c_tapes": {
-   "label": "The Terminal Drive tapes",
-   "text": "“Red light, no brakes. Last exit… All lies.” In the episode's script the Driver kills a cashier who keeps saying: “It wasn't me.”"
+   "label": "Whispers in the Terminal Drive studio",
+   "text": "In the studio, after the AUDIO / LINE IN panel puzzle, whispers on a loop: “All lies...”, “Red light...”, “No brakes...”, “Last exit.” No tapes are shown."
   },
   "c_stunt": {
    "label": "Actors killed in a stunt",
-   "text": "A newspaper: two local actors died during a stunt for Terminal Drive, leaving a small child behind."
+   "text": "A newspaper: two local actors died performing stunts “on the Thelend Broadcasting lot”. It sparked a debate about the dangerous stunts in the “recently released series Terminal Drive”. The journalist worries about the “orphaned little child”."
   },
   "c_smile": {
    "label": "“Smile, Alice. You're on TV”",
-   "text": "And a conversation about déjà vu: “He says that too… That it's already happened… Maybe we're just meant to be together.”"
+   "text": "A recording on the TV: “Smile, Alice. You're on TV.” A conversation about déjà vu: “He says that too.” — “Says what?” — “That it's happened before”… “Maybe we're just meant to be together.”"
   },
   "c_clocks": {
    "label": "The clocks are stopped at 10:07",
@@ -319,7 +319,7 @@
   },
   "c_selfdef": {
    "label": "“Self-defense. Case closed”",
-   "text": "After Red shoots the old man, Jackman: “No one will ever know… The man is dead. Case closed. Any doubts now will only slow you down.”"
+   "text": "After Red shoots the old man, Jackman: “Don't worry. No one will ever know… You acted in self-defense. The man is dead, case closed. Any doubts or questions right now will only slow you down.”"
   },
   "c_notkiller": {
    "label": "“A private investigator, not an assassin”",
@@ -343,7 +343,7 @@
   },
   "c_911": {
    "label": "911 can't hear him",
-   "text": "“My name is Red Walker, I'm calling from Silver Pines.” — “Hello, 911… Can you hear me?… Another stupid prank.”"
+   "text": "Red: “Hello... uh, my name is Red Walker, I'm calling from Silver Pines.” — “Hello? 911, what's your emergency?” — Red: “Can you hear me?” — “Hey, Marie, can you hear anything on here?… Another stupid prank...”"
   },
   "c_down": {
    "label": "“I feel like I'm going down”",
@@ -355,7 +355,7 @@
   },
   "c_carparts": {
    "label": "Car mementos",
-   "text": "Red Driving Glove, 8 Ball Gear Shift, Sea Polished Glass Shard, Cracked Wrist Watch, Damaged Compass."
+   "text": "Red Driving Glove, 8 Ball Gear Shift, Sea Polished Glass Shard, Cracked Wrist Watch, Damaged Compass. The same inventory holds a hula dancer figurine (from a dashboard?), a switchblade cufflink, a faceless coin, and in Rest an old boutonniere."
   },
   "c_adjutor": {
    "label": "Saint Adjutor Parish Church",
@@ -367,19 +367,19 @@
   },
   "c_choice": {
    "label": "“You had a choice from the start”",
-   "text": "The kind old man: “You had a similar choice from the very beginning. You just didn't notice it… The answers aren't always right under your nose.”"
+   "text": "The kind old man: “There, you see. Maybe there's still hope. Looks like you had a choice from the very beginning, you just didn't notice it… The answers aren't always right under our noses.”"
   },
   "c_digger": {
    "label": "The Digging Man is happy in his pit",
-   "text": "“Climb out? Then what would be the point?… Sooner or later it'll bury me… It's better down here. I'm happier now than I've ever been.”"
+   "text": "The Digging Man: “Climb out? Then what would be the point?… Sooner or later the walls will cave in and bury me under a couple of tons of dirt… It's better down here. I'm happier now than I've ever been.”"
   },
   "c_burnt": {
    "label": "The Burned Man: “I burned it all”",
-   "text": "“It was the only way to make him leave me alone… The little guy will get to you too.” Later: “Pieces of the past… drag you down. Collect them all, we'll burn them together, and you'll be truly free.”"
+   "text": "The Burned Man: “I burned it all… It was the only way he'd leave me alone… Soon that little guy will get to you too.” Later: “All these trinkets… pieces of the past that seem important to you but only drag you down. Come back when you've collected them all, and we'll burn them together. That's when you'll be truly free.”"
   },
   "c_hell": {
    "label": "“I'm already in hell”",
-   "text": "The old man in the sewers: “You don't know when to quit, do you? That was always your problem… I'll see you in hell.” — “I'm already in hell.”"
+   "text": "The old man in the sewers: “You don't know when to stop, do you? That was always your problem”… “See you... in hell.” — Red: “Though I'm already in hell.”"
   },
   "c_dangerous": {
    "label": "“He's only a danger to himself”",
@@ -512,7 +512,7 @@
   },
   "r_shining": {
    "label": "The Shining",
-   "text": "A bartender pours for a man on the wagon: “I don't drink.” — “You're going to.” A sobriety chip. A typewriter page with one sentence typed a hundred times.",
+   "text": "A bartender pours for a man on the wagon: “I don't drink.” — “You're going to.” A sobriety chip. A typewriter page with one sentence typed fourteen times in a row.",
    "tag": "OFFICIAL (per an AMA recap) / HYPOTHESIS"
   },
   "r_secret": {
@@ -522,7 +522,7 @@
   },
   "r_jekyll": {
    "label": "Dr Jekyll and Mr Hyde",
-   "text": "The book with a bookmark at the station, a quote from the last chapter. Two personalities in one body.",
+   "text": "The book with a bookmark at the station, a quote from the last chapter. Two personalities in one body. Hyde in the novella is “a little man”.",
    "tag": "FACT (in the game) / HYPOTHESIS (meaning)"
   },
   "r_antig": {
@@ -722,18 +722,71 @@
   },
   "q_melody": {
    "label": "What is the E G D C F A B melody?",
-   "text": "Each bell sounds exactly once, and the melody ends on B, the leading tone, which never resolves to C. The second half, F–A–B, rises by a tritone. No known song could be found in it. The bell-number reading, 352-1467, was dialed by Alex on 19.10: “number unavailable”. Next candidate: the letters E G D C F A B on a phone keypad, 343-2322 — the game itself gives a letter number for CONMAG magazine, “55-CONMAG”."
+   "text": "Each bell sounds exactly once, and the melody ends on B, the leading tone, which never resolves to C. The second half, F–A–B, rises by a tritone. No known song could be found in it. The bell-number reading, 352-1467, was dialed by Alex on 19.10: “number unavailable”. The magazine's letter number, 55-CONMAG, that is 55266624, did work: the magazine called back. The next candidate for the bells is the same letters E G D C F A B on the keypad, 343-2322. Nobody has dialed it yet."
   },
   "q_wib": {
    "label": "Who is the girl in black?",
    "text": "A cat, Alice's dark side, or one more of the town's fragments? About her “friend” she says: “A real oddball. Obsessive. But not as simple as he might seem.”"
+  },
+  "c_conmag": {
+   "label": "“That's him... I mean, me”",
+   "text": "Red calls the hotline of CONMAG magazine: 55-CONMAG is 55266624 on the keypad. He leaves the payphone number, 445555, and the magazine calls back: “Is this Red Walker?” — “Yes! That's him... I mean, me.” The editor doesn't believe he's in town: “Forgive my skepticism, but how did you even get there?” — “I... um... I guess I just drove here. Why?” — “Oh sure, you drove there… Is this some kind of joke?” Red opens word for word as in his 911 call: “Hello... uh, my name is Red Walker, I'm calling from Silver Pines.” 911 can't hear him (“Another stupid prank”); here they hear him but don't believe him. (translated back from the Russian subtitles)"
+  },
+  "c_license": {
+   "label": "Red's license has expired",
+   "text": "The Name Badge is a private investigator license: Red Walker, born 09/13/1961, valid until 03/03/1992. The calendar says October 1993: the detective is working on an expired license."
+  },
+  "c_register": {
+   "label": "Motel register: 09/26/1993",
+   "text": "Guest 70007, Eddie Velvet, Grizzly Suite, dated 09/26/1993, nine days after the September 17 gig. A note to staff: the Grizzly Suite guest is two weeks behind on payment, “evict him and call the sheriff”."
+  },
+  "c_deacon": {
+   "label": "Alice's diary: the deacon and the mountains",
+   "text": "“Eddie, I saw the deacon on Church Hill again… We talk a lot about the past. About what happened in the mountains… But I never talk about you. I never talk about the little man. Or about how I change around you. How everyone around you changes...”"
+  },
+  "c_union": {
+   "label": "“He won't leave me alone”",
+   "text": "Alice's neighbors at Union Apartments die one after another. The artist Laker is crushed under a collapsed balcony. The writer poisons himself with turpentine. A tenant who complained of a stalker is found dead in the elevator shaft. A diary from apartment 3C: “I hear breathing in the bathroom. I feel the poison seeping through the mirror. He's there all the time... Waiting… HE WON'T LEAVE ME ALONE.”"
+  },
+  "c_burnnote": {
+   "label": "The burned note",
+   "text": "“Firebombs are not the answer. Too fast, too cruel. It all weighs on me. Holds me back. Let the fire consume them. But don't rush. Cherish every moment. Then... I'll be free.” Found at Union Apartments. Almost a set of instructions for the Live ending: burn the mementos one at a time."
+  },
+  "c_tdscript": {
+   "label": "The Terminal Drive script",
+   "text": "Gas station, night. The Driver drives a box cutter into the cashier's eye socket. The cashier: “No, no, it's not me!.. I'm telling you, you're wrong.” The Driver: “You're dying. It's already over… Why keep resisting?” A tossed cigarette, the gas station explodes, “The Driver drives off into the night.”"
+  },
+  "c_damp": {
+   "label": "Roberts smells damp",
+   "text": "A crumpled page from the station log: Roberts “listens to things that aren't there”, “smiles at nothing”, “smells of some kind of dampness”. “And around Roberts everything turns... cold...” Roberts sat in on Eddie's interrogation: the booking sheet lists 17:00 — Sheriff Wulfe, Deputy Roberts, E. Velvet."
+  },
+  "c_swim": {
+   "label": "The swim is cancelled",
+   "text": "A notice: “Due to last year's tragedy, the annual Farewell Summer Swim to Church Hill is cancelled. In autumn, dangerous undercurrents can suddenly form at the river mouth.” Father Foster on Alice and the water: “For a long time I thought it should make her anxious.”"
+  },
+  "c_server": {
+   "label": "“Killing Eddie won't bring her back”",
+   "text": "Before the chase in Rest, the Server — bald, pale, in a bow tie and waistcoat — demands: “It has to be you! You have to kill him!”, “Go back and finish what you started”, “There's nothing waiting for you out there.” Red answers: “Killing Eddie won't bring her back.” Then a huge red mass chases Red back to the Miner."
+  },
+  "h_entity": {
+   "label": "The little man is a presence of the place",
+   "text": "Not a person and not a piece of anyone's psyche, but something that lives in the town, like BOB in Twin Peaks. He “won't leave alone” the tenants of Union Apartments, bites the girl at the vet clinic, hounds the Burned Man, “won't let go” of Alice. If the Server in a bow tie from Rest is him, in the chase he turns into a huge red mass."
+  },
+  "r_crane": {
+   "label": "Stephen Crane, “In the Desert”",
+   "text": "A water-swollen book of poems at Union Apartments: a creature, naked, bestial, holds his heart in his hands and eats of it: “It is bitter—bitter… But I like it Because it is bitter, And because it is my heart.” An 1895 poem from The Black Riders and Other Lines.",
+   "tag": "FACT (in the game) / HYPOTHESIS (meaning)"
+  },
+  "c_bump": {
+   "label": "Alice's silhouette at dawn",
+   "text": "In Rest, on the ferry, Alice stands in profile to Red, and the line from her bust to her hips is convex: the belly sticks out a little. Alex: “her proportions look a little pregnant.” The dress is dark, loose and flared, and from behind or at three-quarters no bump shows, so it may just be the cut."
   }
  },
  "edges": {
   "c_wasme|h_same|supports": "in the Russian subtitles Eddie says to Red, in the masculine: “you warned me”, “you'd still be alive”",
   "c_tape|h_drown|contradicts": "there's an interrogation and newspapers: the town has a life of its own",
-  "c_tape|h_crash|contradicts": "the police talk about the cable car, not a car",
-  "c_otherside|h_jump|contradicts": "“Eddie killed her”",
+  "c_tape|h_crash|contradicts": "the police think the car ride was made up",
+  "c_otherside|h_jump|contradicts": "blames Eddie: “take her away from us”",
   "c_friend|h_jackman|contradicts": "different voices and different voice actors",
   "c_stairs|h_owner|contradicts": "“a man who wasn't there”",
   "c_mercy|h_shadow|contradicts": "speaks of Eddie in the third person and wants him dead",
@@ -764,7 +817,40 @@
   "c_ring|h_voice|contradicts": "the ring on her hand came from a living man",
   "c_cage|h_wibdark|supports": "her “friend” would lock her up, the way the little man holds Alice",
   "c_dangerous|h_wibdark|supports": "likes Eddie's music and prefers to “stay away from guys like that”",
-  "r_alice|h_wibcat|echoes": "the Cheshire Cat"
+  "r_alice|h_wibcat|echoes": "the Cheshire Cat",
+  "c_conmag|h_same|supports": "talks about himself in the third person",
+  "c_conmag|h_ghost|supports": "doesn't remember how he got here",
+  "c_conmag|h_drown|supports": "you can't just drive into this town",
+  "c_conmag|h_real|contradicts": "you can't just drive to Silver Pines",
+  "c_license|h_same|supports": "a detective without a valid license: a role, not a job",
+  "c_register|h_month|supports": "September 26 plus two weeks unpaid: it's October",
+  "c_deacon|h_shadow|supports": "“how I change around you”",
+  "c_deacon|h_parts|supports": "“how everyone around you changes”",
+  "c_union|h_entity|supports": "he comes for others, not only for Alice",
+  "c_union|h_voice|contradicts": "other tenants hear him too",
+  "c_burnnote|h_endings|supports": "burn them one at a time, then be free",
+  "c_tdscript|c_eyes|about": "a knife to the eye",
+  "c_tdscript|h_same|supports": "“No, no, it's not me!.. you're wrong”",
+  "c_damp|h_drown|supports": "damp and cold, like a drowned man",
+  "c_swim|c_fosterdiary|about": "water that should frighten Alice",
+  "c_server|h_jackman|supports": "the same order as Jackman's: Red must be the one to kill Eddie",
+  "c_server|h_owner|supports": "wants Alice back",
+  "c_server|h_suicide|supports": "“There's nothing waiting for you out there”",
+  "r_tp|h_entity|echoes": "BOB and the Man from Another Place",
+  "r_crane|h_endings|echoes": "guilt you eat yourself",
+  "r_jekyll|little|echoes": "Hyde is “a little man”",
+  "c_jekyll|h_shadow|supports": "Hyde is the “little man” the potion lets out",
+  "c_report|h_ghost|supports": "an unidentified outsider after a single-vehicle crash",
+  "c_carparts|c_palms|about": "the hula dancer and the palm trees",
+  "c_tape|h_crash|supports": "Eddie himself talked about a car ride",
+  "c_redroom|h_owner|supports": "“won't let me go”",
+  "c_dream|h_shadow|supports": "the Server knows Eddie “better than he knows himself”",
+  "c_dream|little|about": "the Server in a bow tie: by community descriptions, the little man",
+  "c_conmag|c_911|about": "the same call: a “prank” and a “joke”",
+  "c_bump|h_child|supports": "in profile the belly sticks out a little",
+  "c_wall|h_child|supports": "“countdown” and knocking from inside: a due date and kicks?",
+  "c_union|h_child|contradicts": "other tenants hear him too",
+  "c_friend|h_child|contradicts": "an adult voice answers the intercom"
  },
  "src": {
   "пересказ сцены у телецентра, NPC Tips": "retelling of the scene outside Thelend Broadcasting, NPC Tips",
@@ -813,7 +899,22 @@
   "8mm — Wikipedia": "8mm — Wikipedia",
   "Johnnie Walker — Wikipedia": "Johnnie Walker — Wikipedia",
   "The Black Cat — Wikipedia": "The Black Cat — Wikipedia",
-  "Lost Highway — Wikipedia": "Lost Highway — Wikipedia"
+  "Lost Highway — Wikipedia": "Lost Highway — Wikipedia",
+  "запись «все записки» · 2:40, 4:31": "“all notes” recording · 2:40, 4:31",
+  "запись «все записки» · 0:45, 2:15": "“all notes” recording · 0:45, 2:15",
+  "запись «все записки» · 3:19–3:26": "“all notes” recording · 3:19–3:26",
+  "запись «все записки» · 0:04": "“all notes” recording · 0:04",
+  "запись «все записки» · 0:10": "“all notes” recording · 0:10",
+  "запись «все записки» · 0:38, 0:43": "“all notes” recording · 0:38, 0:43",
+  "запись «все записки» · 2:40": "“all notes” recording · 2:40",
+  "запись «все записки» · 1:45–2:09": "“all notes” recording · 1:45–2:09",
+  "запись «все записки» · 2:14": "“all notes” recording · 2:14",
+  "запись «все записки» · 5:19–5:23": "“all notes” recording · 5:19–5:23",
+  "запись «все записки» · 3:09–3:42": "“all notes” recording · 3:09–3:42",
+  "запись «все записки» · 1:18, 4:31": "“all notes” recording · 1:18, 4:31",
+  "запись «все записки» · 2:06": "“all notes” recording · 2:06",
+  "запись звонка в CONMAG, 19.10 · 0:22–2:06": "CONMAG call recording, 19.10 · 0:22–2:06",
+  "The Black Riders — Wikipedia": "The Black Riders — Wikipedia"
  },
  "holders": {
   "Alex": "Alex",

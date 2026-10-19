@@ -86,7 +86,8 @@ function updateStat(){ document.getElementById('stat').innerHTML = `<b>${D.nodes
   document.getElementById('n-'+k).textContent = counts[m];
 });
 const rels = id => D.edges.filter(e => e.source === id || e.target === id).map(e => ({e, other: byId.get(e.source === id ? e.target : e.source), out: e.source === id}));
-function srcHTML(n){ return n.src.length ? `<div class="srcs">${n.src.map((s,i) => `<a href="${esc(s.u)}" target="_blank" rel="noopener">${esc(ST(n,i))} ↗</a>`).join('')}</div>` : ''; }
+const SRCA = (s, label, arrow) => s.u ? `<a href="${esc(s.u)}" target="_blank" rel="noopener">${esc(label)}${arrow ? ' ↗' : ''}</a>` : `<span class="nolink">${esc(label)}</span>`;
+function srcHTML(n){ return n.src.length ? `<div class="srcs">${n.src.map((s,i) => SRCA(s, ST(n,i), true)).join('')}</div>` : ''; }
 function meter(n){ return `<span class="meter" title="${esc(u('strength')(n))}">${[1,2,3].map(i => `<b class="${i<=n?'on':''}"></b>`).join('')}</span>`; }
 function holders(h){ return `<span class="holders">${(h||[]).map(x => `<span class="tag ${x==='Alex'?'alex':''}">${esc(HOLD(x))}</span>`).join('')}</span>`; }
 
@@ -287,7 +288,7 @@ function renderHyp(){
 }
 function renderTime(){
   const ev = D.nodes.filter(n => n.type==='event'), end = D.nodes.filter(n => n.type==='ending');
-  const li = (n, cls='') => `<li class="${cls}"><button type="button" class="ev" data-go="${n.id}" style="border:0;padding:0"><span class="t">${esc(L(n))}</span></button><div class="x">${esc(TX(n))}</div><div class="s">${n.src.map((s,i) => `<a href="${esc(s.u)}" target="_blank" rel="noopener">${esc(ST(n,i))}</a>`).join('')}</div></li>`;
+  const li = (n, cls='') => `<li class="${cls}"><button type="button" class="ev" data-go="${n.id}" style="border:0;padding:0"><span class="t">${esc(L(n))}</span></button><div class="x">${esc(TX(n))}</div><div class="s">${n.src.map((s,i) => SRCA(s, ST(n,i), false)).join('')}</div></li>`;
   const col1 = ev.filter(n => n.era==='before').sort((a,b)=>a.order-b.order), col2 = ev.filter(n => n.era==='game').sort((a,b)=>a.order-b.order);
   document.getElementById('timeline').innerHTML = `
     <div class="col"><h2>${u('before')}</h2><p class="x" style="color:var(--muted);margin:0 0 10px">${u('before_p')}</p><ul class="tl">${col1.map(n=>li(n)).join('')}</ul></div>
@@ -305,7 +306,7 @@ function renderRefs(){
   const R = D.nodes.filter(n => n.type==='ref');
   const rank = t => /ОФИЦИАЛЬНО/.test(t) ? 0 : /Alex/.test(t) ? 1 : /ПРЕССА/.test(t) ? 2 : /ФАКТ/.test(t) ? 3 : 4;
   R.sort((a,b) => rank(a.tag)-rank(b.tag));
-  document.getElementById('refRows').innerHTML = R.map(r => `<tr><td class="r"><button type="button" class="ev" data-go="${r.id}" style="border:0;padding:0">${esc(L(r))}</button></td><td>${esc(TX(r))}</td><td><span class="tag">${esc(TAG(r))}</span></td><td><div class="srcs">${r.src.map((s,i) => `<a href="${esc(s.u)}" target="_blank" rel="noopener">${esc(ST(r,i))} ↗</a>`).join('')}</div></td></tr>`).join('');
+  document.getElementById('refRows').innerHTML = R.map(r => `<tr><td class="r"><button type="button" class="ev" data-go="${r.id}" style="border:0;padding:0">${esc(L(r))}</button></td><td>${esc(TX(r))}</td><td><span class="tag">${esc(TAG(r))}</span></td><td><div class="srcs">${r.src.map((s,i) => SRCA(s, ST(r,i), true)).join('')}</div></td></tr>`).join('');
 }
 function renderOpen(){
   const Q = D.nodes.filter(n => n.type==='open');

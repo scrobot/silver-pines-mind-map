@@ -72,7 +72,7 @@ def card_text(n):
     if rel_lines:
         parts.append('<small>' + '<br>'.join(rel_lines) + '</small>')
     if n.get('src'):
-        parts.append(' · '.join(f"[{s['t']}]({s['u']})" for s in n['src']))
+        parts.append(' · '.join(f"[{s['t']}]({s['u']})" if s.get('u') else s['t'] for s in n['src']))
     return '\n\n'.join(p for p in parts if p)
 
 
