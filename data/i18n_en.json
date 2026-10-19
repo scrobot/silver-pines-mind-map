@@ -411,7 +411,7 @@
   },
   "h_crash": {
    "label": "The crash: Eddie was driving",
-   "text": "A fight in the car, “Stop the car!”, a red light, no brakes, last exit. The car goes into the water, Alice drowns, Eddie survives. He may have been drunk."
+   "text": "A fight (“He will kill us both!”), studio whispers “Red light... No brakes... Last exit”, a single-vehicle accident in the report, car parts among the mementos. The car goes into the water, Alice drowns, Eddie survives. He may have been drunk. No car is actually shown in the fight scene."
   },
   "h_jump": {
    "label": "Alice took her own life",
@@ -766,7 +766,7 @@
   },
   "c_server": {
    "label": "“Killing Eddie won't bring her back”",
-   "text": "Before the chase in Rest, the Server — bald, pale, in a bow tie and waistcoat — demands: “It has to be you! You have to kill him!”, “Go back and finish what you started”, “There's nothing waiting for you out there.” Red answers: “Killing Eddie won't bring her back.” Then a huge red mass chases Red back to the Miner."
+   "text": "In Rest, the Server — bald, pale, in a bow tie and waistcoat — stands over Alice's body: “Look at her. Look what he did to my girl...” Then he demands: “It has to be you! You have to kill him!”, “Go back and finish what you started”, “There's nothing waiting for you out there.” Red answers: “Killing Eddie won't bring her back.” Then a huge red mass chases Red back to the Miner."
   },
   "h_entity": {
    "label": "The little man is a presence of the place",
@@ -780,6 +780,14 @@
   "c_bump": {
    "label": "Alice's silhouette at dawn",
    "text": "In Rest, on the ferry, Alice stands in profile to Red, and the line from her bust to her hips is convex: the belly sticks out a little. Alex: “her proportions look a little pregnant.” The dress is dark, loose and flared, and from behind or at three-quarters no bump shows, so it may just be the cut."
+  },
+  "c_projector": {
+   "label": "Projector labels",
+   "text": "At the station, the hint for the interrogation room door: “Badge. Number. Reverse. Release. Prisoner.” The number of the badge from the drowned man's teeth, reversed, 3100, opens the door behind which Roberts is locked."
+  },
+  "h_roberts": {
+   "label": "Roberts had a hand in the drowned man's death",
+   "text": "The drowned man in the morgue clenches a brass badge, 0013, in his teeth, and its number reversed frees Roberts from the interrogation room. Roberts himself asks Red: “Have you ever lost control, detective? Done something you regretted?”, he “smells of some kind of dampness”, and “around Roberts everything turns... cold”. Meanwhile things go missing from the evidence room that only three people can access. Whose badge it is, the game doesn't say."
   }
  },
  "edges": {
@@ -834,7 +842,7 @@
   "c_damp|h_drown|supports": "damp and cold, like a drowned man",
   "c_swim|c_fosterdiary|about": "water that should frighten Alice",
   "c_server|h_jackman|supports": "the same order as Jackman's: Red must be the one to kill Eddie",
-  "c_server|h_owner|supports": "wants Alice back",
+  "c_server|h_owner|supports": "“my girl”: wants Alice back",
   "c_server|h_suicide|supports": "“There's nothing waiting for you out there”",
   "r_tp|h_entity|echoes": "BOB and the Man from Another Place",
   "r_crane|h_endings|echoes": "guilt you eat yourself",
@@ -850,7 +858,11 @@
   "c_bump|h_child|supports": "in profile the belly sticks out a little",
   "c_wall|h_child|supports": "“countdown” and knocking from inside: a due date and kicks?",
   "c_union|h_child|contradicts": "other tenants hear him too",
-  "c_friend|h_child|contradicts": "an adult voice answers the intercom"
+  "c_friend|h_child|contradicts": "an adult voice answers the intercom",
+  "c_badge|h_roberts|supports": "the badge in the drowned man's teeth opens Roberts's door",
+  "c_damp|h_roberts|supports": "dampness and cold",
+  "c_sameasyou|h_roberts|supports": "“lost control… done something you regretted?”",
+  "c_report|h_roberts|contradicts": "the report is by Deputy Lee, not Roberts: a single-vehicle accident"
  },
  "src": {
   "пересказ сцены у телецентра, NPC Tips": "retelling of the scene outside Thelend Broadcasting, NPC Tips",
@@ -914,7 +926,8 @@
   "запись «все записки» · 1:18, 4:31": "“all notes” recording · 1:18, 4:31",
   "запись «все записки» · 2:06": "“all notes” recording · 2:06",
   "запись звонка в CONMAG, 19.10 · 0:22–2:06": "CONMAG call recording, 19.10 · 0:22–2:06",
-  "The Black Riders — Wikipedia": "The Black Riders — Wikipedia"
+  "The Black Riders — Wikipedia": "The Black Riders — Wikipedia",
+  "запись «все записки» · 4:00": "“all notes” recording · 4:00"
  },
  "holders": {
   "Alex": "Alex",
