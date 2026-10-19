@@ -35,6 +35,9 @@ h1{font-family:var(--f-display);font-weight:400;font-size:clamp(30px,5vw,52px);l
 .lede{max-width:68ch;color:var(--muted);margin:0}
 .stamp{font-family:var(--f-mono);font-size:12px;color:var(--muted);text-align:right;display:flex;flex-direction:column;gap:2px}
 .stamp b{color:var(--ink);font-weight:500}
+.lang{display:inline-flex;align-self:flex-end;border:1px solid var(--line);border-radius:999px;overflow:hidden;margin-bottom:8px}
+.lang button{font:600 11px var(--f-mono);letter-spacing:.08em;padding:4px 11px;background:none;border:0;color:var(--muted);cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
 nav.tabs{display:flex;flex-wrap:nowrap;gap:4px;border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none}
 nav.tabs::-webkit-scrollbar{display:none}
 nav.tabs button{font:600 14px var(--f-body);color:var(--muted);background:none;border:0;border-bottom:2px solid transparent;padding:10px 12px;cursor:pointer;flex:none;white-space:nowrap}
@@ -109,6 +112,7 @@ footer{color:var(--muted);font-size:13px;border-top:1px solid var(--line);paddin
   #cy{height:62vh}
   header.case{grid-template-columns:1fr}
   .stamp{text-align:left}
+  .lang{align-self:flex-start}
 }
 @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
 </style>
@@ -116,32 +120,35 @@ footer{color:var(--muted);font-size:13px;border-top:1px solid var(--line);paddin
 <div class="wrap">
   <header class="case">
     <div>
-      <div class="code">Дело № SP-1993-10 · Silver Pines · Вельвет, Эдди</div>
-      <h1>Дело Эдди Вельвета</h1>
-      <p class="lede">Детектива Рэда Уокера наняли найти пропавшего музыканта. Здесь всё, что удалось собрать: кто есть кто, что случилось до игры и во время неё, три концовки, гипотезы и улики за и против. Таймкоды ведут прямо в записи стримов.</p>
+      <div class="code" data-i18n="code">Дело № SP-1993-10 · Silver Pines · Вельвет, Эдди</div>
+      <h1 data-i18n="title">Дело Эдди Вельвета</h1>
+      <p class="lede" data-i18n="lede">Детектива Рэда Уокера наняли найти пропавшего музыканта. Здесь всё, что удалось собрать: кто есть кто, что случилось до игры и во время неё, три концовки, гипотезы и улики за и против. Таймкоды ведут прямо в записи стримов.</p>
     </div>
-    <div class="stamp"><span>Стримы <b>13, 17, 18.10.2026</b></span><span>Ресерч <b>19.10.2026</b></span><span id="stat"></span></div>
+    <div class="stamp">
+      <div class="lang" role="group" aria-label="Язык / Language"><button type="button" data-lang="ru" aria-pressed="true">RU</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
+      <span><span data-i18n="streams">Стримы</span> <b>13, 17, 18.10.2026</b></span><span><span data-i18n="research">Ресерч</span> <b>19.10.2026</b></span><span id="stat"></span>
+    </div>
   </header>
 
-  <nav class="tabs" role="tablist" aria-label="Разделы">
-    <button role="tab" id="t-board" aria-controls="p-board" aria-selected="true">Доска</button>
-    <button role="tab" id="t-hyp" aria-controls="p-hyp" aria-selected="false">Гипотезы<span class="n" id="n-hyp"></span></button>
-    <button role="tab" id="t-time" aria-controls="p-time" aria-selected="false">Хронология</button>
-    <button role="tab" id="t-people" aria-controls="p-people" aria-selected="false">Люди<span class="n" id="n-people"></span></button>
-    <button role="tab" id="t-refs" aria-controls="p-refs" aria-selected="false">Отсылки<span class="n" id="n-refs"></span></button>
-    <button role="tab" id="t-open" aria-controls="p-open" aria-selected="false">Открытые вопросы<span class="n" id="n-open"></span></button>
+  <nav class="tabs" role="tablist" aria-label="Разделы" data-i18n-aria="sections">
+    <button role="tab" id="t-board" aria-controls="p-board" aria-selected="true"><span data-i18n="tab_board">Доска</span></button>
+    <button role="tab" id="t-hyp" aria-controls="p-hyp" aria-selected="false"><span data-i18n="tab_hyp">Гипотезы</span><span class="n" id="n-hyp"></span></button>
+    <button role="tab" id="t-time" aria-controls="p-time" aria-selected="false"><span data-i18n="tab_time">Хронология</span></button>
+    <button role="tab" id="t-people" aria-controls="p-people" aria-selected="false"><span data-i18n="tab_people">Люди</span><span class="n" id="n-people"></span></button>
+    <button role="tab" id="t-refs" aria-controls="p-refs" aria-selected="false"><span data-i18n="tab_refs">Отсылки</span><span class="n" id="n-refs"></span></button>
+    <button role="tab" id="t-open" aria-controls="p-open" aria-selected="false"><span data-i18n="tab_open">Открытые вопросы</span><span class="n" id="n-open"></span></button>
   </nav>
 
   <section role="tabpanel" id="p-board" aria-labelledby="t-board">
     <div class="toolbar" id="chips"></div>
     <div class="toolbar">
-      <div class="search"><input id="q" type="search" placeholder="Найти: Элис, канатка, 10:07, Джекман…" aria-label="Поиск по доске"></div>
+      <div class="search"><input id="q" type="search" placeholder="Найти: Элис, канатка, 10:07, Джекман…" aria-label="Поиск по доске" data-i18n-ph="search_ph" data-i18n-aria="search_aria"></div>
       <button class="btn" id="layoutBtn" type="button">Разложить по силам</button>
-      <button class="btn" id="fitBtn" type="button">Вся доска</button>
+      <button class="btn" id="fitBtn" type="button" data-i18n="fit">Вся доска</button>
     </div>
     <div class="board">
       <div>
-        <div id="cy" role="img" aria-label="Граф: гипотезы, улики, персонажи, события и отсылки"></div>
+        <div id="cy" role="img" aria-label="Граф: гипотезы, улики, персонажи, события и отсылки" data-i18n-aria="graph_aria"></div>
         <div class="legend" id="legend"></div>
       </div>
       <aside class="dossier" id="dossier" aria-live="polite"></aside>
@@ -151,286 +158,14 @@ footer{color:var(--muted);font-size:13px;border-top:1px solid var(--line);paddin
   <section role="tabpanel" id="p-hyp" aria-labelledby="t-hyp" hidden><div class="grid" id="hypGrid"></div></section>
   <section role="tabpanel" id="p-time" aria-labelledby="t-time" hidden><div class="timeline" id="timeline"></div></section>
   <section role="tabpanel" id="p-people" aria-labelledby="t-people" hidden><div class="grid" id="peopleGrid"></div></section>
-  <section role="tabpanel" id="p-refs" aria-labelledby="t-refs" hidden><div class="tbl"><table><thead><tr><th>Источник</th><th>Что совпадает</th><th>Сила</th><th>Ссылки</th></tr></thead><tbody id="refRows"></tbody></table></div></section>
+  <section role="tabpanel" id="p-refs" aria-labelledby="t-refs" hidden><div class="tbl"><table><thead><tr><th data-i18n="th_src">Источник</th><th data-i18n="th_match">Что совпадает</th><th data-i18n="th_strength">Сила</th><th data-i18n="th_links">Ссылки</th></tr></thead><tbody id="refRows"></tbody></table></div></section>
   <section role="tabpanel" id="p-open" aria-labelledby="t-open" hidden><div class="qs" id="openList"></div></section>
 
-  <footer>Источники: расшифровки трёх стримов автора (автосубтитры YouTube, имена в них могли исказиться), ресерч 19.10.2026 по Steam, YouTube-разборам, прессе и интервью разработчиков. Метки силы у отсылок: ОФИЦИАЛЬНО — сказали разработчики, ПРЕССА — заметили критики, ГИПОТЕЗА — наша догадка без внешнего источника. Полная база — в Obsidian vault, папка research/silver-pines.</footer>
+  <footer data-i18n="footer">Источники: расшифровки трёх стримов автора (автосубтитры YouTube, имена в них могли исказиться) и ресерч 19.10.2026 по Steam, YouTube-разборам, прессе и интервью разработчиков. Ключевые реплики сверены по кадрам записи экрана. Метки силы у отсылок: ОФИЦИАЛЬНО — сказали разработчики, ПРЕССА — заметили критики, ГИПОТЕЗА — наша догадка без внешнего источника.</footer>
 </div>
 
 <script type="application/json" id="data">__DATA__</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.26.0/cytoscape.min.js"></script>
 <script>
-(function(){
-const D = JSON.parse(document.getElementById('data').textContent);
-const byId = new Map(D.nodes.map(n => [n.id, n]));
-const TYPES = {
-  q:{ru:'Главный вопрос', tok:'--red'}, hyp:{ru:'Гипотезы', one:'Гипотеза', tok:'--red'}, clue:{ru:'Улики', one:'Улика', tok:'--amber'},
-  char:{ru:'Люди', one:'Персонаж', tok:'--ink'}, ending:{ru:'Концовки', one:'Концовка', tok:'--red'}, event:{ru:'События', one:'Событие', tok:'--steel'},
-  place:{ru:'Места', one:'Место', tok:'--sage'}, ref:{ru:'Отсылки', one:'Отсылка', tok:'--violet'}, motif:{ru:'Мотивы', one:'Мотив', tok:'--moss'},
-  open:{ru:'Вопросы', one:'Открытый вопрос', tok:'--amber'}
-};
-const KIND = {supports:'за', contradicts:'против', about:'связано', echoes:'отсылка', leads:'дальше', motif:'мотив', asks:'вопрос', answers:'ответ на вопрос'};
-const css = () => getComputedStyle(document.documentElement);
-const col = t => css().getPropertyValue(t).trim();
-const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const counts = {}; D.nodes.forEach(n => counts[n.type] = (counts[n.type]||0)+1);
-document.getElementById('stat').innerHTML = `<b>${D.nodes.length}</b> карточек · <b>${D.edges.length}</b> связей`;
-['hyp','people','refs','open'].forEach(k => {
-  const m = {hyp:'hyp', people:'char', refs:'ref', open:'open'}[k];
-  document.getElementById('n-'+k).textContent = counts[m];
-});
-const rels = id => D.edges.filter(e => e.source === id || e.target === id).map(e => ({e, other: byId.get(e.source === id ? e.target : e.source), out: e.source === id}));
-function srcHTML(src){ return src.length ? `<div class="srcs">${src.map(s => `<a href="${esc(s.u)}" target="_blank" rel="noopener">${esc(s.t)} ↗</a>`).join('')}</div>` : ''; }
-function meter(n){ return `<span class="meter" title="сила: ${n} из 3">${[1,2,3].map(i => `<b class="${i<=n?'on':''}"></b>`).join('')}</span>`; }
-function holders(h){ return `<span class="holders">${(h||[]).map(x => `<span class="tag ${x==='Alex'?'alex':''}">${esc(x)}</span>`).join('')}</span>`; }
-
-/* ---------- dossier panel ---------- */
-const dossier = document.getElementById('dossier');
-function showNode(id){
-  const n = byId.get(id); if(!n){ dossier.innerHTML = defaultDossier(); return; }
-  const r = rels(id);
-  const group = (title, filter) => {
-    const list = r.filter(filter); if(!list.length) return '';
-    return `<div class="rel"><h3>${title}</h3><ul>${list.map(x => `<li><button type="button" data-go="${x.other.id}"><span class="dot" style="background:${col(TYPES[x.other.type].tok)}"></span><span><span class="t">${esc(x.other.label)}</span>${x.e.note?`<span class="note">${esc(x.e.note)}</span>`:''}</span></button></li>`).join('')}</ul></div>`;
-  };
-  let extra = '';
-  if(n.type==='hyp') extra = `<div class="kind">${meter(n.strength)} ${holders(n.holders)}</div>`;
-  if(n.type==='ref' && n.tag) extra = `<div><span class="tag">${esc(n.tag)}</span></div>`;
-  dossier.innerHTML = `
-    <div class="kind"><span class="dot" style="background:${col(TYPES[n.type].tok)}"></span>${esc(TYPES[n.type].one||TYPES[n.type].ru)}</div>
-    <h2>${esc(n.label)}</h2>${extra}
-    ${n.text?`<p>${esc(n.text)}</p>`:''}
-    ${srcHTML(n.src)}
-    ${group('За эту гипотезу', x => x.e.kind==='supports' && !x.out)}
-    ${group('Против', x => x.e.kind==='contradicts' && !x.out)}
-    ${group('Подтверждает', x => x.e.kind==='supports' && x.out)}
-    ${group('Опровергает', x => x.e.kind==='contradicts' && x.out)}
-    ${group('Дальше по времени', x => x.e.kind==='leads' && x.out)}
-    ${group('Раньше по времени', x => x.e.kind==='leads' && !x.out)}
-    ${group('Отсылки', x => x.e.kind==='echoes')}
-    ${group('Мотивы', x => x.e.kind==='motif')}
-    ${group('Связано', x => x.e.kind==='about')}
-    ${group('Вопросы и ответы', x => x.e.kind==='asks' || x.e.kind==='answers')}`;
-}
-function defaultDossier(){
-  const top = D.nodes.filter(n => n.type==='hyp').sort((a,b) => b.strength-a.strength).slice(0,5);
-  return `<div class="kind">Как пользоваться</div><h2>Нажми на карточку</h2>
-  <p>Красное — гипотезы, жёлтое — улики, светлое — люди. Нажми на любую карточку: откроется досье, а на доске останутся только её связи. Зелёная нить — улика за, красный пунктир — против.</p>
-  <div class="rel"><h3>Сильнейшие версии</h3><ul>${top.map(h => `<li><button type="button" data-go="${h.id}"><span class="dot" style="background:${col('--red')}"></span><span><span class="t">${esc(h.label)}</span><span class="note">${h.holders.join(', ')}</span></span></button></li>`).join('')}</ul></div>`;
-}
-dossier.addEventListener('click', e => { const b = e.target.closest('[data-go]'); if(b) focusNode(b.dataset.go); });
-
-/* ---------- graph ---------- */
-let cy = null, hidden = new Set(['place','motif']);
-function zonePositions(){
-  const pos = {}, hy = D.nodes.filter(n => n.type==='hyp');
-  pos.Q = {x:0,y:0};
-  const R = Math.max(360, hy.length*22), d = R - 360;
-  hy.forEach((h,i) => { const a = -Math.PI/2 + i*2*Math.PI/hy.length; pos[h.id] = {x:Math.cos(a)*R*1.45, y:Math.sin(a)*R, a}; });
-  const clues = D.nodes.filter(n => n.type==='clue').map(c => {
-    const hs = D.edges.filter(e => e.source===c.id && byId.get(e.target).type==='hyp').map(e => pos[e.target].a);
-    const seed = [...c.id].reduce((s,ch) => (s*31 + ch.charCodeAt(0)) % 997, 7) / 997 * 6.283;
-    let a = hs.length ? Math.atan2(hs.reduce((s,x)=>s+Math.sin(x),0), hs.reduce((s,x)=>s+Math.cos(x),0)) : seed;
-    return {id:c.id, a};
-  }).sort((p,q) => p.a-q.a);
-  clues.forEach((c,i) => { const a = c.a*0.35 + (-Math.PI + i*2*Math.PI/clues.length)*0.65; const r = 700 + d + (i%3)*80; pos[c.id] = {x:Math.cos(a)*r, y:Math.sin(a)*r}; });
-  const ring = (type, r, from, to) => { const L = D.nodes.filter(n => n.type===type); L.forEach((n,i) => { const a = from + (L.length===1?0.5:i/(L.length-1))*(to-from); pos[n.id] = {x:Math.cos(a)*r, y:Math.sin(a)*r}; }); };
-  ring('char', 1080 + d, -Math.PI*0.95, -Math.PI*0.05);
-  ring('place', 1320 + d, -Math.PI*0.85, -Math.PI*0.15);
-  ring('ref', 1100 + d, Math.PI*0.6, Math.PI*1.05);
-  ring('motif', 1100 + d, Math.PI*0.05, Math.PI*0.3);
-  ring('open', 1330 + d, -Math.PI*0.1, Math.PI*0.14);
-  const evs = D.nodes.filter(n => n.type==='event').sort((a,b) => (a.era===b.era? a.order-b.order : (a.era==='before'?-1:1)));
-  evs.forEach((n,i) => { pos[n.id] = {x:-1180 - d + i*(124 + d/10), y:1240 + d + (i%2)*100}; });
-  D.nodes.filter(n => n.type==='ending').forEach((n,i) => { pos[n.id] = {x:1200 + d + i*200, y:960 + d + (i%2)*110}; });
-  return pos;
-}
-function styles(){
-  const c = k => col(k);
-  return [
-    {selector:'node', style:{'label':'data(label)','font-family':'Manrope, system-ui, sans-serif','font-size':15,'color':c('--ink'),'text-wrap':'wrap','text-max-width':170,'text-valign':'bottom','text-margin-y':6,'min-zoomed-font-size':8,'background-color':'data(color)','border-width':0,'width':'data(size)','height':'data(size)','text-outline-color':c('--panel'),'text-outline-width':2}},
-    {selector:'node[type="q"]', style:{'shape':'ellipse','font-family':'Prata, Georgia, serif','font-size':20,'text-valign':'center','text-margin-y':0,'color':'#fff','text-outline-width':0,'text-max-width':120}},
-    {selector:'node[type="hyp"]', style:{'shape':'round-rectangle','background-color':c('--raise'),'border-color':c('--red'),'border-width':3,'font-family':'Prata, Georgia, serif','font-size':17,'min-zoomed-font-size':5,'text-valign':'center','text-margin-y':0,'text-max-width':150,'text-outline-width':0,'width':'data(w)','height':'data(h)'}},
-    {selector:'node[type="ending"]', style:{'shape':'diamond','font-family':'Prata, Georgia, serif','font-size':16}},
-    {selector:'node[type="clue"]', style:{'shape':'rectangle'}},
-    {selector:'node[type="event"]', style:{'shape':'round-rectangle'}},
-    {selector:'node[type="ref"]', style:{'shape':'tag'}},
-    {selector:'node[type="motif"]', style:{'shape':'hexagon'}},
-    {selector:'node[type="place"]', style:{'shape':'barrel'}},
-    {selector:'node[type="open"]', style:{'shape':'star'}},
-    {selector:'node[type="char"]', style:{'shape':'ellipse','border-width':2,'border-color':c('--muted'),'font-weight':700}},
-    {selector:'edge', style:{'width':1,'line-color':c('--line'),'curve-style':'bezier','opacity':.7}},
-    {selector:'edge[kind="supports"]', style:{'line-color':c('--sup'),'width':1.6,'opacity':.75}},
-    {selector:'edge[kind="contradicts"]', style:{'line-color':c('--con'),'line-style':'dashed','width':1.8}},
-    {selector:'edge[kind="echoes"]', style:{'line-color':c('--violet'),'line-style':'dotted','width':1.4}},
-    {selector:'edge[kind="leads"]', style:{'line-color':c('--steel'),'target-arrow-shape':'triangle','target-arrow-color':c('--steel'),'width':1.6}},
-    {selector:'edge[kind="answers"]', style:{'line-color':c('--red'),'opacity':.25}},
-    {selector:'.faded', style:{'opacity':.08,'text-opacity':0}},
-    {selector:'node.hl', style:{'border-width':3,'border-color':c('--red')}},
-    {selector:'node.match', style:{'border-width':3,'border-color':c('--amber')}},
-    {selector:'edge.hl', style:{'opacity':1,'width':2.4}}
-  ];
-}
-function elements(){
-  const pos = zonePositions();
-  const size = {q:110, hyp:0, ending:62, clue:24, char:38, event:26, place:28, ref:28, motif:28, open:30};
-  const nodes = D.nodes.map(n => {
-    const d = {id:n.id, label:n.label, type:n.type, color:col(TYPES[n.type].tok), size:size[n.type]};
-    if(n.type==='hyp'){ d.w = 150 + n.strength*14; d.h = 62; d.size = d.w - 18; }
-    return {data:d, position:pos[n.id] || {x:0,y:0}};
-  });
-  const edges = D.edges.map((e,i) => ({data:{id:'e'+i, source:e.source, target:e.target, kind:e.kind}}));
-  return nodes.concat(edges);
-}
-function applyVisibility(){
-  if(!cy) return;
-  cy.batch(() => { cy.nodes().forEach(n => n.style('display', hidden.has(n.data('type')) ? 'none' : 'element')); });
-}
-function initGraph(){
-  const box = document.getElementById('cy');
-  if(typeof cytoscape !== 'function'){ box.innerHTML = '<div class="fail">Граф не загрузился. Списки во вкладках «Гипотезы», «Хронология», «Люди» и «Отсылки» работают без него.</div>'; return; }
-  cy = cytoscape({container:box, elements:elements(), style:styles(), layout:{name:'preset'}, wheelSensitivity:.25, minZoom:.12, maxZoom:2.5, boxSelectionEnabled:false});
-  applyVisibility(); cy.fit(cy.elements(':visible'), 30);
-  cy.on('tap','node', ev => focusNode(ev.target.id(), false));
-  cy.on('tap', ev => { if(ev.target === cy) clearFocus(); });
-}
-/* focus: pull the node's connections into a ring around it so labels are readable; put them back on the next focus or reset */
-let saved = null;
-const ORDER = {supports:0, contradicts:1, leads:2, about:3, echoes:4, motif:5, asks:6, answers:7};
-function restorePositions(){ if(saved && cy){ cy.batch(() => saved.forEach((p,id) => { const x = cy.getElementById(id); if(x.length) x.position(p); })); } saved = null; }
-function gather(n){
-  restorePositions();
-  const c = {...n.position()};
-  const others = n.neighborhood().nodes().filter(x => x.style('display') !== 'none');
-  saved = new Map(); others.forEach(x => saved.set(x.id(), {...x.position()}));
-  const kindOf = x => { const e = n.edgesWith(x)[0]; return e ? (ORDER[e.data('kind')] ?? 9) : 9; };
-  const list = others.toArray().sort((a,b) => kindOf(a)-kindOf(b) || a.data('type').localeCompare(b.data('type')));
-  const k = list.length, R = Math.max(240, k*30);
-  cy.batch(() => list.forEach((x,i) => { const a = -Math.PI/2 + i*2*Math.PI/Math.max(k,1); x.position({x:c.x + Math.cos(a)*R, y:c.y + Math.sin(a)*R*0.82}); }));
-}
-const calm = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
-function fitTo(eles, pad, maxZ, dur){
-  if(!eles.length) return;
-  const bb = eles.boundingBox(), w = cy.width(), h = cy.height();
-  let z = Math.min((w-2*pad)/Math.max(bb.w,1), (h-2*pad)/Math.max(bb.h,1));
-  z = Math.max(cy.minZoom(), Math.min(maxZ, z));
-  const pan = {x: w/2 - z*(bb.x1 + bb.w/2), y: h/2 - z*(bb.y1 + bb.h/2)};
-  cy.stop(); cy.animate({zoom:z, pan}, {duration: calm() ? 0 : dur});
-}
-function clearFocus(){ if(cy){ restorePositions(); cy.elements().removeClass('faded hl'); } dossier.innerHTML = defaultDossier(); setHash(''); }
-function focusNode(id, center=true){
-  showNode(id); setHash('n-'+id);
-  if(!cy) return;
-  const n = cy.getElementById(id); if(!n.length) return;
-  if(n.style('display')==='none'){ hidden.delete(n.data('type')); renderChips(); applyVisibility(); }
-  if(!forceOn) gather(n);
-  const hood = n.closedNeighborhood();
-  cy.elements().addClass('faded').removeClass('hl');
-  hood.removeClass('faded'); n.addClass('hl'); hood.edges().addClass('hl');
-  if(center || !forceOn) fitTo(hood.filter(':visible'), 40, 1.25, 350);
-  if(tab !== 'board') selectTab('board');
-}
-function setHash(h){ try{ history.replaceState(null,'', h ? '#'+h : location.pathname + location.search); }catch(e){} }
-
-/* chips + legend */
-const chipsEl = document.getElementById('chips');
-function renderChips(){
-  chipsEl.innerHTML = Object.keys(TYPES).filter(t => t!=='q').map(t => `<button type="button" class="chip" data-t="${t}" aria-pressed="${!hidden.has(t)}"><span class="dot" style="background:${col(TYPES[t].tok)}"></span>${TYPES[t].ru}<span class="c">${counts[t]||0}</span></button>`).join('');
-}
-chipsEl.addEventListener('click', e => { const b = e.target.closest('[data-t]'); if(!b) return; const t = b.dataset.t; hidden.has(t) ? hidden.delete(t) : hidden.add(t); renderChips(); applyVisibility(); });
-function renderLegend(){
-  document.getElementById('legend').innerHTML = [['--sup','улика за','solid'],['--con','улика против','dashed'],['--violet','отсылка','dotted'],['--steel','порядок событий','solid'],['--line','связано','solid']].map(([t,l,s]) => `<span><i style="border-top:2px ${s} ${col(t)}"></i>${l}</span>`).join('');
-}
-document.getElementById('q').addEventListener('input', e => {
-  const v = e.target.value.trim().toLowerCase();
-  if(!cy) return;
-  cy.nodes().removeClass('match');
-  if(!v){ return; }
-  const hits = cy.nodes().filter(n => { const d = byId.get(n.id()); return (d.label + ' ' + d.text + ' ' + d.src.map(s=>s.t).join(' ')).toLowerCase().includes(v); });
-  hits.forEach(n => { if(n.style('display')==='none'){ hidden.delete(n.data('type')); } });
-  renderChips(); applyVisibility(); hits.addClass('match');
-  if(hits.length) fitTo(hits, 60, 1.4, 250);
-});
-let forceOn = false;
-document.getElementById('layoutBtn').addEventListener('click', e => {
-  if(!cy) return; restorePositions(); cy.elements().removeClass('faded hl'); forceOn = !forceOn;
-  e.target.textContent = forceOn ? 'Разложить по зонам' : 'Разложить по силам';
-  if(forceOn) cy.layout({name:'cose', animate:false, randomize:false, nodeRepulsion:()=>9000, idealEdgeLength:()=>90, numIter:1500, fit:true, padding:30}).run();
-  else { const pos = zonePositions(); cy.nodes().forEach(n => n.position(pos[n.id()])); cy.fit(cy.elements(':visible'),30); }
-});
-document.getElementById('fitBtn').addEventListener('click', () => { if(cy){ clearFocus(); cy.fit(cy.elements(':visible'), 30); } });
-
-/* ---------- lists ---------- */
-function evBtn(n, note){ const s = n.src[0]; return `<button type="button" class="ev" data-go="${n.id}">${esc(n.label)}${note?` — <span style="color:var(--muted)">${esc(note)}</span>`:''}${s?`<small>${esc(s.t)}</small>`:''}</button>`; }
-function renderHyp(){
-  const H = D.nodes.filter(n => n.type==='hyp').sort((a,b) => b.strength - a.strength);
-  document.getElementById('hypGrid').innerHTML = H.map(h => {
-    const r = rels(h.id);
-    const pro = r.filter(x => x.e.kind==='supports' && !x.out), con = r.filter(x => x.e.kind==='contradicts' && !x.out);
-    const refs = r.filter(x => x.e.kind==='echoes').map(x => x.other.label);
-    return `<article class="card"><div class="top"><h3>${esc(h.label)}</h3>${meter(h.strength)}</div>${holders(h.holders)}<p>${esc(h.text)}</p>
-      <div class="pro"><h4>За · ${pro.length}</h4>${pro.map(x => evBtn(x.other, x.e.note)).join('') || '<span class="empty">—</span>'}</div>
-      ${con.length?`<div class="contra"><h4>Против · ${con.length}</h4>${con.map(x => evBtn(x.other, x.e.note)).join('')}</div>`:''}
-      ${refs.length?`<div class="kind">Отсылки: ${refs.map(esc).join(', ')}</div>`:''}
-      <div><button type="button" class="btn" data-go="${h.id}">Показать на доске</button></div></article>`;
-  }).join('');
-}
-function renderTime(){
-  const ev = D.nodes.filter(n => n.type==='event'), end = D.nodes.filter(n => n.type==='ending');
-  const li = (n, cls='') => `<li class="${cls}"><button type="button" class="ev" data-go="${n.id}" style="border:0;padding:0"><span class="t">${esc(n.label)}</span></button><div class="x">${esc(n.text)}</div><div class="s">${n.src.map(s => `<a href="${esc(s.u)}" target="_blank" rel="noopener">${esc(s.t)}</a>`).join('')}</div></li>`;
-  const col1 = ev.filter(n => n.era==='before').sort((a,b)=>a.order-b.order), col2 = ev.filter(n => n.era==='game').sort((a,b)=>a.order-b.order);
-  document.getElementById('timeline').innerHTML = `
-    <div class="col"><h2>До игры</h2><p class="x" style="color:var(--muted);margin:0 0 10px">Порядок восстановлен по запискам и допросу. Игра его намеренно размывает.</p><ul class="tl">${col1.map(n=>li(n)).join('')}</ul></div>
-    <div class="col"><h2>В игре</h2><p class="x" style="color:var(--muted);margin:0 0 10px">Сюжетный стержень — пять колоколов для канатки на гору.</p><ul class="tl">${col2.map(n=>li(n)).join('')}${end.map(n=>li(n,'end')).join('')}</ul></div>`;
-}
-function renderPeople(){
-  const C = D.nodes.filter(n => n.type==='char');
-  document.getElementById('peopleGrid').innerHTML = C.map(c => {
-    const r = rels(c.id).filter(x => x.other.type==='clue' || x.other.type==='hyp' || x.other.type==='ref');
-    return `<article class="card"><div class="top"><h3>${esc(c.label)}</h3></div>${c.aka?`<div class="kind">${esc(c.aka)}</div>`:''}<p>${esc(c.text)}</p>${srcHTML(c.src)}
-      ${r.length?`<div class="pro"><h4 style="color:var(--muted)">Улики и версии</h4>${r.map(x => evBtn(x.other)).join('')}</div>`:''}</article>`;
-  }).join('');
-}
-function renderRefs(){
-  const R = D.nodes.filter(n => n.type==='ref');
-  const rank = t => /ОФИЦИАЛЬНО/.test(t) ? 0 : /Alex/.test(t) ? 1 : /ПРЕССА/.test(t) ? 2 : /ФАКТ/.test(t) ? 3 : 4;
-  R.sort((a,b) => rank(a.tag)-rank(b.tag));
-  document.getElementById('refRows').innerHTML = R.map(r => `<tr><td class="r"><button type="button" class="ev" data-go="${r.id}" style="border:0;padding:0">${esc(r.label)}</button></td><td>${esc(r.text)}</td><td><span class="tag">${esc(r.tag)}</span></td><td><div class="srcs">${r.src.map(s => `<a href="${esc(s.u)}" target="_blank" rel="noopener">${esc(s.t)} ↗</a>`).join('')}</div></td></tr>`).join('');
-}
-function renderOpen(){
-  const Q = D.nodes.filter(n => n.type==='open');
-  document.getElementById('openList').innerHTML = Q.map(q => {
-    const r = rels(q.id).filter(x => x.other.id !== 'Q');
-    return `<article class="card"><h3>${esc(q.label)}</h3><p>${esc(q.text)}</p>${r.length?`<div class="pro"><h4 style="color:var(--muted)">Где копать</h4>${r.map(x => evBtn(x.other)).join('')}</div>`:''}</article>`;
-  }).join('');
-}
-document.querySelectorAll('section[role="tabpanel"]').forEach(s => s.addEventListener('click', e => { const b = e.target.closest('[data-go]'); if(b && !b.closest('#dossier')) focusNode(b.dataset.go); }));
-
-/* ---------- tabs ---------- */
-let tab = 'board';
-const TABS = ['board','hyp','time','people','refs','open'];
-function selectTab(t){
-  tab = t;
-  TABS.forEach(k => { document.getElementById('t-'+k).setAttribute('aria-selected', String(k===t)); document.getElementById('p-'+k).hidden = k!==t; });
-  try{ localStorage.setItem('sp-tab', t); }catch(e){}
-  if(t==='board' && cy){ cy.resize(); }
-}
-document.querySelector('nav.tabs').addEventListener('click', e => { const b = e.target.closest('[role="tab"]'); if(b){ selectTab(b.id.slice(2)); if(b.id!=='t-board') setHash(b.id.slice(2)); } });
-
-/* theme follow */
-function restyle(){ if(!cy) return; cy.style(styles()); cy.nodes().forEach(n => n.data('color', col(TYPES[n.data('type')].tok))); renderChips(); renderLegend(); }
-matchMedia('(prefers-color-scheme: dark)').addEventListener('change', restyle);
-new MutationObserver(restyle).observe(document.documentElement, {attributes:true, attributeFilter:['data-theme']});
-
-/* boot */
-renderChips(); renderLegend(); renderHyp(); renderTime(); renderPeople(); renderRefs(); renderOpen();
-dossier.innerHTML = defaultDossier();
-initGraph();
-const h = (location.hash||'').slice(1);
-let start = 'board';
-try{ start = localStorage.getItem('sp-tab') || 'board'; }catch(e){}
-if(TABS.includes(h)) start = h;
-selectTab(TABS.includes(start) ? start : 'board');
-if(h.startsWith('n-') && byId.has(h.slice(2))) focusNode(h.slice(2));
-})();
+__BOARD_JS__
 </script>
