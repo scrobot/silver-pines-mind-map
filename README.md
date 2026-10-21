@@ -26,6 +26,8 @@ An evidence board for the plot of **Silver Pines** (Wych Elm / Team17, 2026): ch
 
 Нужен только Python 3, без зависимостей. / Needs nothing but Python 3.
 
+Каждый пуш в `main` пересобирает доску и выкладывает `dist/` на GitHub Pages (`.github/workflows/pages.yml`): <https://scrobot.github.io/silver-pines-mind-map/>. / Every push to `main` rebuilds the board and publishes `dist/` to GitHub Pages.
+
 Язык страницы переключается кнопками RU / EN в шапке, выбор запоминается. Ссылка с `#en` или `#ru` в конце сразу открывает нужный язык.
 
 The page language switches with the RU / EN buttons in the header and is remembered. A link ending in `#en` or `#ru` opens that language directly.
