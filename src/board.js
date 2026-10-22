@@ -6,45 +6,47 @@ const byId = new Map(D.nodes.map(n => [n.id, n]));
 const UI = {
   ru: {
     code:'Дело № SP-1993-10 · Silver Pines · Вельвет, Эдди', title:'Дело Эдди Вельвета',
-    lede:'Детектива Рэда Уокера наняли найти пропавшего музыканта. Здесь всё, что удалось собрать: кто есть кто, что случилось до игры и во время неё, три концовки, гипотезы и улики за и против. Таймкоды ведут прямо в записи стримов.',
-    streams:'Стримы', research:'Ресерч', cards:'карточек', links:'связей', sections:'Разделы',
+    lede:'Детектива Рэда Уокера наняли найти пропавшего музыканта. Здесь всё, что удалось собрать: кто есть кто, что случилось до игры и во время неё, три концовки, гипотезы и улики за и против.',
+    updated:'Обновлено', cards:'карточек', links:'связей', sections:'Разделы',
     tab_board:'Доска', tab_hyp:'Гипотезы', tab_time:'Хронология', tab_people:'Люди', tab_refs:'Отсылки', tab_open:'Открытые вопросы',
     search_ph:'Найти: Элис, канатка, 10:07, Джекман…', search_aria:'Поиск по доске', force:'Разложить по силам', zones:'Разложить по зонам', fit:'Вся доска',
     graph_aria:'Граф: гипотезы, улики, персонажи, события и отсылки',
     fail:'Граф не загрузился. Списки во вкладках «Гипотезы», «Хронология», «Люди» и «Отсылки» работают без него.',
     th_src:'Источник', th_match:'Что совпадает', th_strength:'Сила', th_links:'Ссылки',
-    footer:'Источники: расшифровки трёх стримов автора (автосубтитры YouTube, имена в них могли исказиться) и ресерч 19.10.2026 по Steam, YouTube-разборам, прессе и интервью разработчиков. Ключевые реплики сверены по кадрам записи экрана. Метки силы у отсылок: ОФИЦИАЛЬНО — сказали разработчики, ПРЕССА — заметили критики, ГИПОТЕЗА — наша догадка без внешнего источника.',
+    footer:'Источники: сама игра и её артбук «The Art of Silver Pines», обсуждения в Steam, YouTube-разборы, пресса и интервью разработчиков. Метки у гипотез: ВЕРДИКТ — итоговая версия доски, ЛОЖНЫЙ СЛЕД — версия, которую улики опровергли. Метки у отсылок: ОФИЦИАЛЬНО — сказали разработчики, ПРЕССА — заметили критики, ГИПОТЕЗА — версия доски без внешнего источника.',
     g_for:'За эту гипотезу', g_against:'Против', g_supports:'Подтверждает', g_contradicts:'Опровергает', g_next:'Дальше по времени', g_prev:'Раньше по времени',
     g_refs:'Отсылки', g_motifs:'Мотивы', g_about:'Связано', g_qa:'Вопросы и ответы',
     how:'Как пользоваться', click:'Нажми на карточку',
-    how_p:'Красное — гипотезы, жёлтое — улики, светлое — люди. Нажми на любую карточку: откроется досье, а на доске останутся только её связи. Зелёная нить — улика за, красный пунктир — против.',
+    how_p:'Красное — гипотезы, жёлтое — улики, светлое — люди. Нажми на любую карточку: откроется досье, а на доске останутся только её связи. Зелёная нить — улика за, красный пунктир — против. Толстая рамка — вердикт доски, пунктирная — ложный след.',
+    st_verdict:'вердикт', st_false:'ложный след', verdict:'Вердикт',
     strongest:'Сильнейшие версии', strength:(n) => `сила: ${n} из 3`,
     l_for:'улика за', l_against:'улика против', l_ref:'отсылка', l_order:'порядок событий', l_about:'связано',
     for:'За', against:'Против', refs_colon:'Отсылки', show:'Показать на доске',
     before:'До игры', before_p:'Порядок восстановлен по запискам и допросу. Игра его намеренно размывает.',
     ingame:'В игре', ingame_p:'Сюжетный стержень — колокола для канатки на гору.',
-    clues_versions:'Улики и версии', dig:'Где копать', stream:'стрим'
+    clues_versions:'Улики и версии', dig:'Где копать'
   },
   en: {
     code:'Case No. SP-1993-10 · Silver Pines · Velvet, Eddie', title:'The Eddie Velvet Case',
-    lede:'Detective Red Walker was hired to find a missing musician. Everything we could gather is here: who is who, what happened before and during the game, the three endings, the hypotheses, and the clues for and against each one. Timecodes link straight into the stream recordings.',
-    streams:'Streams', research:'Research', cards:'cards', links:'links', sections:'Sections',
+    lede:'Detective Red Walker was hired to find a missing musician. Everything we could gather is here: who is who, what happened before and during the game, the three endings, the hypotheses, and the clues for and against each one.',
+    updated:'Updated', cards:'cards', links:'links', sections:'Sections',
     tab_board:'Board', tab_hyp:'Hypotheses', tab_time:'Timeline', tab_people:'People', tab_refs:'References', tab_open:'Open questions',
     search_ph:'Search: Alice, cable car, 10:07, Jackman…', search_aria:'Search the board', force:'Force layout', zones:'Zone layout', fit:'Whole board',
     graph_aria:'Graph: hypotheses, clues, characters, events and references',
     fail:'The graph failed to load. The Hypotheses, Timeline, People and References tabs work without it.',
     th_src:'Source', th_match:'What matches', th_strength:'Strength', th_links:'Links',
-    footer:'Sources: transcripts of the author\'s three streams (YouTube auto-captions of him reading the game\'s Russian text aloud) and research from 19.10.2026: Steam, YouTube breakdowns, press and developer interviews. Key lines are checked against frames of the screen recording. In-game quotes use the original English line where we had it; the rest are translated back from the Russian localization. Reference tags: OFFICIAL — said by the developers, PRESS — noticed by critics, HYPOTHESIS — our guess, no outside source.',
+    footer:'Sources: the game itself and its artbook, The Art of Silver Pines; Steam discussions, YouTube breakdowns, press and developer interviews. In-game quotes use the original English line where we had it; the rest are translated back from the Russian localization. Hypothesis tags: VERDICT — the board\'s final version, FALSE LEAD — a version the clues ruled out. Reference tags: OFFICIAL — said by the developers, PRESS — noticed by critics, HYPOTHESIS — the board\'s own reading, no outside source.',
     g_for:'For this hypothesis', g_against:'Against', g_supports:'Supports', g_contradicts:'Contradicts', g_next:'Next in time', g_prev:'Earlier in time',
     g_refs:'References', g_motifs:'Motifs', g_about:'Connected', g_qa:'Questions and answers',
     how:'How to use', click:'Click a card',
-    how_p:'Red is hypotheses, yellow is clues, light is people. Click any card: its dossier opens and the board keeps only its links. A green thread is a clue for, a red dashed line is a clue against.',
+    how_p:'Red is hypotheses, yellow is clues, light is people. Click any card: its dossier opens and the board keeps only its links. A green thread is a clue for, a red dashed line is a clue against. A thick frame marks the board\'s verdict, a dashed one a false lead.',
+    st_verdict:'verdict', st_false:'false lead', verdict:'Verdict',
     strongest:'Strongest versions', strength:(n) => `strength: ${n} of 3`,
     l_for:'clue for', l_against:'clue against', l_ref:'reference', l_order:'order of events', l_about:'connected',
     for:'For', against:'Against', refs_colon:'References', show:'Show on the board',
     before:'Before the game', before_p:'The order is pieced together from notes and the interrogation. The game blurs it on purpose.',
     ingame:'In the game', ingame_p:'The spine of the plot: the bells for the cable car up the mountain.',
-    clues_versions:'Clues and versions', dig:'Where to dig', stream:'stream'
+    clues_versions:'Clues and versions', dig:'Where to dig'
   }
 };
 const TYPES = {
@@ -72,7 +74,7 @@ const TX = n => (EN() && n.en && typeof n.en.text === 'string') ? n.en.text : (n
 const AKA = n => (EN() && n.en && n.en.aka) || n.aka;
 const TAG = n => (EN() && n.en && n.en.tag) || n.tag;
 const NOTE = e => (EN() && e.note_en) || e.note || '';
-const ST = (n, i) => { const t = n.src[i].t; if(!EN()) return t; return (n.en && n.en.src && n.en.src[i]) || t.replace(/^стрим/, 'stream'); };
+const ST = (n, i) => { const t = n.src[i].t; if(!EN()) return t; return (n.en && n.en.src && n.en.src[i]) || t; };
 const HOLD = h => EN() ? (((D.meta||{}).holders_en||{})[h] || h) : h;
 const TN = (t, one) => EN() ? (one ? (TYPES[t].en1||TYPES[t].en) : TYPES[t].en) : (one ? (TYPES[t].one||TYPES[t].ru) : TYPES[t].ru);
 
@@ -89,7 +91,10 @@ const rels = id => D.edges.filter(e => e.source === id || e.target === id).map(e
 const SRCA = (s, label, arrow) => s.u ? `<a href="${esc(s.u)}" target="_blank" rel="noopener">${esc(label)}${arrow ? ' ↗' : ''}</a>` : `<span class="nolink">${esc(label)}</span>`;
 function srcHTML(n){ return n.src.length ? `<div class="srcs">${n.src.map((s,i) => SRCA(s, ST(n,i), true)).join('')}</div>` : ''; }
 function meter(n){ return `<span class="meter" title="${esc(u('strength')(n))}">${[1,2,3].map(i => `<b class="${i<=n?'on':''}"></b>`).join('')}</span>`; }
-function holders(h){ return `<span class="holders">${(h||[]).map(x => `<span class="tag ${x==='Alex'?'alex':''}">${esc(HOLD(x))}</span>`).join('')}</span>`; }
+function holders(h){ return `<span class="holders">${(h||[]).map(x => `<span class="tag ${x==='SuHo'?'own':''}">${esc(HOLD(x))}</span>`).join('')}</span>`; }
+function statusTag(n){ return n.status ? `<span class="tag st-${n.status}">${esc(u('st_'+n.status))}</span>` : ''; }
+const RANK = n => n.status==='verdict' ? 0 : n.status==='false' ? 2 : 1;
+const byVerdict = (a,b) => RANK(a)-RANK(b) || b.strength-a.strength;
 
 /* ---------- dossier panel ---------- */
 const dossier = document.getElementById('dossier');
@@ -103,7 +108,7 @@ function showNode(id){
     return `<div class="rel"><h3>${title}</h3><ul>${list.map(x => `<li><button type="button" data-go="${x.other.id}"><span class="dot" style="background:${col(TYPES[x.other.type].tok)}"></span><span><span class="t">${esc(L(x.other))}</span>${NOTE(x.e)?`<span class="note">${esc(NOTE(x.e))}</span>`:''}</span></button></li>`).join('')}</ul></div>`;
   };
   let extra = '';
-  if(n.type==='hyp') extra = `<div class="kind">${meter(n.strength)} ${holders(n.holders)}</div>`;
+  if(n.type==='hyp') extra = `<div class="kind">${meter(n.strength)} ${statusTag(n)} ${holders(n.holders)}</div>`;
   if(n.type==='ref' && n.tag) extra = `<div><span class="tag">${esc(TAG(n))}</span></div>`;
   dossier.innerHTML = `
     <div class="kind"><span class="dot" style="background:${col(TYPES[n.type].tok)}"></span>${esc(TN(n.type, true))}</div>
@@ -123,10 +128,10 @@ function showNode(id){
     ${group(u('g_qa'), x => x.e.kind==='asks' || x.e.kind==='answers')}`;
 }
 function defaultDossier(){
-  const top = D.nodes.filter(n => n.type==='hyp').sort((a,b) => b.strength-a.strength).slice(0,5);
+  const top = D.nodes.filter(n => n.type==='hyp' && n.status!=='false').sort(byVerdict).slice(0,5);
   return `<div class="kind">${u('how')}</div><h2>${u('click')}</h2>
   <p>${u('how_p')}</p>
-  <div class="rel"><h3>${u('strongest')}</h3><ul>${top.map(h => `<li><button type="button" data-go="${h.id}"><span class="dot" style="background:${col('--red')}"></span><span><span class="t">${esc(L(h))}</span><span class="note">${h.holders.map(HOLD).map(esc).join(', ')}</span></span></button></li>`).join('')}</ul></div>`;
+  <div class="rel"><h3>${u('strongest')}</h3><ul>${top.map(h => `<li><button type="button" data-go="${h.id}"><span class="dot" style="background:${col('--red')}"></span><span><span class="t">${esc(L(h))}</span><span class="note">${h.status==='verdict' ? esc(u('st_verdict'))+' · ' : ''}${h.holders.map(HOLD).map(esc).join(', ')}</span></span></button></li>`).join('')}</ul></div>`;
 }
 dossier.addEventListener('click', e => { const b = e.target.closest('[data-go]'); if(b) focusNode(b.dataset.go); });
 
@@ -161,6 +166,8 @@ function styles(){
     {selector:'node', style:{'label':'data(label)','font-family':'Manrope, system-ui, sans-serif','font-size':15,'color':c('--ink'),'text-wrap':'wrap','text-max-width':170,'text-valign':'bottom','text-margin-y':6,'min-zoomed-font-size':8,'background-color':'data(color)','border-width':0,'width':'data(size)','height':'data(size)','text-outline-color':c('--panel'),'text-outline-width':2}},
     {selector:'node[type="q"]', style:{'shape':'ellipse','font-family':'Prata, Georgia, serif','font-size':20,'text-valign':'center','text-margin-y':0,'color':'#fff','text-outline-width':0,'text-max-width':120}},
     {selector:'node[type="hyp"]', style:{'shape':'round-rectangle','background-color':c('--raise'),'border-color':c('--red'),'border-width':3,'font-family':'Prata, Georgia, serif','font-size':17,'min-zoomed-font-size':5,'text-valign':'center','text-margin-y':0,'text-max-width':150,'text-outline-width':0,'width':'data(w)','height':'data(h)'}},
+    {selector:'node[type="hyp"][status="verdict"]', style:{'border-width':6,'background-color':c('--raise')}},
+    {selector:'node[type="hyp"][status="false"]', style:{'border-style':'dashed','border-width':2,'border-color':c('--muted'),'color':c('--muted')}},
     {selector:'node[type="ending"]', style:{'shape':'diamond','font-family':'Prata, Georgia, serif','font-size':16}},
     {selector:'node[type="clue"]', style:{'shape':'rectangle'}},
     {selector:'node[type="event"]', style:{'shape':'round-rectangle'}},
@@ -185,7 +192,7 @@ function elements(){
   const pos = zonePositions();
   const size = {q:110, hyp:0, ending:62, clue:24, char:38, event:26, place:28, ref:28, motif:28, open:30};
   const nodes = D.nodes.map(n => {
-    const d = {id:n.id, label:L(n), type:n.type, color:col(TYPES[n.type].tok), size:size[n.type]};
+    const d = {id:n.id, label:L(n), type:n.type, color:col(TYPES[n.type].tok), size:size[n.type], status:n.status||''};
     if(n.type==='hyp'){ d.w = 150 + n.strength*14; d.h = 62; d.size = d.w - 18; }
     return {data:d, position:pos[n.id] || {x:0,y:0}};
   });
@@ -274,12 +281,12 @@ document.getElementById('fitBtn').addEventListener('click', () => { if(cy){ clea
 /* ---------- lists ---------- */
 function evBtn(n, note){ return `<button type="button" class="ev" data-go="${n.id}">${esc(L(n))}${note?` — <span style="color:var(--muted)">${esc(note)}</span>`:''}${n.src.length?`<small>${esc(ST(n,0))}</small>`:''}</button>`; }
 function renderHyp(){
-  const H = D.nodes.filter(n => n.type==='hyp').sort((a,b) => b.strength - a.strength);
+  const H = D.nodes.filter(n => n.type==='hyp').sort(byVerdict);
   document.getElementById('hypGrid').innerHTML = H.map(h => {
     const r = rels(h.id);
     const pro = r.filter(x => x.e.kind==='supports' && !x.out), con = r.filter(x => x.e.kind==='contradicts' && !x.out);
     const refs = r.filter(x => x.e.kind==='echoes').map(x => L(x.other));
-    return `<article class="card"><div class="top"><h3>${esc(L(h))}</h3>${meter(h.strength)}</div>${holders(h.holders)}<p>${esc(TX(h))}</p>
+    return `<article class="card${h.status?' st-'+h.status:''}"><div class="top"><h3>${esc(L(h))}</h3>${meter(h.strength)}</div><div class="holders">${statusTag(h)}${holders(h.holders)}</div><p>${esc(TX(h))}</p>
       <div class="pro"><h4>${u('for')} · ${pro.length}</h4>${pro.map(x => evBtn(x.other, NOTE(x.e))).join('') || '<span class="empty">—</span>'}</div>
       ${con.length?`<div class="contra"><h4>${u('against')} · ${con.length}</h4>${con.map(x => evBtn(x.other, NOTE(x.e))).join('')}</div>`:''}
       ${refs.length?`<div class="kind">${u('refs_colon')}: ${refs.map(esc).join(', ')}</div>`:''}
@@ -304,7 +311,7 @@ function renderPeople(){
 }
 function renderRefs(){
   const R = D.nodes.filter(n => n.type==='ref');
-  const rank = t => /ОФИЦИАЛЬНО/.test(t) ? 0 : /Alex/.test(t) ? 1 : /ПРЕССА/.test(t) ? 2 : /ФАКТ/.test(t) ? 3 : 4;
+  const rank = t => /ОФИЦИАЛЬНО/.test(t) ? 0 : /ПРЕССА/.test(t) ? 1 : /ФАКТ/.test(t) ? 2 : 3;
   R.sort((a,b) => rank(a.tag)-rank(b.tag));
   document.getElementById('refRows').innerHTML = R.map(r => `<tr><td class="r"><button type="button" class="ev" data-go="${r.id}" style="border:0;padding:0">${esc(L(r))}</button></td><td>${esc(TX(r))}</td><td><span class="tag">${esc(TAG(r))}</span></td><td><div class="srcs">${r.src.map((s,i) => SRCA(s, ST(r,i), true)).join('')}</div></td></tr>`).join('');
 }

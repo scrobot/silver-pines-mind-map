@@ -54,6 +54,8 @@ def card_text(n):
     if t == 'hyp':
         head += '  ' + '●' * n.get('strength', 1) + '○' * (3 - n.get('strength', 1))
     parts = [f"<small>{TYPE_RU[t].upper()}</small>", head, n.get('text', '')]
+    if t == 'hyp' and n.get('status'):
+        parts.insert(2, {'verdict': '**Вердикт доски**', 'false': '*Ложный след*'}[n['status']])
     if t == 'hyp' and n.get('holders'):
         parts.append('Держатся: ' + ', '.join(n['holders']))
     if t == 'ref' and n.get('tag'):

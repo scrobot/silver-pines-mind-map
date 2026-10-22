@@ -21,11 +21,8 @@ if os.path.exists(ov_path):
             if t.get(k): en[k] = t[k]
         titles = []
         for s in n.get('src', []):
-            m = re.match(r'^стрим (\d) · (.+)$', s['t'])
-            if m: titles.append(f'stream {m.group(1)} · {m.group(2)}')
-            else:
-                if s['t'] not in osrc: missing.append('src ' + s['t'])
-                titles.append(osrc.get(s['t'], s['t']))
+            if s['t'] not in osrc: missing.append('src ' + s['t'])
+            titles.append(osrc.get(s['t'], s['t']))
         en['src'] = titles
         n['en'] = en
     for e in D['edges']:
