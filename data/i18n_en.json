@@ -2,7 +2,7 @@
  "nodes": {
   "Q": {
    "label": "What happened in Silver Pines?",
-   "text": "Detective Red Walker is hired to find a missing musician, Eddie Velvet. The deeper he digs, the more the case looks like his own. The board gathers facts from the author's streams, outside sources, hypotheses, and the arguments for and against."
+   "text": "Detective Red Walker is hired to find a missing musician, Eddie Velvet. The deeper he digs, the more the case looks like his own. The board gathers facts from the game and its artbook, outside sources, hypotheses, and the arguments for and against."
   },
   "red": {
    "label": "Red Walker",
@@ -14,7 +14,7 @@
   },
   "alice": {
    "label": "Alice Baker",
-   "text": "Missing local girl, apartment 4B in Union Apartments. Her diary is addressed to Eddie. “The toast of the town. An angel if you ask me… she did have another side to her.” Her body is found in the water."
+   "text": "Missing local girl, apartment 4B in Union Apartments. Her diary is addressed to Eddie. “The toast of the town. An angel if you ask me… she did have another side to her.” In the final area her body lies in the shallows below the cliffs."
   },
   "jackman": {
    "label": "Mr. Jackman",
@@ -23,7 +23,7 @@
   },
   "little": {
    "label": "The little man",
-   "text": "The nameless little man from Alice's diary and from other people's stories. He answers the door intercom at her apartment: “A friend, detective.” The voice on the intercom (him, according to outside sources): “Alice was my world”, “to Eddie, you're an angel of mercy”. In Rest he is the Server in a bow tie and the secret boss: “Look at what he did to my sweet girl… It has to be you!”"
+   "text": "The nameless little man from Alice's diary and from other people's stories. He answers the door intercom at her apartment: “A friend, detective.” The voice on the intercom (him, according to outside sources): “Alice was my world”, “to Eddie, you're an angel of mercy”. In Rest he is the Server in a bow tie, also known as the Pale Garçon, and the secret boss: “Look at what he did to my sweet girl… It has to be you!” The artbook gives him a page of his own: The Little Man."
   },
   "foster": {
    "label": "Father Jacob Foster",
@@ -35,7 +35,8 @@
   },
   "cowboy": {
    "label": "The Cowboy",
-   "text": "Bartender at the Rabbit Hole, Red's “partner”. Helps Red, gives him a lucky charm and ammo, then dies defending the Quiet Hour Cafe. Alive in Rest: “Are you ready for a final rodeo?”"
+   "text": "Bartender at the Rabbit Hole, Red's “partner”. Helps Red, gives him a lucky charm and ammo, then dies defending the Quiet Hour Cafe. Alive in Rest: “Are you ready for a final rodeo?”",
+   "aka": "Bartender in the artbook · likeness: Tom Fothergill (Team17)"
   },
   "roberts": {
    "label": "Deputy Roberts",
@@ -43,7 +44,8 @@
   },
   "oldcop": {
    "label": "The old man in a trench coat with a Magnum",
-   "text": "A big, hostile man; guides call him the Sheriff or the “old cop”. He knocks Red to the ground, says “I'll be watching you” and tells him to leave. In the sewers he chokes Red, and Red shoots. “See you... in hell.” — “Though I'm already in hell.”"
+   "text": "A big, hostile man; guides call him the Sheriff or the “old cop”. In the artbook his name is Boots, and the developers call him Walker's dark reflection. He knocks Red to the ground, says “I'll be watching you” and tells him to leave. In the sewers he chokes Red, and Red shoots. “See you... in hell.” — “Though I'm already in hell.”",
+   "aka": "Boots in the artbook · voiced by Glenn Wrage"
   },
   "wulfe": {
    "label": "Sheriff Wulfe",
@@ -134,16 +136,16 @@
    "text": "A poster: Eddie Velvet, September 17, Rabbit Hole. In the vision the Server in a bow tie says: “Eddie Velvet. His last gig.”"
   },
   "b_car": {
-   "label": "The fight in the car",
-   "text": "A recording in the final area: “He will kill us both… It was a mistake to say anything… Stop the car”."
+   "label": "September 17: the fight on the mountain",
+   "text": "After the gig, on the mountain switchbacks, Eddie and Alice fight in the car. The film projector in the Red World plays it back: “He will kill us both… It was a mistake to say anything… Stop the car”. Drunk Eddie slams on the brakes, throws Alice out of the car and drives off."
   },
   "b_crash": {
-   "label": "The car in the water",
-   "text": "A car is burning on the bridge. At the sheriff's station, a report: an unidentified man found drowned under Riverside Bridge, a single-vehicle accident."
+   "label": "A month later: October 1993",
+   "text": "In late October Eddie gets behind the wheel. The studio whisper: “Red light... No brakes... Last exit.” On the same mountain road the car smashes through the chain-link fence above the cliff at full speed and goes under. Silver Pines is what drowning Eddie sees."
   },
   "b_missing": {
    "label": "Alice goes missing, Eddie is questioned",
-   "text": "Newspapers: Miss Baker is missing, and an “out-of-town musician” has been detained. At the interrogation: Alice was seen with him on the cable car. “I didn't kill her.” The town shouts “Murderer!” at him."
+   "text": "Newspapers: Miss Baker is missing, and an “out-of-town musician” has been detained. At the interrogation: Alice was seen with him on the cable car, and the car ride is something he “made up”. “I didn't kill her.” The town shouts “Murderer!” at him. There is no evidence, and Eddie is let go."
   },
   "b_storm": {
    "label": "The storm of the century and the evacuation",
@@ -215,7 +217,7 @@
   },
   "c_dream": {
    "label": "“What's to say you're not dreaming now?”",
-   "text": "The Rabbit Hole vision. The bartender (the Cowboy): “What's to say you're not dreaming now?” Next to him, the Server, pale, in a bow tie. Red: “I guess you're his biggest fan.” The Server: “Well, not quite. But I know him better than he knows himself. I wouldn't miss this for anything.”"
+   "text": "The Rabbit Hole vision. The bartender (the Cowboy): “What's to say you're not dreaming now?” Next to him, the Server, pale, in a bow tie. Red: “I guess you're his biggest fan.” The Server: “Well, not quite. But I know him better than he knows himself. I wouldn't miss this for anything.” And about the gig: “It'll be the kind of moment that lasts forever.”"
   },
   "c_nodrink": {
    "label": "“On the house.” — “I don't drink.”",
@@ -255,7 +257,7 @@
   },
   "c_burncar": {
    "label": "The burning car on the bridge",
-   "text": "Alex: a burning car stood on the bridge at the crossing out of downtown and blocked the way. When one of the bells in town was taken, a storm with heavy rain began and the car “melted away”. Alex connected it to the drowned-man report right away, but the report has no fire: only “a single-vehicle accident”."
+   "text": "A burning car stands on the bridge at the crossing out of downtown and blocks the way. When one of the bells in town is taken, a storm with heavy rain begins and the fire goes out. It looks like the drowned-man report, but the report has no fire: only “a single-vehicle accident”."
   },
   "c_sameasyou": {
    "label": "“Same as me. Same as you”",
@@ -295,7 +297,7 @@
   },
   "c_cararg": {
    "label": "The fight: “He will kill us both!”",
-   "text": "A recording of a fight, heard at the payphone, no portraits. The man: “I can't believe you're doing this, Alice… It's all in your head.” The woman: “He will kill us both! I shouldn't have told you anything… I should have just left.” No car is shown. Alex: “they had one hell of a fight in that car.”"
+   "text": "In the Red World, behind a hidden panel, a film projector comes to life and the speaker plays a fight. The man: “I can't believe you're doing this, Alice… It's all in your head.” The woman: “He will kill us both! I shouldn't have told you anything… I should have just left.” And through the rain: “Jesus fucking Christ, you stop the car!”"
   },
   "c_driver": {
    "label": "“The driver knows what you did”",
@@ -379,7 +381,7 @@
   },
   "c_hell": {
    "label": "“I'm already in hell”",
-   "text": "The old man in the sewers: “You don't know when to stop, do you? That was always your problem”… “See you... in hell.” — Red: “Though I'm already in hell.”"
+   "text": "The old man in the sewers: “You don't know when to stop, do you? That was always your problem.” In the fight: “I've got a hundred pounds on you!” And at the end: “See you... in hell.” — Red: “Though I'm already in hell.”"
   },
   "c_dangerous": {
    "label": "“He's only a danger to himself”",
@@ -403,19 +405,19 @@
   },
   "h_same": {
    "label": "Red is Eddie",
-   "text": "The detective hired to find Eddie is Eddie himself, or a split-off part of his personality. He investigates his own guilt as if it were someone else's case."
+   "text": "The detective hired to find Eddie is Eddie himself: a persona he made up so he could investigate his own guilt as if it were someone else's case. Red's license has expired, he isn't in the photos at the town hall, 911 can't hear him, and in Live the man pulled out of the water wears Eddie's red jacket. On the key art Eddie is drawn right into Walker's face."
   },
   "h_drown": {
    "label": "The town is the mind of a drowning Eddie",
-   "text": "The car went under. Silver Pines is what a fading mind sees: the storm is the water filling the car, and the endings are three outcomes for a drowning man."
+   "text": "The car went under. Silver Pines is what a fading mind sees: the storm is the water filling the car, and the endings are three outcomes for a drowning man. The voice on 55-FAITH all but says it: “While you're asking that, something else is happening… It's the kind of moment that lasts forever.”"
   },
   "h_crash": {
-   "label": "The crash: Eddie was driving",
-   "text": "A fight (“He will kill us both!”), studio whispers “Red light... No brakes... Last exit”, a single-vehicle accident in the report, car parts among the mementos. The car goes into the water, Alice drowns, Eddie survives. He may have been drunk. No car is actually shown in the fight scene."
+   "label": "They crashed together on the night of the fight",
+   "text": "The obvious version: drunk Eddie lost control, the car went through the barrier and under the water, Alice drowned and Eddie survived. Against it: the town is searching for Alice as a missing person, the interrogator calls the car ride made up, and Eddie is questioned rather than tried for a crash."
   },
   "h_jump": {
-   "label": "Alice took her own life",
-   "text": "Alice jumped off the cliff or drowned herself. Eddie is not a killer, but he is to blame: he didn't listen, he pushed her, he kicked her out of the car."
+   "label": "Alice stepped off the cliff herself",
+   "text": "On the night of September 17, on the mountain switchbacks, Eddie and Alice fight in the car: “Stop the car.” Drunk Eddie brakes, throws her out and drives away. Alice is left alone on the mountain in the storm and steps off the cliff. The LOVE tape says the same thing in code: a woman holds to her temple the gun Eddie gave her. Eddie is not a killer, but he is to blame: he didn't listen, he pushed her, he threw her out of the car and left her."
   },
   "h_suicide": {
    "label": "The hit on Eddie is a suicide",
@@ -423,11 +425,11 @@
   },
   "h_jackman": {
    "label": "Jackman and the little man are the same person",
-   "text": "The client on the phone, the little man from the diary and the Server behind the bar in Rest are one figure in different masks. All three demand the same thing: that Red be the one to kill Eddie."
+   "text": "The client on the phone, the little man from the diary and the Server in a bow tie from Rest are one figure in different masks. The voices and actors differ, but all three demand the same thing: that Red be the one to kill Eddie. It is the voice of self-hatred, the executioner inside Eddie himself."
   },
   "h_owner": {
    "label": "The little man is Alice's husband or another “owner”",
-   "text": "A living man who considered Alice his and wouldn't let her go: a husband, a father, an ex. She wears a wedding ring; her diary has “touching what belongs to someone else” and “far away from him”; in the fight, “He will kill us both!”; Eddie has “we would have run away together”. Alex in the interview: “a crappy hypothesis” — no husband appears in any document."
+   "text": "A living man who considered Alice his and wouldn't let her go: a husband, a father, an ex. She wears a wedding ring; her diary has “touching what belongs to someone else” and “far away from him”; in the fight, “He will kill us both!”; Eddie has “we would have run away together”. Against it: no husband appears in any document, and the second ring of the pair lies in the ring box at the diner; the rings look like Alice and Eddie's."
   },
   "h_shadow": {
    "label": "The little man is Eddie's own shadow",
@@ -435,7 +437,7 @@
   },
   "h_child": {
    "label": "The little man is an unborn child",
-   "text": "Alice was pregnant. The final boss is a woman in a “pregnant” Flesh Tree with a beating heart, which Alex confirms. For him the child is “definitely one of the threads”: the little man may be both the child and the dark side of drunk Eddie at once."
+   "text": "Alice was pregnant. The final boss of the Red World is a “pregnant” Flesh Tree with a beating heart, and in Rest the camera shows Alice on the ferry in profile, her belly rounded. The “countdown” in the diary is nine months, the knocking “inside the wall” is the baby kicking. The little man may be both the child and the dark side of drunk Eddie at once."
   },
   "h_endings": {
    "label": "The endings are three answers to guilt",
@@ -443,7 +445,7 @@
   },
   "h_parts": {
    "label": "The townspeople are fragments of Eddie",
-   "text": "The Digging Man: accepting death. The Burned Man: letting go. The Cowboy: pressing on. The kind old man: turning back. The old man with the Magnum: rage. Roberts: “same as you”. The women are facets of Alice."
+   "text": "The little man, a.k.a. the Garçon, is the punishing superego. The Digging Man is the pull toward death, the kind old man the instinct to live, the Burned Man cleansing: burn every anchor to the past. The Cowboy is what's left of warmth and swagger, the old man with the Magnum the wall of denial, Roberts shame: “Same as me. Same as you.” The women are facets of Alice. A drowning brain does what a dreaming one does: it hands its inner voices to living figures."
   },
   "h_tv": {
    "label": "Terminal Drive retells that night",
@@ -455,7 +457,7 @@
   },
   "h_angel": {
    "label": "The Angel Heart template",
-   "text": "A mysterious client hires a detective to find a missing singer, and the singer is the detective himself. In the film the client is the devil. Hence the “Jackman is the devil” theory."
+   "text": "A mysterious client hires a detective to find a missing singer, and the singer is the detective himself. In the film the client is the devil. Silver Pines needs no outside devil: the client is Eddie himself."
   },
   "h_red": {
    "label": "Red is the color of Eddie and of that night",
@@ -532,8 +534,8 @@
   },
   "r_shutter": {
    "label": "Shutter Island",
-   "text": "Alex's comparison: a detective investigates a case and turns out to be a patient who invented the detective so he wouldn't have to remember his guilt. A storm, a lighthouse, the drowned.",
-   "tag": "Alex / HYPOTHESIS"
+   "text": "A detective investigates a case and turns out to be a patient who invented the detective so he wouldn't have to remember his guilt. A storm, a lighthouse, the drowned.",
+   "tag": "HYPOTHESIS"
   },
   "r_carnival": {
    "label": "Carnival of Souls",
@@ -603,11 +605,11 @@
   },
   "q_little": {
    "label": "Who is the little man?",
-   "text": "Alice's “owner”, Eddie's shadow, Jackman, a child or a demon? The game doesn't say."
+   "text": "The artbook answers what he looks like: The Little Man is the Pale Garçon, the waiter from the Rabbit Hole. What he is — Eddie's shadow, a child, a parasite of the town, or all of these at once — the game leaves to the player."
   },
   "q_alice": {
    "label": "How did Alice die?",
-   "text": "A crash, a jump, murder? The police version: the cable car up the mountain. Eddie's version: a car ride."
+   "text": "The board's version: Eddie threw her out of the car on the mountain, and she stepped off the cliff. The game never shows it outright: her body lies in the shallows in the final area, while the town searches for her as a missing person. The police version: the cable car up the mountain. Eddie's version: a car ride."
   },
   "q_rest": {
    "label": "Does Eddie survive in Rest?",
@@ -619,15 +621,16 @@
   },
   "q_oldcop": {
    "label": "Who is the old man with the Magnum?",
-   "text": "The Sheriff, a second detective, or another part of Eddie? Jackman is afraid he will get to Eddie first."
+   "text": "In the artbook he is called Boots, and the developers call him Walker's dark reflection. The Sheriff, a second detective, or the part of Eddie that won't let him up the mountain? Jackman is afraid he will get to Eddie first."
   },
   "q_canon": {
-   "label": "Which ending should the video treat as canon?",
-   "text": "The community is split between Rest and Live. The developers aren't saying. Alex: for him Live is canon, but the video won't claim that on the game's behalf."
+   "label": "Which ending is canon?",
+   "text": "The developers aren't saying; the community is split between Rest and Live. In the SuHo breakdown Live is canon: the only ending where the hero stops hiding behind an invented detective and faces the consequences. But the game leaves room for all three."
   },
   "wib": {
    "label": "The girl in black",
-   "text": "A black-haired girl dressed in black. Downtown at night: “I'm not used to hiding. I like a thrill”; about Eddie: “He's only a danger to himself”; she jokes that she “might scratch your eyes out” right now and warns about “a guy just like you, in a long coat”. Outside the flower shop: “Your precious Eddie”, “If he could, he'd put me in a cage and throw away the key.”"
+   "text": "A black-haired girl dressed in black. Downtown at night: “I'm not used to hiding. I like a thrill”; about Eddie: “He's only a danger to himself”; she jokes that she “might scratch your eyes out” right now and warns about “a guy just like you, in a long coat”. Outside the flower shop: “Your precious Eddie”, “If he could, he'd put me in a cage and throw away the key.”",
+   "aka": "Jade in the artbook · voice and likeness: Suzi Hunter"
   },
   "cat": {
    "label": "The black cat",
@@ -682,8 +685,8 @@
    "text": "He is “knocking inside the wall”, he “wasn't there” on the stairs, and in the middle of Alice's own words in her diary his abuse suddenly breaks through in caps, the same abuse the Server uses in Rest. Eddie's gun is useless against him: “He'll never understand. The gun feels so good in my hands...”"
   },
   "h_month": {
-   "label": "The game takes place a month after that night",
-   "text": "The September 17 gig, the October 1993 calendar, the 30 Days Sober Chip. If the town is a drowning man's mind, Eddie is drowning not on the night of the crash but a month later. For the second time, and apparently on purpose."
+   "label": "A month later Eddie drove off the cliff himself",
+   "text": "The September 17 gig, the October 1993 calendar, the motel register for September 26, the 30 Days Sober Chip. For a month Eddie stays sober and loses his mind over his guilt. In late October he floors it on the same mountain road and breaks through the chain-link fence above the cliff, right where the third stake lies. The car goes under, and drowning Eddie invents a detective named Red Walker."
   },
   "h_ghost": {
    "label": "Red is already dead",
@@ -700,7 +703,7 @@
   "r_jwred": {
    "label": "Johnnie Walker Red Label",
    "text": "The hero's name matches a whisky brand. And this is a hero who says “I don't drink anymore”.",
-   "tag": "HYPOTHESIS (Alex)"
+   "tag": "HYPOTHESIS"
   },
   "r_poecat": {
    "label": "Edgar Allan Poe's “The Black Cat”",
@@ -722,11 +725,11 @@
   },
   "q_melody": {
    "label": "What is the E G D C F A B melody?",
-   "text": "Each bell sounds exactly once, and the melody ends on B, the leading tone, which never resolves to C. The second half, F–A–B, rises by a tritone. No known song could be found in it. The bell-number reading, 352-1467, was dialed by Alex on 19.10: “number unavailable”. The magazine's letter number, 55-CONMAG, that is 55266624, did work: the magazine called back. The next candidate for the bells is the same letters E G D C F A B on the keypad, 343-2322: Alex dialed it, it doesn't work. The billboard number 54-FAITH, 5432484, doesn't work either."
+   "text": "Each bell sounds exactly once, and the melody ends on B, the leading tone, which never resolves to C. The second half, F–A–B, rises by a tritone. No known song could be found in it. As a phone number the melody gets nowhere: the bell-number reading, 352-1467, is unavailable, and so are the same letters on the keypad, 343-2322. The letter numbers do work: 55-CONMAG (55266624) gets a call back from the magazine, and 55-FAITH (5532484) is answered by the little man."
   },
   "q_wib": {
    "label": "Who is the girl in black?",
-   "text": "A cat, Alice's dark side, or one more of the town's fragments? About her “friend” she says: “A real oddball. Obsessive. But not as simple as he might seem.” Alex: the “friend” with the cage is the man in the trench coat with the Magnum from the sewers."
+   "text": "In the artbook she is called Jade, and a black cat sits in the corner of her spread. But who is she: the cat, Alice's dark side, or one more of the town's fragments? About her “friend” she says: “A real oddball. Obsessive. But not as simple as he might seem.” Perhaps the “friend” with the cage is the old man in the trench coat with the Magnum from the sewers."
   },
   "c_conmag": {
    "label": "“That's him... I mean, me”",
@@ -779,7 +782,7 @@
   },
   "c_bump": {
    "label": "Alice's silhouette at dawn",
-   "text": "In Rest, on the ferry, Alice stands in profile to Red, and the line from her bust to her hips is convex: the belly sticks out a little. Alex: “her proportions look a little pregnant.” The dress is dark, loose and flared, and from behind or at three-quarters no bump shows, so it may just be the cut."
+   "text": "In Rest, on the ferry, the camera shows Alice strictly in profile, and the line from her bust to her hips is convex: her belly has rounded. The dress is dark, loose and flared, and from behind or at three-quarters no bump shows, so it may just be the cut."
   },
   "c_projector": {
    "label": "Projector labels",
@@ -791,11 +794,67 @@
   },
   "c_lovetape": {
    "label": "The red “Love” tape",
-   "text": "The red copy of Eddie's room in the final zone. On the bed, “an empty cassette case” labeled LOVE; next to it, “a TV with a VCR hooked up”. On the screen, the face of a woman who looks like Alice, something dark at her temple, then a flash, and the TV catches fire. The same room holds a diary page: “He gave me a gun for self-defense… The gun feels so good in my hands...” Alex: “someone who looks like Alice shot herself with the gun Eddie gave her.”"
+   "text": "The red copy of Eddie's room in the final zone. On the bed, “an empty cassette case” labeled LOVE; next to it, “a TV with a VCR hooked up”. On the screen, the face of a woman who looks like Alice, something dark at her temple, then a flash, and the TV catches fire. The same room holds a diary page: “He gave me a gun for self-defense… The gun feels so good in my hands...” In the artbook this shot sits in the section on Alice. It looks like suicide with the gun Eddie gave her."
   },
   "c_silence": {
    "label": "Jackman goes silent",
-   "text": "Alex: if you refuse to kill Eddie, Jackman never calls again, and there are no more conversations with him. The voice that demanded the killing simply disappears."
+   "text": "If you refuse to kill Eddie, Jackman never calls again, and there are no more conversations with him. The voice that demanded the killing simply disappears."
+  },
+  "b_cliff": {
+   "label": "Alice steps off the cliff",
+   "text": "Alone, at night, in the storm on the mountain. On the LOVE tape a woman holds to her temple the gun Eddie gave her: the same code for suicide. In the final area her body lies in the shallows below the cliffs, a wedding ring on her hand."
+  },
+  "b_month": {
+   "label": "A month sober",
+   "text": "On September 26 Eddie is still staying in the Grizzly Suite and is two weeks behind on payment. He isn't drinking: the lettering on his 30 Days Sober Chip is almost worn away by touch. For a month the guilt eats at him."
+  },
+  "h_stalker": {
+   "label": "Red is a jealous stalker",
+   "text": "The version the game makes you believe just before the end. Red is an obsessed stalker: he followed Alice for years, had a ring ready for her, and when the big-city musician took her away, he went up the mountain for revenge. For: the voice in the confessional talks about Alice as if she were his, the little man is “knocking inside the wall”, the old man in the sewers outweighs Red by a hundred pounds, the ring box, and the girl outside the TV station tells Red: “You look just like him.” Against: the real world doesn't notice Red. He isn't in the photos at the town hall, 911 can't hear him, his license has expired, and in Live it's Eddie they pull out of the water."
+  },
+  "h_little": {
+   "label": "The little man is three faces of one trauma",
+   "text": "The artbook answers what he looks like: The Little Man is the Pale Garçon, the waiter from the Rabbit Hole. What he is, the game doesn't say. The three strongest readings: Mr. Hyde, the drunk dark side of Eddie; the unborn child; a parasite of the town, like BOB in Twin Peaks. In a drowning Eddie's mind they are one and the same. On 55-FAITH he answers in the Garçon's words from the first vision: “the kind of moment that lasts forever”."
+  },
+  "c_missing": {
+   "label": "Missing-person flyers: Alice",
+   "text": "In the newspapers and on the flyers Alice Baker is a missing person, and an “out-of-town musician” has been detained. The search is called off because of the wind."
+  },
+  "c_fence": {
+   "label": "The broken fence above the cliff",
+   "text": "At the edge of the cliff a tall chain-link fence is torn out, crumpled and bent toward the drop, as if a car went through it at full speed. This is where the third stake is pulled out of the Red World, and a diary page lies under the fence."
+  },
+  "c_noreflect": {
+   "label": "Red isn't in the photos",
+   "text": "In the town hall photo gallery, among officials and townspeople, Red's face is missing: he doesn't show up in the glass."
+  },
+  "c_faith": {
+   "label": "The 55-FAITH call",
+   "text": "The number from a crumbling billboard is 55-FAITH, 553-2484 on the keypad. Someone picks up in the booth: “Thank you for calling. I've been expecting you.” — “I'm sorry? This is my first time calling here.” — “Your call didn't begin when you dialed the number on the phone. It began when you decided you had nowhere else to go.” — “Who is this?” — “While you're asking that, something else is happening. But no rush. It's the kind of moment that lasts forever.” — “Where did you hear that?” Silence. “The Kind of Moment That Lasts Forever” is the name of the platinum trophy."
+  },
+  "c_artlittle": {
+   "label": "Artbook: The Little Man",
+   "text": "In the Bosses section the little man has a page of his own, The Little Man. The portraits show a pale man in a vest and a red bow tie: the waiter from the Rabbit Hole and from Rest. The caption is about dream logic: characters tell Walker conflicting versions, and the player decides whom to believe."
+  },
+  "c_artkey": {
+   "label": "Artbook: Eddie inside Walker's face",
+   "text": "On the key art, Eddie's red figure with a V on his jacket is drawn right into Walker's face. The developers write that Eddie's face was hidden in the game on purpose: who he is is one of the main plot knots."
+  },
+  "c_artredlight": {
+   "label": "Artbook: the “Red light” boss",
+   "text": "The boss that crawls out of the Strange Tree's womb is called Red light in the artbook, like the whisper in the TV station. The caption: water, red light and expressions of pain recur throughout the game as Walker descends deeper into the nightmare."
+  },
+  "c_artboots": {
+   "label": "Artbook: Boots",
+   "text": "The old man in the trench coat with the Magnum is called Boots, voiced by Glenn Wrage. The developers call him Walker's dark reflection: he pressures, threatens and seems to know more about Walker than he lets on."
+  },
+  "c_artjade": {
+   "label": "Artbook: Jade and the cat",
+   "text": "The girl in black is called Jade; Suzi Hunter gives her both voice and likeness. In the corner of her spread sits the silhouette of a black cat."
+  },
+  "c_artholloway": {
+   "label": "Artbook: Holloway",
+   "text": "The first boss, the one in the tunnel, is called Holloway in the artbook, like the owner of the Crimson Bear Motel who swore in a note: “WE WILL BE OPEN”. In an early motel layout this boss is drawn as a skull in the basement by the boiler room."
   }
  },
  "edges": {
@@ -812,11 +871,9 @@
   "rest|h_same|supports": "at the bar, Eddie's past is told as Red's",
   "live|h_same|supports": "the man they rescue wears a red jacket",
   "c_bells|h_same|supports": "Red plays the melody, but what comes back is Eddie and Alice",
-  "c_ring|h_owner|supports": "a wedding ring: Alice was married",
   "c_insult|h_voice|supports": "the caps in her own diary are someone else's voice",
   "c_insult|h_same|supports": "the same insult: at Eddie in the diary, at Red in Rest",
   "c_month|h_same|supports": "sober Red is Eddie a month later",
-  "c_month|h_crash|supports": "he quit drinking after that night, which points to a drunk crash",
   "c_redlabel|h_same|supports": "a sober hero named after a bottle",
   "c_bus|h_suicide|supports": "“one day it's going to kill you”",
   "c_bus|h_endings|supports": "“it's yours alone to decide”",
@@ -872,80 +929,100 @@
   "c_sameasyou|h_roberts|supports": "“lost control… done something you regretted?”",
   "c_report|h_roberts|contradicts": "the report is by Deputy Lee, not Roberts: a single-vehicle accident",
   "c_lovetape|h_jump|supports": "Alice shoots herself with Eddie's pistol",
-  "c_lovetape|h_crash|contradicts": "Alice's second death: a gunshot, not a crash",
+  "c_lovetape|h_crash|contradicts": "Alice doesn't die in the car: the tape shows a shot to the temple",
   "c_silence|h_jackman|supports": "the voice disappears once you stop obeying",
-  "c_silence|h_suicide|supports": "the voice of self-hatred goes quiet after the refusal"
+  "c_silence|h_suicide|supports": "the voice of self-hatred goes quiet after the refusal",
+  "c_cararg|h_crash|supports": "there really was a fight in the car",
+  "c_cararg|h_jump|supports": "“Stop the car”: Alice gets out of the car",
+  "c_ring|h_owner|contradicts": "the second ring of the pair is in the ring box: the rings look like hers and Eddie's",
+  "c_missing|h_jump|supports": "she is searched for as a missing person, not as a crash victim",
+  "c_missing|h_crash|contradicts": "had they drowned together, nobody would be searching for Alice",
+  "c_fence|h_month|supports": "a car broke through the fence above the cliff",
+  "c_artredlight|h_month|supports": "“Red light” is born from the womb",
+  "c_artredlight|c_tapes|about": "“Red light... No brakes... Last exit”",
+  "c_otherside|h_stalker|supports": "the voice talks about Alice as if she were his",
+  "c_wall|h_stalker|supports": "“the little man has started counting down”",
+  "c_hell|h_stalker|supports": "“a hundred pounds on you”: Red is a small man",
+  "c_ringbox|h_stalker|supports": "a ring box",
+  "c_lookslike|h_stalker|supports": "“You look just like him”",
+  "c_noreflect|h_stalker|contradicts": "the real world doesn't notice Red",
+  "c_911|h_stalker|contradicts": "911 can't hear him",
+  "c_license|h_stalker|contradicts": "an expired license: the detective is a role",
+  "c_redjacket|h_stalker|contradicts": "it's Eddie they pull out of the water",
+  "c_noreflect|h_same|supports": "he isn't in the town hall photos",
+  "c_artlittle|h_little|supports": "he has the Garçon's face",
+  "c_faith|h_little|supports": "he speaks in the Garçon's words",
+  "c_jekyll|h_little|supports": "face one: Hyde, “a little man”",
+  "c_bump|h_little|supports": "face two: the child",
+  "c_union|h_little|supports": "face three: a parasite of the town",
+  "c_faith|h_drown|supports": "“something else is happening”: a moment that lasts forever",
+  "c_faith|c_dream|about": "the same line from the Garçon in the first vision",
+  "c_artkey|h_same|supports": "Eddie is drawn into Walker's face",
+  "c_artboots|h_parts|supports": "Walker's dark reflection",
+  "c_artjade|h_wibcat|supports": "a black cat on her spread",
+  "c_artholloway|h_parts|supports": "the motel owner became a boss, like the deputy"
  },
  "src": {
-  "пересказ сцены у телецентра, NPC Tips": "retelling of the scene outside Thelend Broadcasting, NPC Tips",
-  "глава «The(l)end Broadcasting Station» у авторов нарезок, NPC Tips": "“The(l)end Broadcasting Station” chapter in a cutscene compilation, NPC Tips",
-  "название зоны по гайдам, NPC Tips": "area name used in guides, NPC Tips",
-  "пересказ журнала, NPC Tips": "retelling of the journal, NPC Tips",
-  "достижения Steam": "Steam achievements",
-  "Antigonish — Wikipedia": "Antigonish — Wikipedia",
-  "Jekyll and Hyde — Wikipedia": "Jekyll and Hyde — Wikipedia",
-  "цитаты допроса, NPC Tips": "interrogation quotes, NPC Tips",
-  "время 10:07 — Steam-обсуждения": "the 10:07 time — Steam discussions",
-  "Adjutor — Wikipedia": "Adjutor — Wikipedia",
-  "название церкви, games.gg": "church name, games.gg",
-  "код и надпись, Steam-обсуждения": "code and inscription, Steam discussions",
-  "условия концовки, NPC Tips": "ending requirements, NPC Tips",
-  "песня Эдди, games.gg": "Eddie's song, games.gg",
-  "NPC Tips, пересказ поста": "NPC Tips, retelling of the post",
-  "Steam: сюжетный тред": "Steam: plot thread",
-  "Medium": "Medium",
-  "Atomic New Age": "Atomic New Age",
-  "Steam: тред о сюжете": "Steam: story thread",
-  "пересказ DTF и Steam RU в ресерче": "DTF and Russian Steam threads, as summarized in the research",
-  "Angel Heart — Wikipedia": "Angel Heart — Wikipedia",
-  "подкаст Horror Game Awards": "Horror Game Awards podcast",
-  "концовки SH2": "SH2 endings",
-  "80.lv, интервью Ларссона": "80.lv, Larsson interview",
-  "Laura Palmer — Wikipedia": "Laura Palmer — Wikipedia",
-  "The Man from Another Place — Wikipedia": "The Man from Another Place — Wikipedia",
-  "подкаст HGA": "HGA podcast",
-  "GmanLives": "GmanLives",
-  "цитаты фильма": "film quotes",
-  "Mulholland Drive — Wikipedia": "Mulholland Drive — Wikipedia",
-  "Blue Velvet — Wikipedia": "Blue Velvet — Wikipedia",
-  "Bloody Disgusting": "Bloody Disgusting",
-  "Alan Wake — Wikipedia": "Alan Wake — Wikipedia",
-  "80.lv, 2024": "80.lv, 2024",
-  "80.lv, 08.10.2026": "80.lv, Oct 8, 2026",
-  "Jacob's Ladder — Wikipedia": "Jacob's Ladder — Wikipedia",
-  "The Shining — Wikipedia": "The Shining — Wikipedia",
-  "Secret Window — Wikipedia": "Secret Window — Wikipedia",
-  "Wikipedia": "Wikipedia",
-  "Orpheus — Wikipedia": "Orpheus — Wikipedia",
-  "достижения, games.gg": "achievements, games.gg",
-  "Memento — Wikipedia": "Memento — Wikipedia",
   "80.lv": "80.lv",
+  "80.lv, 08.10.2026": "80.lv, Oct 8, 2026",
+  "80.lv, 2024": "80.lv, 2024",
+  "80.lv, интервью Ларссона": "80.lv, Larsson interview",
   "8mm — Wikipedia": "8mm — Wikipedia",
+  "Adjutor — Wikipedia": "Adjutor — Wikipedia",
+  "Alan Wake — Wikipedia": "Alan Wake — Wikipedia",
+  "Angel Heart — Wikipedia": "Angel Heart — Wikipedia",
+  "Antigonish — Wikipedia": "Antigonish — Wikipedia",
+  "Atomic New Age": "Atomic New Age",
+  "Bloody Disgusting": "Bloody Disgusting",
+  "Blue Velvet — Wikipedia": "Blue Velvet — Wikipedia",
+  "GmanLives": "GmanLives",
+  "Jacob's Ladder — Wikipedia": "Jacob's Ladder — Wikipedia",
+  "Jekyll and Hyde — Wikipedia": "Jekyll and Hyde — Wikipedia",
   "Johnnie Walker — Wikipedia": "Johnnie Walker — Wikipedia",
-  "The Black Cat — Wikipedia": "The Black Cat — Wikipedia",
+  "Laura Palmer — Wikipedia": "Laura Palmer — Wikipedia",
   "Lost Highway — Wikipedia": "Lost Highway — Wikipedia",
-  "запись «все записки» · 2:40, 4:31": "“all notes” recording · 2:40, 4:31",
-  "запись «все записки» · 0:45, 2:15": "“all notes” recording · 0:45, 2:15",
-  "запись «все записки» · 3:19–3:26": "“all notes” recording · 3:19–3:26",
-  "запись «все записки» · 0:04": "“all notes” recording · 0:04",
-  "запись «все записки» · 0:10": "“all notes” recording · 0:10",
-  "запись «все записки» · 0:38, 0:43": "“all notes” recording · 0:38, 0:43",
-  "запись «все записки» · 2:40": "“all notes” recording · 2:40",
-  "запись «все записки» · 1:45–2:09": "“all notes” recording · 1:45–2:09",
-  "запись «все записки» · 2:14": "“all notes” recording · 2:14",
-  "запись «все записки» · 5:19–5:23": "“all notes” recording · 5:19–5:23",
-  "запись «все записки» · 3:09–3:42": "“all notes” recording · 3:09–3:42",
-  "запись «все записки» · 1:18, 4:31": "“all notes” recording · 1:18, 4:31",
-  "запись «все записки» · 2:06": "“all notes” recording · 2:06",
-  "запись звонка в CONMAG, 19.10 · 0:22–2:06": "CONMAG call recording, 19.10 · 0:22–2:06",
+  "Medium": "Medium",
+  "Memento — Wikipedia": "Memento — Wikipedia",
+  "Mulholland Drive — Wikipedia": "Mulholland Drive — Wikipedia",
+  "NPC Tips, пересказ поста": "NPC Tips, retelling of the post",
+  "Orpheus — Wikipedia": "Orpheus — Wikipedia",
+  "Secret Window — Wikipedia": "Secret Window — Wikipedia",
+  "Steam: сюжетный тред": "Steam: plot thread",
+  "Steam: тред о сюжете": "Steam: story thread",
+  "The Black Cat — Wikipedia": "The Black Cat — Wikipedia",
   "The Black Riders — Wikipedia": "The Black Riders — Wikipedia",
-  "запись «все записки» · 4:00": "“all notes” recording · 4:00",
-  "интервью Alex, 19.10.2026": "Alex interview, 19.10.2026"
+  "The Man from Another Place — Wikipedia": "The Man from Another Place — Wikipedia",
+  "The Shining — Wikipedia": "The Shining — Wikipedia",
+  "Wikipedia": "Wikipedia",
+  "артбук The Art of Silver Pines, с. 15": "The Art of Silver Pines artbook, p. 15",
+  "артбук The Art of Silver Pines, с. 18–19": "The Art of Silver Pines artbook, pp. 18–19",
+  "артбук The Art of Silver Pines, с. 22–23": "The Art of Silver Pines artbook, pp. 22–23",
+  "артбук The Art of Silver Pines, с. 24–25": "The Art of Silver Pines artbook, pp. 24–25",
+  "артбук The Art of Silver Pines, с. 24–25, 30–31": "The Art of Silver Pines artbook, pp. 24–25, 30–31",
+  "артбук The Art of Silver Pines, с. 40–41, 80–81": "The Art of Silver Pines artbook, pp. 40–41, 80–81",
+  "артбук The Art of Silver Pines, с. 42–43": "The Art of Silver Pines artbook, pp. 42–43",
+  "артбук The Art of Silver Pines, с. 44–45": "The Art of Silver Pines artbook, pp. 44–45",
+  "артбук The Art of Silver Pines, с. 94–95, 86–87": "The Art of Silver Pines artbook, pp. 94–95, 86–87",
+  "время 10:07 — Steam-обсуждения": "the 10:07 time — Steam discussions",
+  "глава «The(l)end Broadcasting Station» у авторов нарезок, NPC Tips": "“The(l)end Broadcasting Station” chapter in a cutscene compilation, NPC Tips",
+  "достижения Steam": "Steam achievements",
+  "достижения, games.gg": "achievements, games.gg",
+  "код и надпись, Steam-обсуждения": "code and inscription, Steam discussions",
+  "концовки SH2": "SH2 endings",
+  "название зоны по гайдам, NPC Tips": "area name used in guides, NPC Tips",
+  "название церкви, games.gg": "church name, games.gg",
+  "пересказ журнала, NPC Tips": "retelling of the journal, NPC Tips",
+  "пересказ сцены у телецентра, NPC Tips": "retelling of the scene outside Thelend Broadcasting, NPC Tips",
+  "песня Эдди, games.gg": "Eddie's song, games.gg",
+  "платиновый трофей, games.gg": "platinum trophy, games.gg",
+  "подкаст HGA": "HGA podcast",
+  "подкаст Horror Game Awards": "Horror Game Awards podcast",
+  "условия концовки, NPC Tips": "ending requirements, NPC Tips",
+  "цитаты фильма": "film quotes"
  },
  "holders": {
-  "Alex": "Alex",
+  "SuHo": "SuHo",
   "сообщество": "community",
-  "пресса": "press",
-  "наша": "ours"
+  "пресса": "press"
  }
 }

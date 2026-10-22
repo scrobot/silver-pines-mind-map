@@ -1,8 +1,8 @@
 # Silver Pines — дело Эдди Вельвета / The Eddie Velvet case
 
-Доска улик по сюжету **Silver Pines** (Wych Elm / Team17, 2026): персонажи, события, три концовки, гипотезы и улики за и против. У каждой улики есть ссылка на нужную секунду в записи стрима. Собрано для разбора на канале «SuHo'е мнение».
+Доска улик по сюжету **Silver Pines** (Wych Elm / Team17, 2026): персонажи, события, три концовки, гипотезы и улики за и против. Итоговая версия доски помечена как вердикт, опровергнутые — как ложный след. Собрано для разбора на канале «SuHo'е мнение».
 
-An evidence board for the plot of **Silver Pines** (Wych Elm / Team17, 2026): characters, events, the three endings, hypotheses, and the clues for and against each one. Every clue links to the exact second of a stream recording.
+An evidence board for the plot of **Silver Pines** (Wych Elm / Team17, 2026): characters, events, the three endings, hypotheses, and the clues for and against each one. The board's final version is marked as the verdict, ruled-out versions as false leads.
 
 ## Что внутри / What's inside
 
@@ -34,8 +34,8 @@ The page language switches with the RU / EN buttons in the header and is remembe
 
 ## Откуда данные / Sources
 
-- Три стрима автора с полным прохождением на 100%: [13.10](https://youtu.be/o3eT4Ipg67E), [17.10](https://youtu.be/29WK_-5cpOQ), [18.10.2026](https://youtu.be/YNTpIQ-cENk). Таймкоды на доске ведут в эти записи.
-- Ключевые реплики сверены по кадрам записи экрана (русские субтитры игры), список — в [`docs/verification.md`](docs/verification.md). Остальные цитаты взяты из расшифровки, где автор зачитывал текст вслух, и в них возможны неточности.
+- Сама игра: реплики, записки, памятные вещи и сцены всех трёх концовок. Реплики даны по русской локализации.
+- Артбук «The Art of Silver Pines» (Wych Elm / Team17): имена персонажей и боссов, ключ-арт. Страницы указаны прямо в карточках. / The artbook: character and boss names, the key art; page numbers are on the cards.
 - В английской версии реплики игры даны в оригинале там, где оригинал известен из источников. Остальное переведено с русской локализации. / In the English version, game lines use the original English wherever a source quotes it; the rest is translated back from the Russian localization.
 - Теории сообщества, интервью разработчиков и пресса — ссылки прямо в карточках.
 
