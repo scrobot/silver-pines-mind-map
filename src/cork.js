@@ -531,8 +531,17 @@ function moving() {
 var drag = null;
 var coarse = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
 
+/* The zoom, step and fullscreen controls live INSIDE the board, so their pointer
+   events bubble to these handlers. Capturing the pointer would retarget the
+   pointerup to the board and the button would never see a click at all. */
+function onControl(e) { return !!(e.target.closest && e.target.closest('.cork-ui, #cork-step')); }
+
 view.addEventListener('pointerdown', function (e) {
   if (e.button !== 0 && e.pointerType === 'mouse') return;
+  if (onControl(e)) return;
+  /* Stop the browser starting a native text drag from the captions: dragging the
+     board would otherwise select them and drop the text into the search box. */
+  if (e.pointerType === 'mouse') e.preventDefault();
   /* On a touch screen one finger belongs to the page, so it can be scrolled past the
      board; two fingers pan and pinch. A tap still opens a clue, because a tap never
      moves far enough to count as a drag. */
@@ -543,6 +552,9 @@ view.addEventListener('pointerdown', function (e) {
   drag = { id: e.pointerId, x: e.clientX, y: e.clientY, cx: cam.x, cy: cam.y, moved: 0,
            tapOnly: tapOnly, el: e.target.closest ? e.target.closest('.el') : null };
   if (!tapOnly) view.setPointerCapture(e.pointerId);
+  /* preventDefault above also suppresses the focus a click would normally give,
+     and the board needs focus for the arrow keys to pan it */
+  if (e.pointerType === 'mouse') view.focus({ preventScroll: true });
   view.classList.add('dragging');
 });
 view.addEventListener('pointermove', function (e) {
@@ -589,7 +601,7 @@ view.addEventListener('wheel', function (e) {
 
 /* two-finger pinch */
 var pts = {};
-view.addEventListener('pointerdown', function (e) { pts[e.pointerId] = e; });
+view.addEventListener('pointerdown', function (e) { if (!onControl(e)) pts[e.pointerId] = e; });
 view.addEventListener('pointermove', function (e) {
   if (!(e.pointerId in pts)) return;
   pts[e.pointerId] = e;
@@ -765,9 +777,19 @@ function guideOn(on) {
 
 /* ---- go ------------------------------------------------------------------ */
 collectCullable();
-var ro = new ResizeObserver(function () { invalidate(); });
+/* The panel changes size when the window does and when the board is expanded to
+   the whole screen. If the camera was showing the whole board, it should go on
+   showing the whole board rather than keeping a now-arbitrary zoom; if the reader
+   had zoomed into something, leave their zoom alone. */
+var lastFit = 0;
+var ro = new ResizeObserver(function () {
+  var fz = fitZoom();
+  if (lastFit && Math.abs(cam.z - lastFit) < lastFit * 0.02) cam.z = fz;
+  lastFit = fz;
+  invalidate();
+});
 ro.observe(view);
-cam.z = fitZoom();
+cam.z = lastFit = fitZoom();
 cam.x = (B.cork[0] + B.cork[2]) / 2; cam.y = (B.cork[1] + B.cork[3]) / 2;
 render();
 
