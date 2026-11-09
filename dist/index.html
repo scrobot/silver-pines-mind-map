@@ -195,6 +195,9 @@ footer{color:var(--muted);font-size:13px;border-top:1px solid var(--line);paddin
   contain: strict;
   touch-action: none;
   cursor: grab;
+  /* the paper is a picture, not a document: selecting its captions only ever
+     produces an accidental text-drag into whatever input is nearby */
+  user-select: none; -webkit-user-select: none;
 }
 /* On a touch screen the board must not swallow the page's scroll: one finger scrolls
    past it, two fingers pan and pinch it (cork.js enforces the same rule). */
@@ -347,6 +350,7 @@ body.cork-moving .sheet { box-shadow: inset 0 0 14px rgba(90, 66, 40, 0.14), 6px
 /* ---- controls ----------------------------------------------------------- */
 .cork-ui { position: absolute; display: flex; gap: 6px; z-index: 80; }
 .cork-ui.tl { left: 10px; top: 10px; }
+.cork-ui.tr { right: 10px; top: 10px; }
 .cork-ui.br { right: 10px; bottom: 10px; }
 .cork-btn {
   font: 600 12px/1 var(--f-mono); letter-spacing: .04em;
@@ -373,6 +377,35 @@ body.cork-moving .sheet { box-shadow: inset 0 0 14px rgba(90, 66, 40, 0.14), 6px
 .el.found .marker-ring { opacity: 1; }
 .marker-ring { position: absolute; inset: -14px; opacity: 0; transition: opacity 200ms ease; pointer-events: none; }
 .marker-ring ellipse { fill: none; stroke: var(--p-marker); stroke-width: 5; stroke-linecap: round; }
+
+/* ---- the whole screen ---------------------------------------------------
+   Two layers on purpose. The panel always pins itself over the viewport, which
+   works everywhere; where the Fullscreen API exists, board.js additionally asks
+   for real fullscreen so the browser's own chrome gets out of the way too. iOS
+   Safari has no element fullscreen, and there the pinned layer alone still gives
+   the board the whole screen. */
+.board.expanded {
+  position: fixed; inset: 0; z-index: 900;
+  background: var(--bg);
+  padding: 10px; gap: 10px;
+  align-items: stretch;
+  grid-template-rows: minmax(0, 1fr);
+}
+/* the board column becomes a flex column so the cork takes whatever is left
+   after the legend, instead of its fixed 78vh */
+.board.expanded > div:first-child { display: flex; flex-direction: column; min-height: 0; gap: 8px; }
+.board.expanded #cork-view { height: auto; flex: 1 1 auto; min-height: 0; }
+.board.expanded aside.dossier { max-height: none; height: 100%; }
+body.cork-expanded { overflow: hidden; }
+/* a fullscreen element gets a black backdrop by default */
+.board:fullscreen { background: var(--bg); }
+
+@media (max-width: 900px) {
+  /* no room for a side panel: the board takes the screen and the dossier
+     becomes a sheet under it */
+  .board.expanded { grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) auto; }
+  .board.expanded aside.dossier { max-height: 38vh; height: auto; }
+}
 
 /* ---- small screens ------------------------------------------------------ */
 /* On a phone the board is a map you move around, not the document: at fit-zoom a
@@ -434,6 +467,9 @@ body.cork-moving .sheet { box-shadow: inset 0 0 14px rgba(90, 66, 40, 0.14), 6px
           <div class="cork-ui tl">
             <button class="cork-btn" id="corkZoomOut" type="button" aria-label="Отдалить" data-i18n-aria="zoom_out">−</button>
             <button class="cork-btn" id="corkZoomIn" type="button" aria-label="Приблизить" data-i18n-aria="zoom_in">+</button>
+          </div>
+          <div class="cork-ui tr">
+            <button class="cork-btn" id="corkFs" type="button" aria-pressed="false" aria-label="Во весь экран" data-i18n-aria="fs_enter">⤢</button>
           </div>
           <div id="cork-step" role="group" aria-label="Как собирали дело" data-i18n-aria="guide_aria">
             <button class="cork-btn" id="gPrev" type="button" aria-label="Назад" data-i18n-aria="step_prev">‹</button>
@@ -993,8 +1029,17 @@ function moving() {
 var drag = null;
 var coarse = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
 
+/* The zoom, step and fullscreen controls live INSIDE the board, so their pointer
+   events bubble to these handlers. Capturing the pointer would retarget the
+   pointerup to the board and the button would never see a click at all. */
+function onControl(e) { return !!(e.target.closest && e.target.closest('.cork-ui, #cork-step')); }
+
 view.addEventListener('pointerdown', function (e) {
   if (e.button !== 0 && e.pointerType === 'mouse') return;
+  if (onControl(e)) return;
+  /* Stop the browser starting a native text drag from the captions: dragging the
+     board would otherwise select them and drop the text into the search box. */
+  if (e.pointerType === 'mouse') e.preventDefault();
   /* On a touch screen one finger belongs to the page, so it can be scrolled past the
      board; two fingers pan and pinch. A tap still opens a clue, because a tap never
      moves far enough to count as a drag. */
@@ -1005,6 +1050,9 @@ view.addEventListener('pointerdown', function (e) {
   drag = { id: e.pointerId, x: e.clientX, y: e.clientY, cx: cam.x, cy: cam.y, moved: 0,
            tapOnly: tapOnly, el: e.target.closest ? e.target.closest('.el') : null };
   if (!tapOnly) view.setPointerCapture(e.pointerId);
+  /* preventDefault above also suppresses the focus a click would normally give,
+     and the board needs focus for the arrow keys to pan it */
+  if (e.pointerType === 'mouse') view.focus({ preventScroll: true });
   view.classList.add('dragging');
 });
 view.addEventListener('pointermove', function (e) {
@@ -1051,7 +1099,7 @@ view.addEventListener('wheel', function (e) {
 
 /* two-finger pinch */
 var pts = {};
-view.addEventListener('pointerdown', function (e) { pts[e.pointerId] = e; });
+view.addEventListener('pointerdown', function (e) { if (!onControl(e)) pts[e.pointerId] = e; });
 view.addEventListener('pointermove', function (e) {
   if (!(e.pointerId in pts)) return;
   pts[e.pointerId] = e;
@@ -1227,9 +1275,19 @@ function guideOn(on) {
 
 /* ---- go ------------------------------------------------------------------ */
 collectCullable();
-var ro = new ResizeObserver(function () { invalidate(); });
+/* The panel changes size when the window does and when the board is expanded to
+   the whole screen. If the camera was showing the whole board, it should go on
+   showing the whole board rather than keeping a now-arbitrary zoom; if the reader
+   had zoomed into something, leave their zoom alone. */
+var lastFit = 0;
+var ro = new ResizeObserver(function () {
+  var fz = fitZoom();
+  if (lastFit && Math.abs(cam.z - lastFit) < lastFit * 0.02) cam.z = fz;
+  lastFit = fz;
+  invalidate();
+});
 ro.observe(view);
-cam.z = fitZoom();
+cam.z = lastFit = fitZoom();
 cam.x = (B.cork[0] + B.cork[2]) / 2; cam.y = (B.cork[1] + B.cork[3]) / 2;
 render();
 
@@ -1273,6 +1331,7 @@ const UI = {
     search_ph:'Найти: Элис, канатка, 10:07, Джекман…', search_aria:'Поиск по доске', fit:'Вся доска', guide:'Как собирали',
     board_aria:'Доска улик: 96 улик на пробке, нити между ними',
     zoom_in:'Приблизить', zoom_out:'Отдалить', guide_aria:'Как собирали дело', step_prev:'Назад', step_next:'Дальше',
+    fs_enter:'Во весь экран', fs_exit:'Выйти из полного экрана',
     th_src:'Источник', th_match:'Что совпадает', th_strength:'Сила', th_links:'Ссылки',
     footer:'Всё на доске — из полного прохождения на 100 %: реплики, записки, документы и экраны игры. Цитаты даны по русской локализации; где известна английская строка, она приведена в оригинале. Часть ключевых реплик вычитана по кадрам и приведена дословно, остальные записаны по ходу прохождения и могут расходиться с игрой в отдельных словах. Внешние источники — пресса, обсуждения игроков и интервью разработчиков — помечены ссылкой. Метки у отсылок: РАЗРАБОТЧИКИ — сказано авторами игры, ПРЕССА — замечено критиками, В ИГРЕ — есть в самой игре, ВЕРСИЯ ДОСКИ — прочтение доски без внешнего подтверждения.',
     g_for:'За эту гипотезу', g_against:'Против', g_supports:'Подтверждает', g_contradicts:'Опровергает', g_next:'Дальше по времени', g_prev:'Раньше по времени',
@@ -1296,6 +1355,7 @@ const UI = {
     search_ph:'Search: Alice, cable car, 10:07, Jackman…', search_aria:'Search the board', fit:'Whole board', guide:'How it was built',
     board_aria:'Evidence board: 96 clues pinned to cork, threads between them',
     zoom_in:'Zoom in', zoom_out:'Zoom out', guide_aria:'How the case was built', step_prev:'Back', step_next:'Next',
+    fs_enter:'Full screen', fs_exit:'Leave full screen',
     th_src:'Source', th_match:'What matches', th_strength:'Strength', th_links:'Links',
     footer:'Everything on this board comes from a full 100% playthrough: dialogue, notes, documents and in-game screens. Quotes follow the Russian localization; where the English line is known, it is given as written. Some key lines were read off the frames and are quoted verbatim, the rest were taken down during play and may differ from the game in individual words. Outside sources — press, player discussion and developer interviews — carry a link. Reference tags: DEVELOPERS — stated by the game\'s authors, PRESS — noted by critics, IN GAME — present in the game itself, BOARD — this board\'s own reading, with no outside confirmation.',
     g_for:'For this hypothesis', g_against:'Against', g_supports:'Supports', g_contradicts:'Contradicts', g_next:'Next in time', g_prev:'Earlier in time',
@@ -1477,6 +1537,42 @@ document.getElementById('gNext').addEventListener('click', () => { const c = COR
 document.getElementById('gPrev').addEventListener('click', () => { const c = CORK(); if(c) c.guideStep(-1); });
 document.getElementById('corkZoomIn').addEventListener('click', () => { const c = CORK(); if(c) c.zoom(1.4); });
 document.getElementById('corkZoomOut').addEventListener('click', () => { const c = CORK(); if(c) c.zoom(1/1.4); });
+
+/* ---------- the whole screen ----------
+   In the page the board is one panel among several and has to share the height.
+   Expanding pins the panel — board and dossier together, so a clue still opens
+   beside it — over the viewport, and where the Fullscreen API exists we also ask
+   for real fullscreen so the browser's chrome goes too. iOS Safari has no element
+   fullscreen; there the pinned layer alone does the job. */
+const boardPanel = document.querySelector('#p-board .board');
+const fsBtn = document.getElementById('corkFs');
+const rawFs = boardPanel.requestFullscreen || boardPanel.webkitRequestFullscreen;
+const rawExit = document.exitFullscreen || document.webkitExitFullscreen;
+const nativeFs = () => document.fullscreenElement || document.webkitFullscreenElement;
+const isExpanded = () => boardPanel.classList.contains('expanded');
+
+function setExpanded(on){
+  boardPanel.classList.toggle('expanded', on);
+  document.body.classList.toggle('cork-expanded', on);
+  fsBtn.setAttribute('aria-pressed', String(on));
+  fsBtn.setAttribute('aria-label', u(on ? 'fs_exit' : 'fs_enter'));
+  fsBtn.dataset.i18nAria = on ? 'fs_exit' : 'fs_enter';
+  fsBtn.textContent = on ? '⤡' : '⤢';
+}
+fsBtn.addEventListener('click', () => {
+  const on = !isExpanded();
+  setExpanded(on);
+  if(!rawFs) return;                       // pinned layer only; still full-viewport
+  if(on) { const r = rawFs.call(boardPanel); if(r && r.catch) r.catch(() => {}); }
+  else if(nativeFs() && rawExit) rawExit.call(document);
+});
+/* leaving fullscreen by Escape or the browser's own control must unpin the panel */
+['fullscreenchange','webkitfullscreenchange'].forEach(ev =>
+  document.addEventListener(ev, () => { if(!nativeFs() && isExpanded()) setExpanded(false); }));
+/* and Escape has to work when we never got native fullscreen in the first place */
+document.addEventListener('keydown', e => {
+  if(e.key === 'Escape' && isExpanded() && !nativeFs()) setExpanded(false);
+});
 
 /* ---------- lists ---------- */
 function evBtn(n, note){ return `<button type="button" class="ev" data-go="${n.id}">${esc(L(n))}${note?` — <span style="color:var(--muted)">${esc(note)}</span>`:''}${n.src.length?`<small>${esc(ST(n,0))}</small>`:''}</button>`; }

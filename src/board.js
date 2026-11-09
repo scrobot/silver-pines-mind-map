@@ -12,6 +12,7 @@ const UI = {
     search_ph:'Найти: Элис, канатка, 10:07, Джекман…', search_aria:'Поиск по доске', fit:'Вся доска', guide:'Как собирали',
     board_aria:'Доска улик: 96 улик на пробке, нити между ними',
     zoom_in:'Приблизить', zoom_out:'Отдалить', guide_aria:'Как собирали дело', step_prev:'Назад', step_next:'Дальше',
+    fs_enter:'Во весь экран', fs_exit:'Выйти из полного экрана',
     th_src:'Источник', th_match:'Что совпадает', th_strength:'Сила', th_links:'Ссылки',
     footer:'Всё на доске — из полного прохождения на 100 %: реплики, записки, документы и экраны игры. Цитаты даны по русской локализации; где известна английская строка, она приведена в оригинале. Часть ключевых реплик вычитана по кадрам и приведена дословно, остальные записаны по ходу прохождения и могут расходиться с игрой в отдельных словах. Внешние источники — пресса, обсуждения игроков и интервью разработчиков — помечены ссылкой. Метки у отсылок: РАЗРАБОТЧИКИ — сказано авторами игры, ПРЕССА — замечено критиками, В ИГРЕ — есть в самой игре, ВЕРСИЯ ДОСКИ — прочтение доски без внешнего подтверждения.',
     g_for:'За эту гипотезу', g_against:'Против', g_supports:'Подтверждает', g_contradicts:'Опровергает', g_next:'Дальше по времени', g_prev:'Раньше по времени',
@@ -35,6 +36,7 @@ const UI = {
     search_ph:'Search: Alice, cable car, 10:07, Jackman…', search_aria:'Search the board', fit:'Whole board', guide:'How it was built',
     board_aria:'Evidence board: 96 clues pinned to cork, threads between them',
     zoom_in:'Zoom in', zoom_out:'Zoom out', guide_aria:'How the case was built', step_prev:'Back', step_next:'Next',
+    fs_enter:'Full screen', fs_exit:'Leave full screen',
     th_src:'Source', th_match:'What matches', th_strength:'Strength', th_links:'Links',
     footer:'Everything on this board comes from a full 100% playthrough: dialogue, notes, documents and in-game screens. Quotes follow the Russian localization; where the English line is known, it is given as written. Some key lines were read off the frames and are quoted verbatim, the rest were taken down during play and may differ from the game in individual words. Outside sources — press, player discussion and developer interviews — carry a link. Reference tags: DEVELOPERS — stated by the game\'s authors, PRESS — noted by critics, IN GAME — present in the game itself, BOARD — this board\'s own reading, with no outside confirmation.',
     g_for:'For this hypothesis', g_against:'Against', g_supports:'Supports', g_contradicts:'Contradicts', g_next:'Next in time', g_prev:'Earlier in time',
@@ -216,6 +218,42 @@ document.getElementById('gNext').addEventListener('click', () => { const c = COR
 document.getElementById('gPrev').addEventListener('click', () => { const c = CORK(); if(c) c.guideStep(-1); });
 document.getElementById('corkZoomIn').addEventListener('click', () => { const c = CORK(); if(c) c.zoom(1.4); });
 document.getElementById('corkZoomOut').addEventListener('click', () => { const c = CORK(); if(c) c.zoom(1/1.4); });
+
+/* ---------- the whole screen ----------
+   In the page the board is one panel among several and has to share the height.
+   Expanding pins the panel — board and dossier together, so a clue still opens
+   beside it — over the viewport, and where the Fullscreen API exists we also ask
+   for real fullscreen so the browser's chrome goes too. iOS Safari has no element
+   fullscreen; there the pinned layer alone does the job. */
+const boardPanel = document.querySelector('#p-board .board');
+const fsBtn = document.getElementById('corkFs');
+const rawFs = boardPanel.requestFullscreen || boardPanel.webkitRequestFullscreen;
+const rawExit = document.exitFullscreen || document.webkitExitFullscreen;
+const nativeFs = () => document.fullscreenElement || document.webkitFullscreenElement;
+const isExpanded = () => boardPanel.classList.contains('expanded');
+
+function setExpanded(on){
+  boardPanel.classList.toggle('expanded', on);
+  document.body.classList.toggle('cork-expanded', on);
+  fsBtn.setAttribute('aria-pressed', String(on));
+  fsBtn.setAttribute('aria-label', u(on ? 'fs_exit' : 'fs_enter'));
+  fsBtn.dataset.i18nAria = on ? 'fs_exit' : 'fs_enter';
+  fsBtn.textContent = on ? '⤡' : '⤢';
+}
+fsBtn.addEventListener('click', () => {
+  const on = !isExpanded();
+  setExpanded(on);
+  if(!rawFs) return;                       // pinned layer only; still full-viewport
+  if(on) { const r = rawFs.call(boardPanel); if(r && r.catch) r.catch(() => {}); }
+  else if(nativeFs() && rawExit) rawExit.call(document);
+});
+/* leaving fullscreen by Escape or the browser's own control must unpin the panel */
+['fullscreenchange','webkitfullscreenchange'].forEach(ev =>
+  document.addEventListener(ev, () => { if(!nativeFs() && isExpanded()) setExpanded(false); }));
+/* and Escape has to work when we never got native fullscreen in the first place */
+document.addEventListener('keydown', e => {
+  if(e.key === 'Escape' && isExpanded() && !nativeFs()) setExpanded(false);
+});
 
 /* ---------- lists ---------- */
 function evBtn(n, note){ return `<button type="button" class="ev" data-go="${n.id}">${esc(L(n))}${note?` — <span style="color:var(--muted)">${esc(note)}</span>`:''}${n.src.length?`<small>${esc(ST(n,0))}</small>`:''}</button>`; }
