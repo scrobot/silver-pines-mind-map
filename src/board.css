@@ -1,0 +1,261 @@
+/* ============================================================================
+   The cork board.
+
+   A port of the film's look (the Remotion project that rendered SP_BOARD_master)
+   to a page you can actually push around. Same paper, same pins, same red string,
+   same desk lamp. Everything here is plain CSS: no canvas, no WebGL.
+
+   Two rules keep it fast, both learned the hard way:
+     1. The cork and the thread layer are sized to the VIEWPORT, never to the
+        7000x3800 board. A board-sized layer rasterises to ~50 megapixels at zoom 1
+        and the page dies. The cork tracks the camera with background-position;
+        the thread SVG tracks it with a moving viewBox.
+     2. Panning and zooming move ONE transform on #cork-stage. Nothing else is
+        restyled per frame, and the expensive paper shading drops to a cheap
+        shadow while the board is in motion (body.cork-moving).
+   ========================================================================= */
+
+:root {
+  /* paper and ink — the film's palette, no new colours */
+  --p-ink: #2A2521;
+  --p-red: #D8241B;
+  --p-marker: #C81E16;
+  --p-graphite: #38332E;
+  --p-thread-red: #A8170F;
+
+  /* each carrier's paper stock */
+  --paper-polaroid: #E2D9C6;
+  --paper-caption: #E9DFC8;
+  --paper-card: #E8DDC6;
+  --paper-note: #ECE4D2;
+  --paper-strip: #EADFC9;
+  --paper-stamp: #E8DDC6;
+  --paper-tag: #CDB894;
+  --paper-blank: #E4DAC4;
+  --paper-sheet: #ECE5D3;
+  --paper-back: #E3D7BE;
+
+  /* AVIF where it is understood, WebP everywhere else. image-set picks per browser. */
+  --tex-paper: image-set(url(assets/tex/paper.avif) type("image/avif"), url(assets/tex/paper.webp) type("image/webp"));
+  --tex-cork:  image-set(url(assets/tex/cork.avif)  type("image/avif"), url(assets/tex/cork.webp)  type("image/webp"));
+  --tex-grain: image-set(url(assets/tex/grain.avif) type("image/avif"), url(assets/tex/grain.webp) type("image/webp"));
+}
+
+/* ---- fonts: real woff2, latin + cyrillic. Every card is bilingual. ---- */
+@font-face { font-family: 'PT Mono'; font-weight: 400; font-display: swap; src: url(assets/fonts/pt-mono-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+2000-206F,U+2122,U+2191,U+2193,U+2212,U+2215; }
+@font-face { font-family: 'PT Mono'; font-weight: 400; font-display: swap; src: url(assets/fonts/pt-mono-cyrillic-400-normal.woff2) format('woff2');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
+@font-face { font-family: 'Caveat'; font-weight: 400; font-display: swap; src: url(assets/fonts/caveat-latin-400-normal.woff2) format('woff2'); unicode-range: U+0000-00FF,U+2000-206F; }
+@font-face { font-family: 'Caveat'; font-weight: 400; font-display: swap; src: url(assets/fonts/caveat-cyrillic-400-normal.woff2) format('woff2'); unicode-range: U+0301,U+0400-045F,U+0490-0491,U+2116; }
+@font-face { font-family: 'Caveat'; font-weight: 700; font-display: swap; src: url(assets/fonts/caveat-latin-700-normal.woff2) format('woff2'); unicode-range: U+0000-00FF,U+2000-206F; }
+@font-face { font-family: 'Caveat'; font-weight: 700; font-display: swap; src: url(assets/fonts/caveat-cyrillic-700-normal.woff2) format('woff2'); unicode-range: U+0301,U+0400-045F,U+0490-0491,U+2116; }
+@font-face { font-family: 'Oswald'; font-weight: 500; font-display: swap; src: url(assets/fonts/oswald-latin-500-normal.woff2) format('woff2'); unicode-range: U+0000-00FF,U+2000-206F; }
+@font-face { font-family: 'Oswald'; font-weight: 500; font-display: swap; src: url(assets/fonts/oswald-cyrillic-500-normal.woff2) format('woff2'); unicode-range: U+0301,U+0400-045F,U+0490-0491,U+2116; }
+@font-face { font-family: 'Oswald'; font-weight: 700; font-display: swap; src: url(assets/fonts/oswald-latin-700-normal.woff2) format('woff2'); unicode-range: U+0000-00FF,U+2000-206F; }
+@font-face { font-family: 'Oswald'; font-weight: 700; font-display: swap; src: url(assets/fonts/oswald-cyrillic-700-normal.woff2) format('woff2'); unicode-range: U+0301,U+0400-045F,U+0490-0491,U+2116; }
+
+/* ---- the frame ---------------------------------------------------------- */
+#cork-view {
+  position: relative;
+  height: min(78vh, 820px);
+  min-height: 460px;
+  overflow: hidden;
+  background: #0b0806;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  contain: strict;
+  touch-action: none;
+  cursor: grab;
+}
+/* On a touch screen the board must not swallow the page's scroll: one finger scrolls
+   past it, two fingers pan and pinch it (cork.js enforces the same rule). */
+@media (pointer: coarse) { #cork-view { touch-action: pan-y; } }
+#cork-view.dragging { cursor: grabbing; }
+#cork-view:focus-visible { outline: 2px solid var(--p-red); outline-offset: 2px; }
+
+/* cork: one screen-sized layer, tiled, phase-locked to the camera */
+#cork-felt {
+  position: absolute; inset: 0;
+  background-image: var(--tex-cork);
+  background-repeat: repeat;
+  filter: saturate(0.86) brightness(0.92);
+}
+/* beyond the board's edge there is no cork, only dark */
+#cork-edge { position: absolute; inset: 0; pointer-events: none; }
+
+#cork-stage {
+  position: absolute; left: 0; top: 0; width: 0; height: 0;
+  transform-origin: 0 0;
+  will-change: transform;
+}
+
+/* ---- a pinned piece of paper -------------------------------------------- */
+.el {
+  position: absolute;
+  transform-origin: var(--ox) var(--oy);
+  /* the film's two-stage drop shadow: a tight contact shadow plus a long soft one */
+  filter: drop-shadow(3px 5px 2.5px rgba(12, 7, 3, 0.58)) drop-shadow(13px 21px 22px rgba(12, 7, 3, 0.36));
+  transition: filter 180ms ease, opacity 180ms ease;
+}
+/* while panning, swap the two drop-shadows for one cheap box-shadow on the paper */
+body.cork-moving .el { filter: none; }
+body.cork-moving .sheet { box-shadow: inset 0 0 14px rgba(90, 66, 40, 0.14), 6px 10px 12px rgba(12, 7, 3, 0.5), 18px 28px 30px rgba(12, 7, 3, 0.3); }
+
+.el:focus-visible { outline: none; }
+.el:focus-visible .sheet { box-shadow: 0 0 0 3px var(--p-red), inset 0 0 14px rgba(90, 66, 40, 0.14); }
+
+/* lift on hover, like a thumb under the corner */
+.el.hot { filter: drop-shadow(8px 14px 7px rgba(12, 7, 3, 0.5)) drop-shadow(28px 48px 44px rgba(12, 7, 3, 0.34)); z-index: 60; }
+.el.hot .paper-part { transform: scale(1.012); }
+.paper-part { position: absolute; transition: transform 180ms ease; }
+
+/* when one card is open, the rest of the board steps back */
+#cork-view.focused .el { opacity: 0.32; }
+#cork-view.focused .el.lit { opacity: 1; }
+#cork-view.focused .el.open { opacity: 1; }
+
+/* not yet revealed, in the guided walk-through */
+.el.unrevealed, .pin.unrevealed { display: none; }
+
+/* ---- paper stocks ------------------------------------------------------- */
+.sheet {
+  position: absolute; inset: 0;
+  background-image: var(--tex-paper);
+  background-size: 420px 420px;
+  background-blend-mode: multiply;
+  box-shadow: inset 0 0 14px rgba(90, 66, 40, 0.14);
+}
+.c-polaroid .sheet { background-color: var(--paper-polaroid); box-shadow: inset 0 0 0 1px rgba(60,45,30,.16), inset 0 0 22px rgba(90,66,40,.16); }
+.c-caption  .sheet { background-color: var(--paper-caption); }
+.c-card     .sheet { background-color: var(--paper-card); box-shadow: inset 0 0 20px rgba(90,66,40,.14); }
+.c-note     .sheet { background-color: var(--paper-note); box-shadow: inset 0 0 18px rgba(90,66,40,.12); }
+.c-strip    .sheet { background-color: var(--paper-strip); box-shadow: none; }
+.c-stamp    .sheet { background-color: var(--paper-stamp); box-shadow: inset 0 0 22px rgba(90,66,40,.14); }
+.c-blank    .sheet { background-color: var(--paper-blank); box-shadow: inset 0 0 26px rgba(90,66,40,.16); }
+.c-sketch   .sheet { background-color: var(--paper-note); box-shadow: none; }
+.c-sheet    .sheet { background-color: var(--paper-sheet); background-size: 520px 520px; box-shadow: inset 0 0 30px rgba(90,66,40,.14); }
+.c-tag      .sheet { background-color: var(--paper-tag); background-size: 300px 300px; box-shadow: inset 0 0 12px rgba(90,60,30,.2);
+  clip-path: polygon(14% 0, 100% 0, 100% 100%, 14% 100%, 0 50%); }
+
+/* the fold: lamp from the top left, so a highlight up there and a shadow at the lower right */
+.bend { position: absolute; inset: 0; pointer-events: none; }
+
+/* ---- photographs -------------------------------------------------------- */
+.photo-win { position: absolute; overflow: hidden; background: #17140F; box-shadow: inset 0 0 0 1px rgba(20,15,10,.55); }
+.photo-win img { width: 100%; height: 100%; object-fit: cover; display: block;
+  filter: contrast(1.06) brightness(1) saturate(0.8) sepia(0.26); }
+.photo-win .vig { position: absolute; inset: 0; background: radial-gradient(ellipse 72% 72% at 46% 42%, rgba(0,0,0,0) 55%, rgba(10,6,4,.4) 100%); }
+.photo-win .gloss { position: absolute; inset: 0; background: linear-gradient(125deg, rgba(255,245,225,.10) 0%, rgba(255,245,225,0) 35%); }
+.c-polaroid .grime { position: absolute; inset: 0; mix-blend-mode: multiply; }
+
+/* a document is its own cut-out image; the fold is masked to its silhouette */
+.c-document img, .c-photoobj img { width: 100%; height: 100%; display: block; }
+.c-document img { filter: contrast(1.05); }
+.c-photoobj img { filter: saturate(0.8) sepia(0.2) contrast(1.03); }
+.c-clipping img { width: 100%; height: 100%; object-fit: cover; display: block;
+  filter: sepia(0.35) saturate(1.35) hue-rotate(-6deg) brightness(1.02) contrast(1.04); }
+.c-clipping .tint { position: absolute; inset: 0; background: rgba(214,190,120,.16); mix-blend-mode: multiply; }
+
+/* ---- ruling and furniture ----------------------------------------------- */
+.card-rule { position: absolute; left: 0; right: 0; height: 2px; background: var(--p-red); opacity: .55; }
+.card-lines, .note-lines, .report-lines { position: absolute; left: 0; right: 0; }
+.note-margin { position: absolute; top: 0; bottom: 0; left: 30px; width: 1.6px; background: var(--p-red); opacity: .4; }
+.blank-border { position: absolute; inset: 14px; border: 1.2px solid rgba(74,68,62,.35); }
+.tag-eye { position: absolute; border-radius: 50%; background: #5a4632; box-shadow: 0 0 0 2px #E2D3B4; }
+
+/* ---- type --------------------------------------------------------------- */
+.bi { position: absolute; display: flex; flex-direction: column; justify-content: center; color: var(--p-ink); }
+.bi .pri { white-space: nowrap; }
+.bi .sec { white-space: nowrap; opacity: .7; }     /* RU_ALPHA */
+.bi.center { align-items: center; text-align: center; }
+.f-mono { font-family: 'PT Mono', ui-monospace, monospace; }
+.f-hand { font-family: 'Caveat', cursive; }
+.f-stamp { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
+
+/* the red rubber stamp: a double-ruled box of ink */
+.stamp-ink { position: absolute; display: flex; align-items: center; justify-content: center;
+  border: 4px solid var(--p-red); border-radius: 6px; mix-blend-mode: multiply; opacity: .92; }
+.stamp-ink .bi { color: var(--p-red); position: static; }
+
+/* ---- pins --------------------------------------------------------------- */
+.pin { position: absolute; width: 0; height: 0; pointer-events: none; }
+.pin i {
+  position: absolute; border-radius: 50%; display: block;
+  box-shadow: inset -1.5px -2px 3px rgba(0,0,0,.35), 0 0 0 .6px rgba(0,0,0,.35);
+}
+.pin.red i { width: 24px; height: 24px; left: -12px; top: -12px;
+  background: radial-gradient(circle at 34% 30%, #ff9a88 0%, #e2392c 26%, #b8170f 60%, #6d0c07 100%); }
+.pin.graphite i { width: 21px; height: 21px; left: -10.5px; top: -10.5px;
+  background: radial-gradient(circle at 34% 30%, #b6aea4 0%, #6d665e 30%, #3f3a35 65%, #1c1916 100%); }
+.pin b { position: absolute; border-radius: 50%; background: rgba(255,255,255,.55); filter: blur(1px);
+  width: 6px; height: 4px; left: 1px; top: -4px; }
+.pin s { position: absolute; border-radius: 50%; background: rgba(10,6,3,.5); filter: blur(2.4px);
+  width: 25px; height: 19px; left: -7px; top: -1px; }
+
+/* ---- threads ------------------------------------------------------------ */
+#cork-threads { position: absolute; overflow: visible; pointer-events: none; }
+#cork-threads path { pointer-events: none; }
+#cork-view.focused #cork-threads .th { opacity: .12; }
+#cork-view.focused #cork-threads .th.lit { opacity: 1; }
+#cork-threads .th { transition: opacity 180ms ease; }
+
+/* ---- the lamp ----------------------------------------------------------- */
+/* A desk lamp over the hub. Multiply for the falloff, screen for the warm core,
+   then one more multiply that tints the whole frame like aged paper. */
+/* One full-frame multiply, placed by cork.js. Its outermost stop IS the darkness
+   beyond the lamp, so there is no second dark layer to double up with. */
+#cork-lamp { position: absolute; inset: 0; mix-blend-mode: multiply; pointer-events: none; }
+#cork-glow { position: absolute; inset: 0; mix-blend-mode: screen; pointer-events: none; }
+#cork-tint { position: absolute; inset: 0; mix-blend-mode: multiply; pointer-events: none;
+  background: linear-gradient(140deg, rgb(255,252,246) 0%, rgb(250,242,230) 40%, rgb(214,198,180) 100%); }
+#cork-vig { position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 74% 74% at 50% 50%, rgba(0,0,0,0) 38%, rgba(8,5,3,.62) 100%); }
+/* Film grain. The film regenerates feTurbulence every frame; here it is one tiled
+   noise bitmap nudged around, which looks the same and costs nothing. */
+#cork-grain { position: absolute; inset: -40px; pointer-events: none; mix-blend-mode: overlay; opacity: .085;
+  background-image: var(--tex-grain); background-size: 180px 180px; }
+
+/* ---- controls ----------------------------------------------------------- */
+.cork-ui { position: absolute; display: flex; gap: 6px; z-index: 80; }
+.cork-ui.tl { left: 10px; top: 10px; }
+.cork-ui.br { right: 10px; bottom: 10px; }
+.cork-btn {
+  font: 600 12px/1 var(--f-mono); letter-spacing: .04em;
+  color: #e8dcc4; background: rgba(18,12,8,.82); border: 1px solid rgba(232,220,196,.26);
+  border-radius: 4px; padding: 7px 10px; cursor: pointer; backdrop-filter: blur(3px);
+}
+.cork-btn:hover { background: rgba(32,22,14,.92); border-color: rgba(232,220,196,.5); }
+.cork-btn[aria-pressed="true"] { background: var(--p-red); border-color: var(--p-red); color: #fff; }
+.cork-btn:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+/* the guided walk-through */
+#cork-step {
+  position: absolute; left: 10px; right: 10px; bottom: 10px; z-index: 80;
+  display: none; gap: 10px; align-items: center;
+  background: rgba(18,12,8,.88); border: 1px solid rgba(232,220,196,.26); border-radius: 5px; padding: 8px 10px;
+  backdrop-filter: blur(3px);
+}
+#cork-view.guided #cork-step { display: flex; }
+#cork-step .bar { flex: 1; height: 3px; background: rgba(232,220,196,.2); border-radius: 2px; overflow: hidden; }
+#cork-step .bar i { display: block; height: 100%; background: var(--p-red); transition: width 200ms ease; }
+#cork-step .lab { font: 500 12px var(--f-mono); color: #e8dcc4; white-space: nowrap; }
+
+/* a card the search has found gets circled in marker, as if by hand */
+.el.found .marker-ring { opacity: 1; }
+.marker-ring { position: absolute; inset: -14px; opacity: 0; transition: opacity 200ms ease; pointer-events: none; }
+.marker-ring ellipse { fill: none; stroke: var(--p-marker); stroke-width: 5; stroke-linecap: round; }
+
+/* ---- small screens ------------------------------------------------------ */
+/* On a phone the board is a map you move around, not the document: at fit-zoom a
+   caption is a few pixels tall and unreadable. The list tabs carry the content. */
+@media (max-width: 760px) {
+  #cork-view { height: 58vh; min-height: 320px; }
+  .cork-ui.tl { top: 6px; left: 6px; }
+  .cork-btn { padding: 8px 9px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .el, .paper-part, #cork-threads .th, #cork-step .bar i { transition: none !important; }
+  #cork-grain { display: none; }
+}
