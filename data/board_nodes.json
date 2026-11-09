@@ -1,0 +1,482 @@
+[
+ {
+  "elementId": "E01",
+  "nodeId": "c_license",
+  "confidence": "exact"
+ },
+ {
+  "elementId": "E02",
+  "nodeId": "eddie",
+  "confidence": "strong"
+ },
+ {
+  "elementId": "E03",
+  "nodeId": "g_bar",
+  "confidence": "exact"
+ },
+ {
+  "elementId": "E04",
+  "nodeId": "alice",
+  "confidence": "strong"
+ },
+ {
+  "elementId": "E05",
+  "nodeId": "b_gig",
+  "confidence": "exact"
+ },
+ {
+  "elementId": "E06",
+  "nodeId": "g_bells",
+  "confidence": "strong"
+ },
+ {
+  "elementId": "E07",
+  "nodeId": "jackman",
+  "confidence": "strong"
+ },
+ {
+  "elementId": "E08",
+  "nodeId": "b_missing",
+  "confidence": "strong"
+ },
+ {
+  "elementId": "E09",
+  "nodeId": "c_burncar",
+  "confidence": "exact"
+ },
+ {
+  "elementId": "E10",
+  "nodeId": "wib",
+  "confidence": "strong"
+ },
+ {
+  "elementId": "E11",
+  "nodeId": "c_friend",
+  "confidence": "exact"
+ },
+ {
+  "elementId": "E12",
+  "nodeId": "c_notmyself",
+  "confidence": "exact"
+ },
+ {
+  "elementId": "E13",
+  "nodeId": "c_deacon",
+  "confidence": "exact"
+ },
+ {
+  "elementId": "E14",
+  "nodeId": "c_redroom",
+  "confidence": "exact"
+ },
+ {
+  "elementId": "E15",
+  "nodeId": "c_burnnote",
+  "confidence": "exact"
+ },
+ {
+  "elementId": "E16",
+  "nodeId": "c_report",
+  "confidence": "exact"
+ },
+ {
+  "elementId": "E17",
+  "nodeId": "c_badge",
+  "confidence": "exact"
+ },
+ {
+  "elementId": "E18",
+  "nodeId": "r_jekyll",
+  "confidence": "exact"
+ },
+ {
+  "elementId": "E19",
+  "nodeId": "c_tape",
+  "confidence": "exact"
+ },
+ {
+  "elementId": "E20",
+  "nodeId": "",
+  "confidence": "none"
+ },
+ {
+  "elementId": "E21",
+  "nodeId": "r_antig",
+  "confidence": "exact"
+ },
+ {
+  "elementId": "E22",
+  "nodeId": "driver",
+  "confidence": "strong"
+ },
+ {
+  "elementId": "E23",
+  "nodeId": "",
+  "confidence": "none"
+ },
+ {
+  "elementId": "E24",
+  "nodeId": "c_digger",
+  "confidence": "strong"
+ },
+ {
+  "elementId": "E25",
+  "nodeId": "c_adjutor",
+  "confidence": "exact"
+ },
+ {
+  "elementId": "E26",
+  "nodeId": "b_storm",
+  "confidence": "strong"
+ },
+ {
+  "elementId": "E27",
+  "nodeId": "",
+  "confidence": "none"
+ },
+ {
+  "elementId": "E28",
+  "nodeId": "c_palms",
+  "confidence": "exact"
+ },
+ {
+  "elementId": "E29",
+  "nodeId": "cowboy",
+  "confidence": "strong"
+ },
+ {
+  "elementId": "E30",
+  "nodeId": "room3",
+  "confidence": "weak"
+ },
+ {
+  "elementId": "E31",
+  "nodeId": "c_burnt",
+  "confidence": "strong"
+ },
+ {
+  "elementId": "E32",
+  "nodeId": "c_sober",
+  "confidence": "exact"
+ },
+ {
+  "elementId": "E33",
+  "nodeId": "oldcop",
+  "confidence": "strong"
+ },
+ {
+  "elementId": "E34",
+  "nodeId": "c_bells",
+  "confidence": "strong"
+ },
+ {
+  "elementId": "E35",
+  "nodeId": "c_selfdef",
+  "confidence": "exact"
+ },
+ {
+  "elementId": "E36",
+  "nodeId": "h_shadow",
+  "confidence": "weak"
+ },
+ {
+  "elementId": "E37",
+  "nodeId": "c_down",
+  "confidence": "strong"
+ },
+ {
+  "elementId": "E38",
+  "nodeId": "c_lookslike",
+  "confidence": "strong"
+ },
+ {
+  "elementId": "E39",
+  "nodeId": "g_order",
+  "confidence": "strong"
+ },
+ {
+  "elementId": "E40",
+  "nodeId": "thelend",
+  "confidence": "strong"
+ },
+ {
+  "elementId": "E41",
+  "nodeId": "c_tapes",
+  "confidence": "exact"
+ },
+ {
+  "elementId": "E42",
+  "nodeId": "c_tdscript",
+  "confidence": "exact"
+ },
+ {
+  "elementId": "E43",
+  "nodeId": "c_carparts",
+  "confidence": "exact"
+ },
+ {
+  "elementId": "E44",
+  "nodeId": "driver",
+  "confidence": "strong"
+ },
+ {
+  "elementId": "E45",
+  "nodeId": "m_red",
+  "confidence": "weak"
+ },
+ {
+  "elementId": "E46",
+  "nodeId": "h_child",
+  "confidence": "weak"
+ },
+ {
+  "elementId": "E47",
+  "nodeId": "b_car",
+  "confidence": "strong"
+ },
+ {
+  "elementId": "E48",
+  "nodeId": "b_crash",
+  "confidence": "strong"
+ },
+ {
+  "elementId": "E49",
+  "nodeId": "h_child",
+  "confidence": "weak"
+ },
+ {
+  "elementId": "E50",
+  "nodeId": "g_tree",
+  "confidence": "exact"
+ },
+ {
+  "elementId": "F01",
+  "nodeId": "c_ringbox",
+  "confidence": "strong"
+ },
+ {
+  "elementId": "F02",
+  "nodeId": "",
+  "confidence": "none"
+ },
+ {
+  "elementId": "F03",
+  "nodeId": "jackman",
+  "confidence": "exact"
+ },
+ {
+  "elementId": "F04",
+  "nodeId": "c_server",
+  "confidence": "strong"
+ },
+ {
+  "elementId": "F05",
+  "nodeId": "g_mercy",
+  "confidence": "strong"
+ },
+ {
+  "elementId": "F06",
+  "nodeId": "g_order",
+  "confidence": "strong"
+ },
+ {
+  "elementId": "F07",
+  "nodeId": "c_server",
+  "confidence": "exact"
+ },
+ {
+  "elementId": "F08",
+  "nodeId": "g_mercy",
+  "confidence": "exact"
+ },
+ {
+  "elementId": "F09",
+  "nodeId": "h_jackman",
+  "confidence": "strong"
+ },
+ {
+  "elementId": "F10",
+  "nodeId": "little",
+  "confidence": "exact"
+ },
+ {
+  "elementId": "F11",
+  "nodeId": "h_shadow",
+  "confidence": "weak"
+ },
+ {
+  "elementId": "F12",
+  "nodeId": "h_child",
+  "confidence": "exact"
+ },
+ {
+  "elementId": "F13",
+  "nodeId": "h_entity",
+  "confidence": "strong"
+ },
+ {
+  "elementId": "F14a",
+  "nodeId": "r_jekyll",
+  "confidence": "exact"
+ },
+ {
+  "elementId": "F14b",
+  "nodeId": "c_sober",
+  "confidence": "exact"
+ },
+ {
+  "elementId": "F15a",
+  "nodeId": "c_wall",
+  "confidence": "exact"
+ },
+ {
+  "elementId": "F15b",
+  "nodeId": "c_wall",
+  "confidence": "strong"
+ },
+ {
+  "elementId": "F16a",
+  "nodeId": "burnt",
+  "confidence": "strong"
+ },
+ {
+  "elementId": "F16b",
+  "nodeId": "sadgirl",
+  "confidence": "strong"
+ },
+ {
+  "elementId": "F18",
+  "nodeId": "digger",
+  "confidence": "exact"
+ },
+ {
+  "elementId": "F19",
+  "nodeId": "burnt",
+  "confidence": "exact"
+ },
+ {
+  "elementId": "F20",
+  "nodeId": "cowboy",
+  "confidence": "exact"
+ },
+ {
+  "elementId": "F21",
+  "nodeId": "oldman",
+  "confidence": "exact"
+ },
+ {
+  "elementId": "F22",
+  "nodeId": "oldcop",
+  "confidence": "strong"
+ },
+ {
+  "elementId": "F23",
+  "nodeId": "roberts",
+  "confidence": "strong"
+ },
+ {
+  "elementId": "F24",
+  "nodeId": "",
+  "confidence": "none"
+ },
+ {
+  "elementId": "F25",
+  "nodeId": "",
+  "confidence": "none"
+ },
+ {
+  "elementId": "F26",
+  "nodeId": "",
+  "confidence": "none"
+ },
+ {
+  "elementId": "F27a",
+  "nodeId": "h_parts",
+  "confidence": "weak"
+ },
+ {
+  "elementId": "F27b",
+  "nodeId": "h_parts",
+  "confidence": "weak"
+ },
+ {
+  "elementId": "F27c",
+  "nodeId": "h_parts",
+  "confidence": "weak"
+ },
+ {
+  "elementId": "F27d",
+  "nodeId": "h_parts",
+  "confidence": "weak"
+ },
+ {
+  "elementId": "F29",
+  "nodeId": "b_car",
+  "confidence": "weak"
+ },
+ {
+  "elementId": "F30",
+  "nodeId": "h_month",
+  "confidence": "strong"
+ },
+ {
+  "elementId": "F31",
+  "nodeId": "h_crash",
+  "confidence": "strong"
+ },
+ {
+  "elementId": "F32a",
+  "nodeId": "b_gig",
+  "confidence": "strong"
+ },
+ {
+  "elementId": "F32b",
+  "nodeId": "h_jump",
+  "confidence": "strong"
+ },
+ {
+  "elementId": "F32c",
+  "nodeId": "b_crash",
+  "confidence": "strong"
+ },
+ {
+  "elementId": "F33a",
+  "nodeId": "leave",
+  "confidence": "exact"
+ },
+ {
+  "elementId": "F33b",
+  "nodeId": "rest",
+  "confidence": "exact"
+ },
+ {
+  "elementId": "F33c",
+  "nodeId": "live",
+  "confidence": "exact"
+ },
+ {
+  "elementId": "F34",
+  "nodeId": "live",
+  "confidence": "strong"
+ },
+ {
+  "elementId": "F35",
+  "nodeId": "q_little",
+  "confidence": "strong"
+ },
+ {
+  "elementId": "F36a",
+  "nodeId": "h_child",
+  "confidence": "exact"
+ },
+ {
+  "elementId": "F36b",
+  "nodeId": "h_shadow",
+  "confidence": "weak"
+ },
+ {
+  "elementId": "F36c",
+  "nodeId": "h_entity",
+  "confidence": "strong"
+ }
+]

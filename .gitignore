@@ -1,3 +1,6 @@
 __pycache__/
 *.pyc
 .DS_Store
+
+# dist/assets is a build-time copy of assets/ — build_html.py recreates it, CI included.
+dist/assets/

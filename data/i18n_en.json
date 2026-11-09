@@ -2,7 +2,7 @@
  "nodes": {
   "Q": {
    "label": "What happened in Silver Pines?",
-   "text": "Detective Red Walker is hired to find a missing musician, Eddie Velvet. The deeper he digs, the more the case looks like his own. The board gathers facts from the author's streams, outside sources, hypotheses, and the arguments for and against."
+   "text": "Detective Red Walker is hired to find a missing musician, Eddie Velvet. The deeper he digs, the more the case looks like his own. This board collects everything the game states outright — dialogue, notes, documents, screens — and builds the hypotheses, with the arguments for and against, on top of it."
   },
   "red": {
    "label": "Red Walker",
@@ -19,11 +19,11 @@
   "jackman": {
    "label": "Mr. Jackman",
    "text": "The client. Only a voice on the payphone; every save is a call to him. First “Find him, Walker”, then “put an end to him”. Promises a beach, palm trees and an endless blue ocean.",
-   "aka": "Hank Jackman (per fan sources)"
+   "aka": "Hank Jackman (a name from outside the game; in the game he is only “Mr. Jackman”)"
   },
   "little": {
    "label": "The little man",
-   "text": "The nameless little man from Alice's diary and from other people's stories. He answers the door intercom at her apartment: “A friend, detective.” The voice on the intercom (him, according to outside sources): “Alice was my world”, “to Eddie, you're an angel of mercy”. In Rest he is the Server in a bow tie and the secret boss: “Look at what he did to my sweet girl… It has to be you!”"
+   "text": "The nameless little man from Alice's diary and from other people's stories. He answers the door intercom at her apartment: “A friend, detective.” The intercom voice speaks in the same terms he does: “Alice was my world”, “to Eddie, you're an angel of mercy”. In Rest he is the Server in a bow tie and the secret boss: “Look at what he did to my sweet girl… It has to be you!”"
   },
   "foster": {
    "label": "Father Jacob Foster",
@@ -43,7 +43,7 @@
   },
   "oldcop": {
    "label": "The old man in a trench coat with a Magnum",
-   "text": "A big, hostile man; guides call him the Sheriff or the “old cop”. He knocks Red to the ground, says “I'll be watching you” and tells him to leave. In the sewers he chokes Red, and Red shoots. “See you... in hell.” — “Though I'm already in hell.”"
+   "text": "A big, hostile man, never named in the game. He knocks Red to the ground, says “I'll be watching you” and tells him to leave. In the sewers he chokes Red, and Red shoots. “See you... in hell.” — “Though I'm already in hell.”"
   },
   "wulfe": {
    "label": "Sheriff Wulfe",
@@ -63,7 +63,7 @@
   },
   "burnt": {
    "label": "The Burned Man",
-   "text": "Washes his burned hands by the water: “I burned it all… It was the only way to make him leave me alone. The little guy will get to you too.” Key to the Live ending: he tells Red to burn the mementos in the furnace. Fan sources call him Drew."
+   "text": "Washes his burned hands by the water: “I burned it all… It was the only way to make him leave me alone. The little guy will get to you too.” Key to the Live ending: he tells Red to burn the mementos in the furnace. Outside the game he is called Drew."
   },
   "driver": {
    "label": "The Driver",
@@ -255,7 +255,7 @@
   },
   "c_burncar": {
    "label": "The burning car on the bridge",
-   "text": "Alex: a burning car stood on the bridge at the crossing out of downtown and blocked the way. When one of the bells in town was taken, a storm with heavy rain began and the car “melted away”. Alex connected it to the drowned-man report right away, but the report has no fire: only “a single-vehicle accident”."
+   "text": "A burning car stands on the bridge at the exit from downtown and blocks the way. After one of the town's bells is taken, a storm with heavy rain begins and the car “melts away”. The drowned-man report mentions no fire — only “a single-vehicle accident” — so tying the two together stays a guess, not a fact."
   },
   "c_sameasyou": {
    "label": "“Same as me. Same as you”",
@@ -295,7 +295,7 @@
   },
   "c_cararg": {
    "label": "The fight: “He will kill us both!”",
-   "text": "A recording of a fight, heard at the payphone, no portraits. The man: “I can't believe you're doing this, Alice… It's all in your head.” The woman: “He will kill us both! I shouldn't have told you anything… I should have just left.” No car is shown. Alex: “they had one hell of a fight in that car.”"
+   "text": "A recording of a fight, heard at the payphone, no portraits. The man: “I can't believe you're doing this, Alice… It's all in your head.” The woman: “He will kill us both! I shouldn't have told you anything… I should have just left.” No car is shown — the car is only inferred from the noise and the lines."
   },
   "c_driver": {
    "label": "“The driver knows what you did”",
@@ -327,7 +327,7 @@
   },
   "c_mercy": {
    "label": "“You're an angel of mercy”",
-   "text": "The intercom voice after Thelend Broadcasting (the little man, according to outside sources): “Alice was my world… Maybe you can't bring Alice back to me. But killing Eddie is the next best thing. I know you're not a killer, Walker, but to Eddie, you're an angel of mercy. I'm glad it'll be you. It's just the way it was always supposed to be.”"
+   "text": "The intercom voice after Thelend Broadcasting — by what it says, the little man: “Alice was my world… Maybe you can't bring Alice back to me. But killing Eddie is the next best thing. I know you're not a killer, Walker, but to Eddie, you're an angel of mercy. I'm glad it'll be you. It's just the way it was always supposed to be.”"
   },
   "c_wasme": {
    "label": "“Look what I did to you”",
@@ -395,11 +395,11 @@
   },
   "c_rideto": {
    "label": "“A Ride to the Stars”",
-   "text": "The name of the cable car, of a flyer and, according to fan sources, of Eddie's song. The game opens with these words."
+   "text": "It is the name of the cable car and of a flyer; Eddie's song is credited under the same title. The game opens with these words."
   },
   "c_devpost": {
    "label": "“Some things just aren't what they seem”",
-   "text": "A developer's answer on Discord to a question about the plot (Oct 10, 2026), known only secondhand. An echo of “The owls are not what they seem”."
+   "text": "A developer's answer on Discord to a question about the plot (Oct 10, 2026), quoted from a recap. An echo of “The owls are not what they seem”."
   },
   "h_same": {
    "label": "Red is Eddie",
@@ -427,7 +427,7 @@
   },
   "h_owner": {
    "label": "The little man is Alice's husband or another “owner”",
-   "text": "A living man who considered Alice his and wouldn't let her go: a husband, a father, an ex. She wears a wedding ring; her diary has “touching what belongs to someone else” and “far away from him”; in the fight, “He will kill us both!”; Eddie has “we would have run away together”. Alex in the interview: “a crappy hypothesis” — no husband appears in any document."
+   "text": "A living man who considered Alice his and wouldn't let her go: a husband, a father, an ex. She wears a wedding ring; her diary has “touching what belongs to someone else” and “far away from him”; in the fight, “He will kill us both!”; Eddie has “we would have run away together”. The weak point: no such man appears in any document in the game — not in the papers, not in the reports, not in the motel register."
   },
   "h_shadow": {
    "label": "The little man is Eddie's own shadow",
@@ -435,7 +435,7 @@
   },
   "h_child": {
    "label": "The little man is an unborn child",
-   "text": "Alice was pregnant. The final boss is a woman in a “pregnant” Flesh Tree with a beating heart, which Alex confirms. For him the child is “definitely one of the threads”: the little man may be both the child and the dark side of drunk Eddie at once."
+   "text": "Alice was pregnant. The final boss is a woman inside a “pregnant” Flesh Tree with a beating heart. The child does not rule the other readings out: the little man may be both the unborn child and the dark side of drunk Eddie at once."
   },
   "h_endings": {
    "label": "The endings are three answers to guilt",
@@ -468,102 +468,102 @@
   "r_sh2": {
    "label": "Silent Hill 2",
    "text": "A search for a missing person turns into a search for yourself, the town reflects guilt, and both games have a Leave ending and a car in the water (In Water). The developers name SH2 as one founder's “first big one” among horror games, but they don't directly confirm the plot structure.",
-   "tag": "OFFICIAL (influence) / HYPOTHESIS (structure)"
+   "tag": "DEVELOPERS (influence) / BOARD (structure)"
   },
   "r_tp": {
    "label": "Twin Peaks",
    "text": "A dead “toast of the town” with a dark side, like Laura Palmer; red rooms; a dwarf; coffee; “the owls are not what they seem”.",
-   "tag": "OFFICIAL (influence) / PRESS (details)"
+   "tag": "DEVELOPERS (influence) / PRESS (details)"
   },
   "r_lost": {
    "label": "Lost Highway",
    "text": "The developers named the film outright. The Mystery Man: “We've met before, haven't we?” and “Call me”, and the achievement “Call me…”. Psychogenic fugue: one man becomes another. The endless road in Leave.",
-   "tag": "OFFICIAL (film) / PRESS + HYPOTHESIS (details)"
+   "tag": "DEVELOPERS (film) / PRESS / BOARD (details)"
   },
   "r_mull": {
    "label": "Mulholland Drive",
    "text": "A car crash and amnesia at the start; the first part of the film is a wish-fulfillment dream; the Cowboy.",
-   "tag": "HYPOTHESIS"
+   "tag": "BOARD"
   },
   "r_bv": {
    "label": "Blue Velvet",
    "text": "The surname Velvet. The press lists the film among the game's Lynchian roots.",
-   "tag": "PRESS (general) / HYPOTHESIS (name)"
+   "tag": "PRESS (general) / BOARD (name)"
   },
   "r_aw": {
    "label": "Alan Wake",
    "text": "A TV show inside the game, like Night Springs; Alan's wife is Alice, and the lake takes her; Alan comes to after a car crash. The developers never named Alan Wake, but there is an official Steam bundle.",
-   "tag": "PRESS + HYPOTHESIS"
+   "tag": "PRESS / BOARD"
   },
   "r_xf": {
    "label": "The X-Files",
    "text": "The early prototype: an FBI agent in a small town called Silver City. The Omega Report show: a believer agent and a skeptic agent, “we lost 12 minutes”.",
-   "tag": "OFFICIAL"
+   "tag": "DEVELOPERS"
   },
   "r_jacob": {
    "label": "Jacob's Ladder",
    "text": "A dying man's delirium that he takes for life. Father Jacob; the “angel of mercy” (in the film, Eckhart's devils are angels freeing you from the earth); the “Ascension” achievement.",
-   "tag": "OFFICIAL (film) / HYPOTHESIS (details)"
+   "tag": "DEVELOPERS (film) / BOARD (details)"
   },
   "r_angel": {
    "label": "Angel Heart",
    "text": "A private investigator is hired to find a missing singer; the singer turns out to be him, and the client is the devil. Neither the press nor players have looked at the link seriously.",
-   "tag": "HYPOTHESIS"
+   "tag": "BOARD"
   },
   "r_shining": {
    "label": "The Shining",
    "text": "A bartender pours for a man on the wagon: “I don't drink.” — “You're going to.” A sobriety chip. A typewriter page with one sentence typed fourteen times in a row.",
-   "tag": "OFFICIAL (per an AMA recap) / HYPOTHESIS"
+   "tag": "DEVELOPERS (AMA) / BOARD"
   },
   "r_secret": {
    "label": "Secret Window",
    "text": "The stalker exists only in the hero's head.",
-   "tag": "OFFICIAL (per an AMA recap) / HYPOTHESIS"
+   "tag": "DEVELOPERS (AMA) / BOARD"
   },
   "r_jekyll": {
    "label": "Dr Jekyll and Mr Hyde",
    "text": "The book with a bookmark at the station, a quote from the last chapter. Two personalities in one body. Hyde in the novella is “a little man”.",
-   "tag": "FACT (in the game) / HYPOTHESIS (meaning)"
+   "tag": "IN GAME / BOARD (meaning)"
   },
   "r_antig": {
    "label": "“Antigonish” and “The Little Man Who Wasn't There”",
    "text": "The note about the man on the stairs who wasn't there is almost word for word an 1899 poem. A song based on it is called “The Little Man Who Wasn't There”.",
-   "tag": "FACT (in the game) / HYPOTHESIS (meaning)"
+   "tag": "IN GAME / BOARD (meaning)"
   },
   "r_shutter": {
    "label": "Shutter Island",
-   "text": "Alex's comparison: a detective investigates a case and turns out to be a patient who invented the detective so he wouldn't have to remember his guilt. A storm, a lighthouse, the drowned.",
-   "tag": "Alex / HYPOTHESIS"
+   "text": "A detective investigates a case and turns out to be a patient who invented the detective so he wouldn't have to remember his guilt. A storm, a lighthouse, the drowned.",
+   "tag": "BOARD"
   },
   "r_carnival": {
    "label": "Carnival of Souls",
    "text": "A car falls off a bridge into a river; the heroine gets out, but at times no one can see or hear her.",
-   "tag": "HYPOTHESIS"
+   "tag": "BOARD"
   },
   "r_owl": {
    "label": "An Occurrence at Owl Creek Bridge",
    "text": "The whole story is one stretched-out moment before death. The great-grandfather of Jacob's Ladder.",
-   "tag": "HYPOTHESIS"
+   "tag": "BOARD"
   },
   "r_orpheus": {
    "label": "Orpheus",
    "text": "A musician goes down after his dead beloved and loses her when he turns back to look. Eddie: “Why did you turn back?” The ferry to the horizon in Rest.",
-   "tag": "HYPOTHESIS"
+   "tag": "BOARD"
   },
   "r_alice": {
    "label": "Alice in Wonderland",
    "text": "Alice, the Rabbit Hole bar, the “Down the Rabbit Hole” achievement. The Cheshire Cat, who appears, teases and points the way, is one more candidate model for the girl in black.",
-   "tag": "HYPOTHESIS"
+   "tag": "BOARD"
   },
   "r_memento": {
    "label": "Memento",
    "text": "A hero with no memory, Polaroids with notes on them, objects called “mementos”.",
-   "tag": "HYPOTHESIS"
+   "tag": "BOARD"
   },
   "r_8mm": {
    "label": "8mm",
    "text": "A private investigator follows a trail of films to find a missing girl. The developers list the film among their sources.",
-   "tag": "OFFICIAL (film) / HYPOTHESIS (details)"
+   "tag": "DEVELOPERS (film) / BOARD (details)"
   },
   "m_red": {
    "label": "Red",
@@ -622,8 +622,8 @@
    "text": "The Sheriff, a second detective, or another part of Eddie? Jackman is afraid he will get to Eddie first."
   },
   "q_canon": {
-   "label": "Which ending should the video treat as canon?",
-   "text": "The community is split between Rest and Live. The developers aren't saying. Alex: for him Live is canon, but the video won't claim that on the game's behalf."
+   "label": "Which ending is canon?",
+   "text": "Players are split between Rest and Live. The developers have not weighed in. This board assigns no canon: all three endings rest on their own clues, and none cancels the others. Live is the only one where a rescue is shown outright; Rest is the only one where Eddie is let go; Leave is the only one where the road never ends."
   },
   "wib": {
    "label": "The girl in black",
@@ -700,17 +700,17 @@
   "r_jwred": {
    "label": "Johnnie Walker Red Label",
    "text": "The hero's name matches a whisky brand. And this is a hero who says “I don't drink anymore”.",
-   "tag": "HYPOTHESIS (Alex)"
+   "tag": "BOARD"
   },
   "r_poecat": {
    "label": "Edgar Allan Poe's “The Black Cat”",
    "text": "The drunken narrator gouges out his cat's eye in a rage, later kills his wife and walls her body up. A cat's wailing from inside the wall leads the police to the body. In the game: hard-drinking Eddie, “I might scratch your eyes out”, “knocking inside the wall” in Alice's diary, the black cat in a cage.",
-   "tag": "HYPOTHESIS"
+   "tag": "BOARD"
   },
   "r_blonde": {
    "label": "Lynch's blonde and brunette",
    "text": "Lost Highway: the brunette Renee and the blonde Alice, both played by the same actress. Mulholland Drive: Betty and Rita. Twin Peaks: Laura and her dark-haired cousin Maddy, again one actress. In the game: fair-haired Alice and the girl in black.",
-   "tag": "HYPOTHESIS"
+   "tag": "BOARD"
   },
   "m_cats": {
    "label": "Cats",
@@ -722,11 +722,11 @@
   },
   "q_melody": {
    "label": "What is the E G D C F A B melody?",
-   "text": "Each bell sounds exactly once, and the melody ends on B, the leading tone, which never resolves to C. The second half, F–A–B, rises by a tritone. No known song could be found in it. The bell-number reading, 352-1467, was dialed by Alex on 19.10: “number unavailable”. The magazine's letter number, 55-CONMAG, that is 55266624, did work: the magazine called back. The next candidate for the bells is the same letters E G D C F A B on the keypad, 343-2322: Alex dialed it, it doesn't work. The billboard number 54-FAITH, 5432484, doesn't work either."
+   "text": "Each bell sounds exactly once, and the melody ends on B, the leading tone, which never resolves to C. The second half, F–A–B, rises by a tritone. No known song could be found in it. The phone readings were tried too: the bell number 352-1467 gives “number unavailable”; the same letters E G D C F A B on the keypad, 343-2322, does not work; the billboard number 54-FAITH, 5432484, does not work either. Only the magazine's letter number, 55-CONMAG — that is 55266624 — works: the magazine calls back."
   },
   "q_wib": {
    "label": "Who is the girl in black?",
-   "text": "A cat, Alice's dark side, or one more of the town's fragments? About her “friend” she says: “A real oddball. Obsessive. But not as simple as he might seem.” Alex: the “friend” with the cage is the man in the trench coat with the Magnum from the sewers."
+   "text": "A cat, Alice's dark side, or one more of the town's fragments? About her “friend” she says: “A real oddball. Obsessive. But not as simple as he might seem.” One candidate for that “friend” is the old man in the trench coat with the Magnum from the sewers."
   },
   "c_conmag": {
    "label": "“That's him... I mean, me”",
@@ -775,11 +775,11 @@
   "r_crane": {
    "label": "Stephen Crane, “In the Desert”",
    "text": "A water-swollen book of poems at Union Apartments: a creature, naked, bestial, holds his heart in his hands and eats of it: “It is bitter—bitter… But I like it Because it is bitter, And because it is my heart.” An 1895 poem from The Black Riders and Other Lines.",
-   "tag": "FACT (in the game) / HYPOTHESIS (meaning)"
+   "tag": "IN GAME / BOARD (meaning)"
   },
   "c_bump": {
    "label": "Alice's silhouette at dawn",
-   "text": "In Rest, on the ferry, Alice stands in profile to Red, and the line from her bust to her hips is convex: the belly sticks out a little. Alex: “her proportions look a little pregnant.” The dress is dark, loose and flared, and from behind or at three-quarters no bump shows, so it may just be the cut."
+   "text": "In Rest, on the ferry, Alice stands in profile to Red, and the line from her bust to her hips is convex: the belly sticks out a little. The dress is dark, loose and flared, and from behind or at three-quarters no bump shows, so it may just be the cut."
   },
   "c_projector": {
    "label": "Projector labels",
@@ -791,11 +791,11 @@
   },
   "c_lovetape": {
    "label": "The red “Love” tape",
-   "text": "The red copy of Eddie's room in the final zone. On the bed, “an empty cassette case” labeled LOVE; next to it, “a TV with a VCR hooked up”. On the screen, the face of a woman who looks like Alice, something dark at her temple, then a flash, and the TV catches fire. The same room holds a diary page: “He gave me a gun for self-defense… The gun feels so good in my hands...” Alex: “someone who looks like Alice shot herself with the gun Eddie gave her.”"
+   "text": "The red copy of Eddie's room in the final zone. On the bed, “an empty cassette case” labeled LOVE; next to it, “a TV with a VCR hooked up”. On the screen, the face of a woman who looks like Alice, something dark at her temple, then a flash, and the TV catches fire. The same room holds a diary page: “He gave me a gun for self-defense… The gun feels so good in my hands...” Read together, that points to a woman who looks like Alice shooting herself with the gun Eddie gave her. The shot itself is never shown."
   },
   "c_silence": {
    "label": "Jackman goes silent",
-   "text": "Alex: if you refuse to kill Eddie, Jackman never calls again, and there are no more conversations with him. The voice that demanded the killing simply disappears."
+   "text": "If you refuse to kill Eddie, Jackman never calls again: there are no further conversations with him in the game. The voice that demanded the killing simply disappears."
   }
  },
  "edges": {
@@ -878,13 +878,12 @@
  },
  "src": {
   "пересказ сцены у телецентра, NPC Tips": "retelling of the scene outside Thelend Broadcasting, NPC Tips",
-  "глава «The(l)end Broadcasting Station» у авторов нарезок, NPC Tips": "“The(l)end Broadcasting Station” chapter in a cutscene compilation, NPC Tips",
+  "глава «The(l)end Broadcasting Station», NPC Tips": "“The(l)end Broadcasting Station” chapter, NPC Tips",
   "название зоны по гайдам, NPC Tips": "area name used in guides, NPC Tips",
   "пересказ журнала, NPC Tips": "retelling of the journal, NPC Tips",
   "достижения Steam": "Steam achievements",
   "Antigonish — Wikipedia": "Antigonish — Wikipedia",
   "Jekyll and Hyde — Wikipedia": "Jekyll and Hyde — Wikipedia",
-  "цитаты допроса, NPC Tips": "interrogation quotes, NPC Tips",
   "время 10:07 — Steam-обсуждения": "the 10:07 time — Steam discussions",
   "Adjutor — Wikipedia": "Adjutor — Wikipedia",
   "название церкви, games.gg": "church name, games.gg",
@@ -896,7 +895,6 @@
   "Medium": "Medium",
   "Atomic New Age": "Atomic New Age",
   "Steam: тред о сюжете": "Steam: story thread",
-  "пересказ DTF и Steam RU в ресерче": "DTF and Russian Steam threads, as summarized in the research",
   "Angel Heart — Wikipedia": "Angel Heart — Wikipedia",
   "подкаст Horror Game Awards": "Horror Game Awards podcast",
   "концовки SH2": "SH2 endings",
@@ -924,28 +922,214 @@
   "Johnnie Walker — Wikipedia": "Johnnie Walker — Wikipedia",
   "The Black Cat — Wikipedia": "The Black Cat — Wikipedia",
   "Lost Highway — Wikipedia": "Lost Highway — Wikipedia",
-  "запись «все записки» · 2:40, 4:31": "“all notes” recording · 2:40, 4:31",
-  "запись «все записки» · 0:45, 2:15": "“all notes” recording · 0:45, 2:15",
-  "запись «все записки» · 3:19–3:26": "“all notes” recording · 3:19–3:26",
-  "запись «все записки» · 0:04": "“all notes” recording · 0:04",
-  "запись «все записки» · 0:10": "“all notes” recording · 0:10",
-  "запись «все записки» · 0:38, 0:43": "“all notes” recording · 0:38, 0:43",
-  "запись «все записки» · 2:40": "“all notes” recording · 2:40",
-  "запись «все записки» · 1:45–2:09": "“all notes” recording · 1:45–2:09",
-  "запись «все записки» · 2:14": "“all notes” recording · 2:14",
-  "запись «все записки» · 5:19–5:23": "“all notes” recording · 5:19–5:23",
-  "запись «все записки» · 3:09–3:42": "“all notes” recording · 3:09–3:42",
-  "запись «все записки» · 1:18, 4:31": "“all notes” recording · 1:18, 4:31",
-  "запись «все записки» · 2:06": "“all notes” recording · 2:06",
-  "запись звонка в CONMAG, 19.10 · 0:22–2:06": "CONMAG call recording, 19.10 · 0:22–2:06",
   "The Black Riders — Wikipedia": "The Black Riders — Wikipedia",
-  "запись «все записки» · 4:00": "“all notes” recording · 4:00",
-  "интервью Alex, 19.10.2026": "Alex interview, 19.10.2026"
+  "Разработчики": "Developers",
+  "Пресса": "Press",
+  "Обсуждение игроков": "Player discussion",
+  "Гайд сообщества": "Community guide",
+  "Справка": "Reference",
+  "«Omega Report»: «мы потеряли 12 минут»": "Omega Report: “we lost 12 minutes”",
+  "«Красный свет без тормозов», студия Terminal Drive": "“Red light, no brakes”, the Terminal Drive studio",
+  "«Юнион», кв. 4B": "Union Apartments, apt. 4B",
+  "Автобус, пожилой попутчик в шляпе": "The bus, the elderly fellow passenger in a hat",
+  "Афиша концерта Эдди Вельвета": "Eddie Velvet's gig poster",
+  "Бар Rabbit Hole": "The Rabbit Hole bar",
+  "Бар Rabbit Hole, бармен": "The Rabbit Hole bar, the bartender",
+  "Бар Rabbit Hole, видение": "The Rabbit Hole bar, the vision",
+  "Бар Rabbit Hole, первое видение": "Rabbit Hole bar, the first vision",
+  "Бар Rabbit Hole, стена с выемками под кольца за сценой": "The Rabbit Hole bar, the wall with ring-shaped indents behind the stage",
+  "Бар в концовке «Покой»": "The bar in the Rest ending",
+  "Бар в концовке «Покой», встреча с Ковбоем": "The bar in the Rest ending, meeting the Cowboy",
+  "Бар в концовке «Покой», женщина из номера 3": "The bar in the Rest ending, the woman from Room 3",
+  "Бармен в первом видении": "The bartender in the first vision",
+  "Бармен-Ковбой, бар Rabbit Hole": "The Cowboy bartender, the Rabbit Hole bar",
+  "Бармен: «назад дороги нет»": "The bartender: “there's no way back”",
+  "Ветклиника, девушка в клетке": "The vet clinic, the girl in the cage",
+  "Ветклиника, кот в клетке": "The vet clinic, the cat in a cage",
+  "Видение в Rabbit Hole": "The Rabbit Hole vision",
+  "Видение в Rabbit Hole, бармен и Сервер": "The Rabbit Hole vision, the bartender and the Server",
+  "Видение: Сервер в бабочке": "The vision: the Server in a bow tie",
+  "Встреча на мосту": "The meeting on the bridge",
+  "Встреча у парома": "The meeting at the ferry",
+  "Выстрел в старика, канализация": "The shooting of the old man, the sewers",
+  "Газетная заметка о гибели каскадёров на площадке телецентра Thelend": "Newspaper report on the stunt deaths on the Thelend Broadcasting lot",
+  "Газеты о пропаже мисс Бейкер": "Newspapers on Miss Baker's disappearance",
+  "Голос в интеркоме после телецентра Thelend": "The intercom voice after Thelend Broadcasting",
+  "Голос в красной комнате": "The voice in the red room",
+  "Голос маленького человека, Чёрч-Хилл": "The little man's voice, Church Hill",
+  "Голос по интеркому": "The voice on the intercom",
+  "Гора, дорога к вершине": "Mt. Siah Kopa, the way to the summit",
+  "Городские часы, Сильвер-Пайнс": "The town clocks, Silver Pines",
+  "Горящая машина на мосту": "The burning car on the bridge",
+  "Даунтаун ночью": "Downtown at night",
+  "Дверь Робертса в управлении шерифа, код 3100": "Roberts' door at the sheriff's office, code 3100",
+  "Девушка в чёрном у цветочного магазина": "The girl in black outside the flower shop",
+  "Девушка в чёрном, даунтаун ночью": "The girl in black, downtown at night",
+  "Девушка в чёрном, ночь в даунтауне": "The girl in black, downtown at night",
+  "Девушка у телецентра Thelend, перед смертью": "The girl outside Thelend Broadcasting, just before she dies",
+  "Джекман о самообороне": "Jackman on self-defense",
+  "Дневник Фостера": "Foster's journal",
+  "Дневник Элис": "Alice's diary",
+  "Дневник Элис, красная зона": "Alice's diary, the red zone",
+  "Дневник из квартиры 3C «Юниона»": "The diary from apartment 3C, Union Apartments",
+  "Добрый старик с зонтом, прощание": "The kind old man with an umbrella, on parting",
+  "Домофон «Юниона», кв. 4B": "Union Apartments intercom, apt. 4B",
+  "Домофон квартиры 4B": "The apartment 4B intercom",
+  "Допросная, управление шерифа": "Interrogation room, sheriff's office",
+  "Досье похоронного бюро на отца Фостера": "Funeral Home Dossier on Father Foster",
+  "Досье похоронного бюро, Чёрч-Хилл": "Funeral Home Dossier, Church Hill",
+  "Жалоба на пропажи из хранилища улик": "Complaint about things missing from the evidence room",
+  "Закусочная «Шахтёр», концовка «Покой»": "Miner Diner, the Rest ending",
+  "Закусочная «Шахтёр», начало игры": "Miner Diner, the opening",
+  "Закусочная «Шахтёр», пробуждение Рэда": "Miner Diner, Red waking up",
+  "Записка в номере 5, мотель «Багровый медведь»": "The note in Room 5, Crimson Bear Motel",
+  "Записка из номера 5, мотель «Багровый медведь»": "The note in Room 5, Crimson Bear Motel",
+  "Записка о человеке на лестнице": "The note about the man on the stairs",
+  "Записка о человеке на лестнице, которого не было": "The note about the man on the stairs who wasn't there",
+  "Записка шерифа Вульф": "Sheriff Wulfe's note",
+  "Записки Водителя": "The Driver's notes",
+  "Запись в финальной зоне": "Recording in the final area",
+  "Запись на телевизоре": "The recording on the TV",
+  "Запись ссоры у таксофона": "The recording of the fight, at the payphone",
+  "Звонки Джекмана по таксофону": "Jackman's calls on the payphone",
+  "Звонок Джекмана": "Jackman's call",
+  "Звонок Джекмана по таксофону": "Jackman's payphone call",
+  "Звонок Джекмана, заказ на поиски Эдди": "Jackman's call, the job to find Eddie",
+  "Звонок Джекмана, таксофон": "Jackman's call on the payphone",
+  "Звонок Джекмана: «покончи с ним»": "Jackman's call: “put an end to him”",
+  "Звонок Джекману по таксофону": "Payphone call to Jackman",
+  "Звонок Рэда в 911": "Red's 911 call",
+  "Звонок в 911": "The 911 call",
+  "Зона «Место, где всё кончается»": "A Place That Ends, the final area",
+  "Инвентарь мементо": "The memento inventory",
+  "Исповедальня Чёрч-Хилла, голос за решёткой": "The Church Hill confessional, the voice behind the grille",
+  "Исповедальня: «любимица города»": "The confessional: “the toast of the town”",
+  "Кабина канатки «Путешествие к звёздам»": "The “A Ride to the Stars” cable car",
+  "Календарь в магазине, октябрь 1993-го": "The store calendar, October 1993",
+  "Канализация, выстрел в старика": "The sewers, the shooting of the old man",
+  "Канализация, старик в плаще с магнумом": "The sewers, the old man in a trench coat with a Magnum",
+  "Канатка «Путешествие к звёздам»": "The “A Ride to the Stars” cable car",
+  "Канатка «Путешествие к звёздам» и буклет": "The “A Ride to the Stars” cable car and flyer",
+  "Канатка «Путешествие к звёздам», мелодия на семи колоколах": "The “A Ride to the Stars” cable car, the melody on seven bells",
+  "Кассеты Terminal Drive, телецентр Thelend": "The Terminal Drive tapes, Thelend Broadcasting",
+  "Квартира 1C «Юниона»": "Union Apartments, apt. 1C",
+  "Квартира 4B, «Юнион»": "Apartment 4B, Union Apartments",
+  "Квартира кошатницы": "The cat lady's apartment",
+  "Квартира кошатницы, чёрный кот": "The cat lady's apartment, the black cat",
+  "Книга с закладкой в участке": "The bookmarked book at the station",
+  "Книга с закладкой, управление шерифа": "The bookmarked book, sheriff's office",
+  "Концовка «Бегство»": "The Leave ending",
+  "Концовка «Жизнь»": "The Live ending",
+  "Концовка «Жизнь», человека вытаскивают из воды": "The Live ending, the man pulled from the water",
+  "Концовка «Жизнь»: человек в красной куртке": "The Live ending: the man in the red jacket",
+  "Концовка «Жизнь»: человека вытаскивают из воды": "The Live ending: a man pulled out of the water",
+  "Концовка «Покой»": "The Rest ending",
+  "Концовка «Покой», «последнее родео»": "The Rest ending, the “final rodeo”",
+  "Концовка «Покой», Сервер в бабочке": "The Rest ending, the Server in a bow tie",
+  "Концовка «Покой», Сервер над телом Элис": "The Rest ending, the Server over Alice's body",
+  "Концовка «Покой», Элис на пароме": "The Rest ending, Alice on the ferry",
+  "Концовка «Покой», рассвет с Элис": "The Rest ending, dawn with Alice",
+  "Копатель, яма за станцией канатки": "The Digging Man, the pit behind the cable car station",
+  "Красная копия комнаты Эдди, финальная зона": "The red copy of Eddie's room, the final zone",
+  "Красная куртка Эдди, портрет в диалогах": "Eddie's red jacket, the dialogue portrait",
+  "Красное видение: Эдди обнимает Элис": "The red vision: Eddie embracing Alice",
+  "Кремация Фостера": "Foster's cremation",
+  "Лист из пишущей машинки, кв. 2A «Юниона»": "Typewriter page, apt. 2A, Union Apartments",
+  "Люкс «Гризли», мотель «Багровый медведь»": "The Grizzly Suite, Crimson Bear Motel",
+  "Мелководье финала, где ждёт Эдди": "The shallows of the finale, where Eddie waits",
+  "Мементо «Красная водительская перчатка»": "The Red Driving Glove memento",
+  "Мементо «Разбитые наручные часы»": "The Cracked Wrist Watch memento",
+  "Мементо «Старая бутоньерка», концовка «Покой»": "The old boutonniere memento, the Rest ending",
+  "Мементо: жетон «30 дней трезвости»": "The 30 Days Sober Chip memento",
+  "Морг управления шерифа, значок из зубов утопленника": "The sheriff's office morgue, the badge in the drowned man's teeth",
+  "Мост Риверсайда и водосток": "Riverside Bridge and the storm drain",
+  "Мост у перехода из даунтауна, горящая машина": "The bridge at the crossing out of downtown, the burning car",
+  "Мотель «Багровый медведь»": "The Crimson Bear Motel",
+  "Мотель «Багровый медведь», люкс «Гризли»": "Crimson Bear Motel, the Grizzly Suite",
+  "Мэр об эвакуации, октябрь 1993": "The mayor on the evacuation, October 1993",
+  "Мэрия и съёмочная площадка": "Town Hall and the studio set",
+  "Мёртвое дерево, выбор убить или уйти": "The dead tree, the choice to kill or leave",
+  "Надпись на экране, телецентр Thelend": "The on-screen message, Thelend Broadcasting",
+  "Начало игры, закусочная «Шахтёр»": "The start of the game, Miner Diner",
+  "Недописанный портрет, надпись под слоями краски": "The unfinished portrait, writing under layers of paint",
+  "Немой колокольчик на кошачьем ошейнике": "The silent bell on the Cat Collar",
+  "Номер 3, мотель «Багровый медведь»": "Room 3, Crimson Bear Motel",
+  "Обещание Джекмана": "Jackman's promise",
+  "Обожжённый о побрякушках": "The Burned Man on the trinkets",
+  "Обожжённый у воды": "The Burned Man by the water",
+  "Осколок стекла, отполированный морем": "The Sea Polished Glass Shard",
+  "Остановленные часы, 10:07": "The clocks stopped at 10:07",
+  "Отчёт об аварии одной машины": "The single-vehicle accident report",
+  "Отчёт об утопленнике под Риверсайдским мостом": "Report on the drowned man under Riverside Bridge",
+  "Отчёт об утопленнике под мостом": "The report on the drowned man under the bridge",
+  "Отчёт об утопленнике под мостом, управление шерифа": "The report on the drowned man under the bridge, sheriff's office",
+  "Отчёт об утопленнике, архив участка": "Report on the drowned man, the station archive",
+  "Отчёт помощника А. Ли, управление шерифа": "Deputy A. Lee's incident report, sheriff's office",
+  "Памятная вещь «Кошачий ошейник»": "The Cat Collar memento",
+  "Первые слова игры": "The game's opening words",
+  "Печь Обожжённого": "The Burned Man's furnace",
+  "Печь, концовка «Жизнь»": "The furnace, the Live ending",
+  "Плёнка допроса Эдди": "The tape of Eddie's interrogation",
+  "Плёнка допроса, управление шерифа": "Interrogation tape, sheriff's office",
+  "Подвал ветклиники": "The vet clinic basement",
+  "Подвал ветклиники, кот в клетке": "The vet clinic basement, the caged cat",
+  "Полароид Эдди и Элис, последний кадр": "The Polaroid of Eddie and Alice, the last shot",
+  "Попутчик в автобусе": "A fellow passenger on the bus",
+  "Последний концерт Эдди в Rabbit Hole, 17 сентября": "Eddie's last gig at the Rabbit Hole, September 17",
+  "Предупреждение по радио перед бурей": "The radio warning before the storm",
+  "Разговор с Джекманом": "The conversation with Jackman",
+  "Разговор с Обожжённым у воды": "The talk with the Burned Man by the water",
+  "Робертс превращается в босса": "Roberts turns into a boss",
+  "Русские субтитры сцены у дерева": "The Russian subtitles of the scene at the tree",
+  "Рэд в баре: «просто воды»": "Red at the bar: “just water”",
+  "Семь колоколов канатки": "The seven cable car bells",
+  "Семь колоколов канатки, табличка с мелодией": "The seven cable car bells, the melody plaque",
+  "Сервер в бабочке, бар Rabbit Hole": "The Server in a bow tie, the Rabbit Hole bar",
+  "Сервер, концовка «Покой»": "The Server, the Rest ending",
+  "Слова девушки из ветклиники": "The vet clinic girl's words",
+  "Служитель канатки": "The cable car attendant",
+  "Смотритель канатки": "The cable car attendant",
+  "Сон о гаснущих звёздах, концовка «Покой»": "The dream of the stars going out, the Rest ending",
+  "Сообщение о Водителе по телевизору": "The message about the Driver on the TV",
+  "Страница дневника Элис, красная копия комнаты Эдди": "Alice's diary page, the red copy of Eddie's room",
+  "Страница дневника Элис, финальная зона": "Alice's diary page, the final zone",
+  "Студия Terminal Drive, шёпот «Красный свет… Без тормозов»": "The Terminal Drive studio, the “Red light... No brakes” whispers",
+  "Студия телецентра Thelend, панель AUDIO / LINE IN": "The studio at Thelend Broadcasting, the AUDIO / LINE IN panel",
+  "Сцена у телецентра": "Outside Thelend Broadcasting",
+  "Табличка с мелодией колоколов": "The plaque with the bell melody",
+  "Таксофон, звонок Джекману": "The payphone call to Jackman",
+  "Телевизор: «Улыбнись, Элис, ты в телевизоре»": "The TV: “Smile, Alice. You're on TV”",
+  "Телецентр Thelend": "Thelend Broadcasting",
+  "Телецентр Thelend, кассеты «Terminal Drive»": "Thelend Broadcasting, the Terminal Drive tapes",
+  "Телецентр Thelend, съёмочная площадка «Terminal Drive»": "Thelend Broadcasting, the Terminal Drive studio set",
+  "Тело Элис в воде": "Alice's body in the water",
+  "Туалет закусочной «Шахтёр», шкатулка для кольца": "The Miner Diner restroom, the ring box",
+  "Участок, подсказка к двери допросной": "The station, the hint for the interrogation room door",
+  "Хижина у церкви, запертый гитарный кейс": "The cabin by the church, the locked guitar case",
+  "Цветочный магазин, Чёрч-Хилл": "The flower shop, Church Hill",
+  "Церковь святого Адъютора, покровителя утопающих": "Saint Adjutor Parish Church, patron of the drowning",
+  "Чёрч-Хилл, похоронное бюро и кладбище": "Church Hill, the funeral home and the cemetery",
+  "Чёрч-Хилл, церковь святого Адъютора": "Church Hill, Saint Adjutor Parish Church",
+  "Шкатулка со звёздами, туалет закусочной «Шахтёр»": "The star ring box, Miner Diner restroom",
+  "Шторм в Сильвер-Пайнс": "The storm in Silver Pines",
+  "Эдди у мёртвого дерева": "Eddie at the dead tree",
+  "Эдди: «Почему ты повернул назад?»": "Eddie: “Why did you turn back?”",
+  "Яма за станцией канатки": "The pit behind the cable car station",
+  "Журнал регистрации, мотель «Багровый медведь»": "The guest register, Crimson Bear Motel",
+  "Записка персоналу, мотель «Багровый медведь»": "The note to staff, Crimson Bear Motel",
+  "Звонок в CONMAG с таксофона": "The CONMAG call from the payphone",
+  "Книга стихов Стивена Крейна, «Юнион»": "Stephen Crane's book of poems, Union Apartments",
+  "Лист бронирования допросной, 17:00": "The interrogation room booking sheet, 17:00",
+  "Лицензия частного детектива Рэда Уокера": "Red Walker's private investigator license",
+  "Объявление об отмене «Прощального летнего заплыва»": "The notice cancelling the Farewell Summer Swim",
+  "Сгоревшая записка, «Юнион»": "The burned note, Union Apartments",
+  "Смятая страница из журнала участка": "The crumpled page from the station log",
+  "Сценарий «Terminal Drive»": "The Terminal Drive script"
  },
  "holders": {
-  "Alex": "Alex",
-  "сообщество": "community",
-  "пресса": "press",
-  "наша": "ours"
+  "devs": "developers",
+  "press": "press",
+  "players": "players",
+  "board": "board"
  }
 }

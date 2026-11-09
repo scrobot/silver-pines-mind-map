@@ -1,4 +1,10 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Дело Эдди Вельвета</title>
+<meta name="description" content="Доска улик по сюжету Silver Pines: персонажи, события, три концовки, гипотезы и улики за и против.">
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,6 +50,9 @@ nav.tabs button{font:600 14px var(--f-body);color:var(--muted);background:none;b
 nav.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--red)}
 nav.tabs button .n{font-family:var(--f-mono);font-size:11px;color:var(--muted);margin-left:4px}
 section[role="tabpanel"]{display:flex;flex-direction:column;gap:14px}
+/* An author display rule outranks the browser's own [hidden]{display:none}, so without
+   this the tab panels never actually hide and every section stacks on the page at once. */
+section[role="tabpanel"][hidden]{display:none}
 .toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .chip{display:inline-flex;align-items:center;gap:6px;font:500 13px var(--f-body);color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:5px 10px;cursor:pointer}
 .chip[aria-pressed="false"]{opacity:.45}
@@ -77,7 +86,8 @@ aside.dossier{background:var(--raise);border:1px solid var(--line);border-radius
 .meter b.on{background:var(--red)}
 .holders{display:flex;flex-wrap:wrap;gap:4px}
 .tag{font:500 11px var(--f-mono);border:1px solid var(--line);border-radius:4px;padding:1px 6px;color:var(--muted)}
-.tag.alex{color:var(--red);border-color:var(--red);border-color:color-mix(in srgb,var(--red) 50%,var(--line))}
+/* the board's own reading is the one tier worth marking: it has no outside source behind it */
+.tag.h-board{color:var(--red);border-color:color-mix(in srgb,var(--red) 50%,var(--line))}
 .empty{color:var(--muted);font-size:14px}
 /* lists */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr));gap:14px}
@@ -116,18 +126,21 @@ footer{color:var(--muted);font-size:13px;border-top:1px solid var(--line);paddin
   .lang{align-self:flex-start}
 }
 @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+__BOARD_CSS__
 </style>
+</head>
+<body>
 
 <div class="wrap">
   <header class="case">
     <div>
       <div class="code" data-i18n="code">Дело № SP-1993-10 · Silver Pines · Вельвет, Эдди</div>
       <h1 data-i18n="title">Дело Эдди Вельвета</h1>
-      <p class="lede" data-i18n="lede">Детектива Рэда Уокера наняли найти пропавшего музыканта. Здесь всё, что удалось собрать: кто есть кто, что случилось до игры и во время неё, три концовки, гипотезы и улики за и против. Таймкоды ведут прямо в записи стримов.</p>
+      <p class="lede" data-i18n="lede">Детектива Рэда Уокера наняли найти пропавшего музыканта. Здесь дело целиком: кто есть кто, что случилось до игры и во время неё, три концовки, гипотезы и улики за и против. У каждой улики — место в игре, где её видно.</p>
     </div>
     <div class="stamp">
       <div class="lang" role="group" aria-label="Язык / Language"><button type="button" data-lang="ru" aria-pressed="true">RU</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
-      <span><span data-i18n="streams">Стримы</span> <b>13, 17, 18.10.2026</b></span><span><span data-i18n="research">Ресерч</span> <b>19.10.2026</b></span><span id="stat"></span>
+      <span><span data-i18n="coverage">Прохождение</span> <b>100 %</b></span><span><span data-i18n="endings">Концовки</span> <b>3 / 3</b></span><span id="stat"></span>
     </div>
   </header>
 
@@ -141,15 +154,33 @@ footer{color:var(--muted);font-size:13px;border-top:1px solid var(--line);paddin
   </nav>
 
   <section role="tabpanel" id="p-board" aria-labelledby="t-board">
-    <div class="toolbar" id="chips"></div>
     <div class="toolbar">
       <div class="search"><input id="q" type="search" placeholder="Найти: Элис, канатка, 10:07, Джекман…" aria-label="Поиск по доске" data-i18n-ph="search_ph" data-i18n-aria="search_aria"></div>
-      <button class="btn" id="layoutBtn" type="button">Разложить по силам</button>
+      <button class="btn" id="guideBtn" type="button" aria-pressed="false" data-i18n="guide">Как собирали</button>
       <button class="btn" id="fitBtn" type="button" data-i18n="fit">Вся доска</button>
     </div>
     <div class="board">
       <div>
-        <div id="cy" role="img" aria-label="Граф: гипотезы, улики, персонажи, события и отсылки" data-i18n-aria="graph_aria"></div>
+        <!-- The cork board. Everything inside is drawn by cork.js from data/board.json;
+             with no JavaScript it stays empty and the five list tabs carry the case. -->
+        <div id="cork-view" tabindex="0" role="application"
+             aria-label="Доска улик: 96 улик на пробке, нити между ними"
+             data-i18n-aria="board_aria">
+          <div id="cork-felt"></div>
+          <div id="cork-stage"><svg id="cork-threads" aria-hidden="true"></svg></div>
+          <div id="cork-lamp"></div><div id="cork-glow"></div>
+          <div id="cork-tint"></div><div id="cork-vig"></div><div id="cork-grain"></div>
+          <div class="cork-ui tl">
+            <button class="cork-btn" id="corkZoomOut" type="button" aria-label="Отдалить" data-i18n-aria="zoom_out">−</button>
+            <button class="cork-btn" id="corkZoomIn" type="button" aria-label="Приблизить" data-i18n-aria="zoom_in">+</button>
+          </div>
+          <div id="cork-step" role="group" aria-label="Как собирали дело" data-i18n-aria="guide_aria">
+            <button class="cork-btn" id="gPrev" type="button" aria-label="Назад" data-i18n-aria="step_prev">‹</button>
+            <div class="bar"><i id="gBar" style="width:0%"></i></div>
+            <span class="lab" id="gLab">—</span>
+            <button class="cork-btn" id="gNext" type="button" aria-label="Дальше" data-i18n-aria="step_next">›</button>
+          </div>
+        </div>
         <div class="legend" id="legend"></div>
       </div>
       <aside class="dossier" id="dossier" aria-live="polite"></aside>
@@ -162,11 +193,16 @@ footer{color:var(--muted);font-size:13px;border-top:1px solid var(--line);paddin
   <section role="tabpanel" id="p-refs" aria-labelledby="t-refs" hidden><div class="tbl"><table><thead><tr><th data-i18n="th_src">Источник</th><th data-i18n="th_match">Что совпадает</th><th data-i18n="th_strength">Сила</th><th data-i18n="th_links">Ссылки</th></tr></thead><tbody id="refRows"></tbody></table></div></section>
   <section role="tabpanel" id="p-open" aria-labelledby="t-open" hidden><div class="qs" id="openList"></div></section>
 
-  <footer data-i18n="footer">Источники: расшифровки трёх стримов автора (автосубтитры YouTube, имена в них могли исказиться) и ресерч 19.10.2026 по Steam, YouTube-разборам, прессе и интервью разработчиков. Ключевые реплики сверены по кадрам записи экрана. Метки силы у отсылок: ОФИЦИАЛЬНО — сказали разработчики, ПРЕССА — заметили критики, ГИПОТЕЗА — наша догадка без внешнего источника.</footer>
+  <footer data-i18n="footer">Всё на доске — из полного прохождения на 100 %: реплики, записки, документы и экраны игры. Цитаты даны по русской локализации; где известна английская строка, она приведена в оригинале. Часть ключевых реплик вычитана по кадрам и приведена дословно, остальные записаны по ходу прохождения и могут расходиться с игрой в отдельных словах. Внешние источники — пресса, обсуждения игроков и интервью разработчиков — помечены ссылкой. Метки у отсылок: РАЗРАБОТЧИКИ — сказано авторами игры, ПРЕССА — замечено критиками, В ИГРЕ — есть в самой игре, ВЕРСИЯ ДОСКИ — прочтение доски без внешнего подтверждения.</footer>
 </div>
 
 <script type="application/json" id="data">__DATA__</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.26.0/cytoscape.min.js"></script>
+<script type="application/json" id="board-data">__BOARD_DATA__</script>
+<script>
+__CORK_JS__
+</script>
 <script>
 __BOARD_JS__
 </script>
+</body>
+</html>
